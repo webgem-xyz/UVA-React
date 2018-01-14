@@ -42,6 +42,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## Account Component
 ### Usage
 The Account component consists of the following
+* Header
+  * Back arrow
+  * Account
 * Graph of the ammount of contributions
   * Ammount of contributions is based on a montly basis.
 * Account info
@@ -64,6 +67,43 @@ Uid | string | The identifier of the user, used to get the user info etc.
 Logout | function | The function to run when the user presses the Sign out button.
 
 ## Add Component
+### Usage
+The Add component consists of the following
+* Header
+  * Back arrow
+  * Add Measurement
+* Form
+  * Longitude
+    * Label
+    * Input (type number)
+  * Latitude
+    * Label
+    * Input (type number)
+  * Date of measurement
+    * Label
+    * Input (type date)
+* Button +
+  * Adds a new form field
+    * Select (select the measurement type)
+    * Input of the measurement
+  * Remove Item button
+    * Removes the new form field
+* Button Submit Measurement
+  * Adds measurement to database
+  * Sends user to [Overview Component](#overview-component)
+
+### Location
+The Add Component is located at
+```
+  src/routes/add/
+```
+### Attributes
+The Add Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+handleSubmit | function | The function that handles the adding the measurement to the database.
+
 
 ## AddMedia Component
 
@@ -89,6 +129,26 @@ Title | string | The text that should be displayed on the top of the page.
 Accic | boolean | Should there be a account circle to [Account Component](#account-component).
 BackColor | string | The color code that the header should have.
 ## Item Component
+### Usage
+The Item Component consists of the following
+* Type (icon)
+* Date
+* Uploaded (V)
+* When clicked on the Item Component it will send them to [Measurement Component](#measurement-component).
+
+### Location
+The Item Component is located at
+```
+  src/components/item/
+```
+### Attributes
+The Item Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+Key | string | Unique identiier for item.
+Index | string | The key used for the item data.
+Details | object | The data of the item (type, date, uploaded).
 
 ## Login Component
 ### Usage
