@@ -20,3 +20,4 @@ script:
   - npm run build
   - npm run test
   - BROWSER=true COVERAGE=false
+  - ./node_modules/coveralls/bin/coveralls.js < ./coverage/lcov.info
