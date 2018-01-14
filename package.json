@@ -19,6 +19,7 @@
   "devDependencies": {
     "eslint": "^4.15.0",
     "eslint-config-synacor": "^2.0.4",
+    "eslint-plugin-html": "^4.0.1",
     "if-env": "^1.0.0",
     "node-sass": "^4.7.2",
     "preact-cli": "^2.1.0",
