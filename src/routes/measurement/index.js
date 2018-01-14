@@ -9,7 +9,7 @@ export default class Measurement extends Component {
 
     this.state = {
       measurement: {}
-    }
+    };
   }
 
   componentWillMount(nextProps) {
@@ -25,51 +25,46 @@ export default class Measurement extends Component {
 
   render() {
     const measurement = this.state.measurement;
-
-  }
-
-  render() {
-    const measurement = this.state.measurement;
     return (
       <div class={style.container}>
-        <Header head={this.props.head} backCol="#ffffff"/>
-          {measurement.longitude &&
-            <div style={style.row}>
-              <p style={style.label}>Longitude</p>
-              <p style={style.value}>{measurement.longitude}</p>
-            </div>
-          }
-          {measurement.latitude &&
-            <div style={style.row}>
-              <p style={style.label}>Latitude</p>
-              <p style={style.value}>{measurement.latitude}</p>
-            </div>
-          }
-          {measurement.date &&
-            <div style={style.row}>
-              <p style={style.label}>Date</p>
-              <p style={style.value}>{measurement.date}</p>
-            </div>
-          }
-          {measurement.acidity &&
-            <div style={style.row}>
-              <p style={style.label}>Acidity (pH)</p>
-              <p style={style.value}>{measurement.acidity}</p>
-            </div>
-          }
-          {measurement.salinity &&
-            <div style={style.row}>
-              <p style={style.label}>Salinity (PSU)</p>
-              <p style={style.value}>{measurement.salinity}</p>
-            </div>
-          }
-          {measurement.tempature &&
-            <div style={style.row}>
-              <p style={style.label}>Tempature</p>
-              <p style={style.value}>{measurement.tempature}</p>
-            </div>
-            }
-            </div>
-        );
+        <Header head={this.props.head} backCol="#ffffff" />
+        {measurement.longitude &&
+          <div class={style.row}>
+            <p class={style.label}>Longitude</p>
+            <p class={style.value}>{measurement.longitude}</p>
+          </div>
         }
-      }
+        {measurement.latitude &&
+          <div style={style.row}>
+            <p style={style.label}>Latitude</p>
+            <p style={style.value}>{measurement.latitude}</p>
+          </div>
+        }
+        {measurement.date &&
+          <div style={style.row}>
+            <p style={style.label}>Date</p>
+            <p style={style.value}>{measurement.date}</p>
+          </div>
+        }
+        {measurement.acidity &&
+          <div style={style.row}>
+            <p style={style.label}>Acidity (pH)</p>
+            <p style={style.value}>{measurement.acidity}</p>
+          </div>
+        }
+        {measurement.salinity &&
+          <div style={style.row}>
+            <p style={style.label}>Salinity (PSU)</p>
+            <p style={style.value}>{measurement.salinity}</p>
+          </div>
+        }
+        {measurement.tempature &&
+          <div style={style.row}>
+            <p style={style.label}>Tempature</p>
+            <p style={style.value}>{measurement.tempature}</p>
+          </div>
+        }
+      </div>
+    );
+  }
+}
