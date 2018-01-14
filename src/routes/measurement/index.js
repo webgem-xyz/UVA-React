@@ -35,33 +35,33 @@ export default class Measurement extends Component {
           </div>
         }
         {measurement.latitude &&
-          <div style={style.row}>
-            <p style={style.label}>Latitude</p>
-            <p style={style.value}>{measurement.latitude}</p>
+          <div class={style.row}>
+            <p class={style.label}>Latitude</p>
+            <p class={style.value}>{measurement.latitude}</p>
           </div>
         }
         {measurement.date &&
-          <div style={style.row}>
-            <p style={style.label}>Date</p>
-            <p style={style.value}>{measurement.date}</p>
+          <div class={style.row}>
+            <p class={style.label}>Date</p>
+            <p class={style.value}>{measurement.date}</p>
           </div>
         }
         {measurement.acidity &&
-          <div style={style.row}>
-            <p style={style.label}>Acidity (pH)</p>
-            <p style={style.value}>{measurement.acidity}</p>
+          <div class={style.row}>
+            <p class={style.label}>Acidity (pH)</p>
+            <p class={style.value}>{measurement.acidity}</p>
           </div>
         }
         {measurement.salinity &&
-          <div style={style.row}>
-            <p style={style.label}>Salinity (PSU)</p>
-            <p style={style.value}>{measurement.salinity}</p>
+          <div class={style.row}>
+            <p class={style.label}>Salinity (PSU)</p>
+            <p class={style.value}>{measurement.salinity}</p>
           </div>
         }
         {measurement.tempature &&
-          <div style={style.row}>
-            <p style={style.label}>Tempature</p>
-            <p style={style.value}>{measurement.tempature}</p>
+          <div class={style.row}>
+            <p class={style.label}>Tempature</p>
+            <p class={style.value}>{measurement.tempature}</p>
           </div>
         }
       </div>
