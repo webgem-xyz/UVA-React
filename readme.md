@@ -40,7 +40,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * [Reset Component](#reset-component)
 
 ## Account Component
-#### Usage
+### Usage
 The Account component consists of the following
 * Header
   * Back arrow
@@ -53,12 +53,12 @@ The Account component consists of the following
 * Sign out button
   * Send user back to [Login Component](#login-component).
 
-#### Location
+### Location
 The Account Component is located at
 ```
   src/routes/account/
 ```
-#### Attributes
+### Attributes
 The Account Component accepts the following attributes
 
 Attribute | Type | Usage
