@@ -1,5 +1,6 @@
-import { h, Component } from 'preact';
+import { Component } from 'preact';
 import { Link } from 'preact-router/match';
+import { PropTypes } from 'preact-compat';
 import style from './style';
 
 // Import Components
@@ -14,14 +15,14 @@ export default class Overview extends Component {
     super(props);
 
     this.state = {
-      measurements: {}
+      measurements: {},
     };
   }
 
   componentWillMount(nextProps) {
     this.ref = base.syncState(`/${this.props.uid}/mes/`, {
       context: this,
-      state: 'measurements'
+      state: 'measurements',
     });
   }
 
@@ -72,3 +73,7 @@ export default class Overview extends Component {
     );
   }
 }
+
+Overview.propTypes = {
+  uid: PropTypes.string.isRequired,
+};

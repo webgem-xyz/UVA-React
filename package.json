@@ -18,15 +18,22 @@
   },
   "devDependencies": {
     "eslint": "^4.15.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-config-synacor": "^2.0.4",
     "eslint-plugin-html": "^4.0.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.4.0",
+    "eslint-plugin-react": "^7.5.1",
     "if-env": "^1.0.0",
     "node-sass": "^4.7.2",
     "preact-cli": "^2.1.0",
+    "prettier": "^1.10.2",
     "sass-loader": "^6.0.6"
   },
   "dependencies": {
+    "firebase": "^4.8.2",
     "preact": "^8.2.7",
     "preact-compat": "^3.17.0",
     "preact-router": "^2.6.0",
