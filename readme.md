@@ -88,6 +88,31 @@ backColor | string | The color code that the header should have.
 ## Item Component
 
 ## Login Component
+### Usage
+The Login component consists of the following
+* Logo of MyMarine
+* Login form
+  * Username
+    * Label
+    * Input (type email)
+  * Password
+    * Label
+    * Input (type password)
+* Log in button
+  * If the login is succesfull it will send the user to [Overview Component](#overview-component)
+* I forgot my password ( link to [Reset Component](#reset-component) )
+
+### Location
+The Login Component is located at
+```
+  src/routes/login/
+```
+### Attributes
+The Account Component accepts the following attributes
+Attribute | Type | Usage
+--- | --- | ---
+Signin | function | The function that handles the login.
+
 
 ## Measurement Component
 
@@ -111,7 +136,6 @@ The Overview Component consists of the following
     * Type (icon)
     * Date
     * Uploaded (V)
-
 
 ### Location
 The Overview Component is located at
