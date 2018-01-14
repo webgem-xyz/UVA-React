@@ -30,7 +30,7 @@ export default class App extends Component {
       <div id="app">
         <Router onChange={this.handleRoute}>
           <Overview path="/" />
-          <Measurement path="/mes/:measurementId" />
+          <Measurement path="/mes/:measurementId" uid={this.state.uid} />
           <Account path="/account" />
           <Add path="/add" />
           <AddMedia path="/addMedia" />

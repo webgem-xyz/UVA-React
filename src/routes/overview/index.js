@@ -6,6 +6,7 @@ import style from './style';
 import Header from '../../components/header';
 import Item from '../../components/item';
 
+// Import firebase
 import base from '../../base';
 
 export default class Overview extends Component {
