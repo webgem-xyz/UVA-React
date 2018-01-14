@@ -106,6 +106,48 @@ handleSubmit | function | The function that handles the adding the measurement t
 
 
 ## AddMedia Component
+### Usage
+The AddMedia component consists of the following
+* Header
+  * Back arrow
+  * Add Media
+* Form
+  * Longitude
+    * Label
+    * Input (type number)
+  * Latitude
+    * Label
+    * Input (type number)
+  * Date
+    * Label
+    * Input (type date)
+  * Category
+    * Label
+    * Input (type select)
+  * Description
+    * Label (Description (optional))
+    * Input (type text)
+* Button +
+  * Add media (camera roll or camera)
+* Currently uploaded media
+  * Picture
+    * X button to remove media
+* Button Submit Media
+  * Submits the media to the database
+  * Sends the user back to [Overview Component](#overview-component)
+
+### Location
+The AddMedia Component is located at
+```
+  src/routes/addMedia/
+```
+### Attributes
+The Add Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+handleImageSubmit | function | The function that handles uploading and handling the media to the database.
+
 
 ## Header Component
 ### Usage
@@ -180,6 +222,33 @@ Signin | function | The function that handles the login.
 ## Measurement Component
 
 ## Media Component
+### Usage
+The Media Component consists of the following
+* Header
+  * Back arrow
+  * View Media
+* List of data (label - value)
+  * Longitude
+  * Latitude
+  * Date
+  * Category
+  * Description
+* Media
+  * The uploaded media (preview)
+
+### Location
+The Media Component is located at
+```
+  src/routes/media/
+```
+### Attributes
+The Media Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+Uid | string | Used to get the media of the user.
+mediaId | string | Used to get the media that was selected.
+
 
 ## Overview Component
 ### Usage
