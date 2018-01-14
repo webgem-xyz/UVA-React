@@ -145,6 +145,6 @@ The Overview Component is located at
 ### Attributes
 The Overview Component accepts the following attributes
 
-| Attribute | Type | Usage |
-| --- | --- | --- |
-| uid | string | Used to get the measurements of the logged in user. |
+Attribute | Type | Usage
+--- | --- | ---
+uid | string | Used to get the measurements of the logged in user.
