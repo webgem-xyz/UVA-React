@@ -144,11 +144,6 @@ The Overview Component is located at
 ```
 ### Attributes
 The Overview Component accepts the following attributes
-Attribute | Type | Usage
---- | --- | ---
-uid | string | Used to get the measurements of the logged in user.
-
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Attribute | Type | Usage |
+| --- | --- | --- |
+| uid | string | Used to get the measurements of the logged in user. |
