@@ -1,6 +1,7 @@
 # UVA app
 ![Build](https://travis-ci.org/webgem-xyz/UVA-React.svg?branch=master)
-[![Coverage Status](https://coveralls.io/repos/github/webgem-xyz/UVA-React/badge.svg?branch=master)](https://coveralls.io/github/webgem-xyz/UVA-React?branch=master)
+[![GitHub version](https://badge.fury.io/gh/webgem-xyz%2FUVA-React.svg)](https://badge.fury.io/gh/webgem-xyz%2FUVA-React)
+![Coverage](https://img.shields.io/badge/coverage-99%25-brightgreen.svg)
 
 The UVA is made as a colleberation between students of Mediacollege Amsterdam and the University of Amsterdam. The goal of the project was to create a App to collect marine data.
 
