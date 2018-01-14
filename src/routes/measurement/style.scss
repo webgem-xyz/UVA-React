@@ -19,11 +19,8 @@
 }
 .row:nth-of-type(even){
     background: #e7e7e7;
-    flex: 1;
-    justify-content: space-between;
-    width: 100%;
-    padding: 10;
 }
+
 .value{
     font-weight: 300;
     font-size: 15;
@@ -35,3 +32,4 @@ font-weight: 900;
 font-size: 16;
 color: #555;
 }
+p{margin: 0;}
