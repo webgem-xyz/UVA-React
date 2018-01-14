@@ -37,6 +37,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * [Measurement Component](#measurement-component)
 * [Media Component](#media-component)
 * [Overview Component](#overview-component)
+* [Reset Component](#reset-component)
 
 ## Account Component
 ### Usage
@@ -59,8 +60,8 @@ The Account Component accepts the following attributes
 
 Attribute | Type | Usage
 --- | --- | ---
-uid | string | The identifier of the user, used to get the user info etc.
-logout | function | The function to run when the user presses the Sign out button.
+Uid | string | The identifier of the user, used to get the user info etc.
+Logout | function | The function to run when the user presses the Sign out button.
 
 ## Add Component
 
@@ -83,10 +84,10 @@ The Header Component accepts the following attributes
 
 Attribute | Type | Usage
 --- | --- | ---
-to | string | Used to determen where the backarrow should send the user to. Don't define if page doesn't need a back arrow.
-title | string | The text that should be displayed on the top of the page.
-accic | boolean | Should there be a account circle to [Account Component](#account-component).
-backColor | string | The color code that the header should have.
+To | string | Used to determen where the backarrow should send the user to. Don't define if page doesn't need a back arrow.
+Title | string | The text that should be displayed on the top of the page.
+Accic | boolean | Should there be a account circle to [Account Component](#account-component).
+BackColor | string | The color code that the header should have.
 ## Item Component
 
 ## Login Component
@@ -149,4 +150,28 @@ The Overview Component accepts the following attributes
 
 Attribute | Type | Usage
 --- | --- | ---
-uid | string | Used to get the measurements of the logged in user.
+Uid | string | Used to get the measurements of the logged in user.
+
+## Reset Component
+### Usage
+The Reset Component consists of the following
+* Header
+  * Back arrow
+  * Reset password
+* Email
+  * Label
+  * Input (type email)
+* Button
+  * Reset password
+
+### Location
+The Reset Component is located at
+```
+  src/routes/reset/
+```
+### Attributes
+The Reset Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+Reset | function | The function that handles the reset of the password.
