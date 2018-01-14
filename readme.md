@@ -79,6 +79,7 @@ The Header Component is located at
 ```
 ### Attributes
 The Header Component accepts the following attributes
+
 Attribute | Type | Usage
 --- | --- | ---
 to | string | Used to determen where the backarrow should send the user to. Don't define if page doesn't need a back arrow.
@@ -109,10 +110,10 @@ The Login Component is located at
 ```
 ### Attributes
 The Account Component accepts the following attributes
+
 Attribute | Type | Usage
 --- | --- | ---
 Signin | function | The function that handles the login.
-
 
 ## Measurement Component
 
