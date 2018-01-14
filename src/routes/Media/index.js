@@ -1,7 +1,7 @@
 import { h, Component } from 'preact';
 import style from './style';
 
-export default class AddMedia extends Component {
+export default class Media extends Component {
   render() {
     return (
       <div class={style.home}>

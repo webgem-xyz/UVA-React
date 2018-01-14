@@ -1,0 +1,31 @@
+.overview{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.add{
+
+}
+
+.addButtons{
+  display: flex;
+  justify-content: space-between;
+}
+
+.button{
+  background: #656565;
+  color: white;
+  width: 49.5%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button p{
+  margin: 0;
+}

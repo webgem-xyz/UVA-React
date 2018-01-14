@@ -34,37 +34,37 @@ export default class Overview extends Component {
         <Header to="" title="dashboard" accic />
         <div class={style.add}>
           <h2>add data +</h2>
-          <div>
-            <Link>
+          <div class={style.addButtons}>
+            <Link class={style.button}>
               <i>icon</i>
               <p>Add Measurement</p>
             </Link>
-            <Link>
+            <Link class={style.button}>
               <i>icon</i>
               <p>Add Media</p>
             </Link>
           </div>
+        </div>
+        <div>
           <div>
+            <h2>overview</h2>
             <div>
-              <h2>overview</h2>
-              <div>
-                <button>All</button>
-                <button>Measurements</button>
-                <button>Media</button>
-              </div>
+              <button>All</button>
+              <button>Measurements</button>
+              <button>Media</button>
             </div>
-            <div>
-              <p>Type</p>
-              <p>Date</p>
-              <p>Uploaded</p>
-            </div>
-            <div>
-              {
-                Object
-                  .keys(this.state.measurements)
-                  .map((key) => <Item key={key} index={key} details={this.state.measurements[key]} />)
-              }
-            </div>
+          </div>
+          <div>
+            <p>Type</p>
+            <p>Date</p>
+            <p>Uploaded</p>
+          </div>
+          <div>
+            {
+              Object
+                .keys(this.state.measurements)
+                .map((key) => <Item key={key} index={key} details={this.state.measurements[key]} />)
+            }
           </div>
         </div>
       </div>
