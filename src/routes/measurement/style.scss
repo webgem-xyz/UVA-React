@@ -1,0 +1,37 @@
+.container{
+    flex: 1;
+    background-color: '#fff';
+    align-items: center;
+    justify-content: center;
+}
+.main{
+    flex: 0;
+    width: 100%;
+    padding: 10;
+}
+.row{
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background: #fafafa;
+    padding: 10;
+}
+.row:nth-of-type(even){
+    background: #e7e7e7;
+    flex: 1;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10;
+}
+.value{
+    font-weight: 300;
+    font-size: 15;
+    width: 50%;
+    color:#333;
+}
+label{
+font-weight: 900;
+font-size: 16;
+color: #555;
+}
