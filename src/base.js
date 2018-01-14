@@ -1,6 +1,7 @@
 import Rebase from 're-base';
-// import fireApp from './base2';
-import firebase from 'react-native-firebase';
+require('firebase/auth');
+require('firebase/database');
+import fireApp from './base2';
 
-const base = Rebase.createClass(firebase.database());
+const base = Rebase.createClass(fireApp.database());
 export default base;
