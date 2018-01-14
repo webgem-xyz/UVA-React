@@ -56,10 +56,10 @@ The Account Component is located at
 ```
 ### Attributes
 The Account Component accepts the following attributes
-| Attribute | Type | Usage |
-| --- | --- | --- |
-| uid | string | The identifier of the user, used to get the user info etc. |
-| logout | function | The function to run when the user presses the Sign out button. |
+Attribute | Type | Usage
+--- | --- | ---
+uid | string | The identifier of the user, used to get the user info etc.
+logout | function | The function to run when the user presses the Sign out button.
 
 ## Add Component
 
@@ -147,3 +147,8 @@ The Overview Component accepts the following attributes
 Attribute | Type | Usage
 --- | --- | ---
 uid | string | Used to get the measurements of the logged in user.
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
