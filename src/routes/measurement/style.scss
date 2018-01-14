@@ -12,7 +12,7 @@ p{
 .main{
   flex: 0;
   width: 100%;
-  padding: 10;
+  padding: 10px;
 }
 .row{
   display: flex;
@@ -21,19 +21,19 @@ p{
   justify-content: space-between;
   width: 100%;
   background: #fafafa;
-  padding: 10;
+  padding: 10px;
 }
 .row:nth-of-type(even){
   background: #e7e7e7;
 }
 .value{
   font-weight: 300;
-  font-size: 15;
+  font-size: 15px;
   width: 50%;
   color:#333;
 }
 label{
   font-weight: 900;
-  font-size: 16;
+  font-size: 16px;
   color: #555;
 }
