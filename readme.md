@@ -59,20 +59,71 @@ The Account Component accepts the following attributes
 Attribute | Type | Usage
 --- | --- | ---
 uid | string | The identifier of the user, used to get the user info etc.
-logout | function | The function to run when the user presses
+logout | function | The function to run when the user presses the Sign out button.
 
 ## Add Component
 
 ## AddMedia Component
 
 ## Header Component
+### Usage
+The Header component consists of the following
+* Back arrow
+* Page title
+* Account circle button to [Account Component](#account-component)
 
+### Location
+The Header Component is located at
+```
+  src/components/header/
+```
+### Attributes
+The Header Component accepts the following attributes
+Attribute | Type | Usage
+--- | --- | ---
+to | string | Used to determen where the backarrow should send the user to. Don't define if page doesn't need a back arrow.
+title | string | The text that should be displayed on the top of the page.
+accic | boolean | Should there be a account circle to [Account Component](#account-component).
+backColor | string | The color code that the header should have.
 ## Item Component
 
 ## Login Component
 
 ## Measurement Component
+The Measurement component consists of the following
+* Information from the Measurements 
+* A Delete button
+* Map focused at the coordinates from the measurements.
 
 ## Media Component
 
 ## Overview Component
+### Usage
+The Overview Component consists of the following
+* Header
+  * Dashboard
+  * Button to [Account Component](#account-component)
+* Add data
+  * Button Add Measurement to [Add Component](#add-component)
+  * Button Add Media to [AddMedia Component](#addmedia-component)
+* Overview
+  * Filter
+    * All
+    * Measurements
+    * Media
+  * List of measurements
+    * Type (icon)
+    * Date
+    * Uploaded (V)
+
+
+### Location
+The Overview Component is located at
+```
+  src/routes/overview/
+```
+### Attributes
+The Overview Component accepts the following attributes
+Attribute | Type | Usage
+--- | --- | ---
+uid | string | Used to get the measurements of the logged in user.
