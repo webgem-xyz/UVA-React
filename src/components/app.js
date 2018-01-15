@@ -1,4 +1,4 @@
-import { h, Component } from 'preact';
+import { Component } from 'preact';
 import { Router } from 'preact-router';
 
 // Import Routes
@@ -15,7 +15,7 @@ export default class App extends Component {
     super();
 
     this.state = {
-      uid: 'hl8tgg53mkQIUmIh6D8SUsReTGD2'
+      uid: 'hl8tgg53mkQIUmIh6D8SUsReTGD2',
     };
   }
   handleRoute = e => {

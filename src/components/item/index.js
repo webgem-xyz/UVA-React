@@ -1,4 +1,5 @@
-import { h, Component } from 'preact';
+import { Component } from 'preact';
+import { PropTypes } from 'preact-compat';
 import { Link } from 'preact-router/match';
 import style from './style';
 
@@ -14,3 +15,7 @@ export default class Item extends Component {
     );
   }
 }
+
+Item.propTypes = {
+  details: PropTypes.object.isRequired,
+};

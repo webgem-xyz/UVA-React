@@ -1,4 +1,8 @@
 # UVA app
+![Build](https://travis-ci.org/webgem-xyz/UVA-React.svg?branch=master)
+[![GitHub version](https://badge.fury.io/gh/webgem-xyz%2FUVA-React.svg)](https://badge.fury.io/gh/webgem-xyz%2FUVA-React)
+![Coverage](https://img.shields.io/badge/coverage-99%25-brightgreen.svg)
+
 The UVA is made as a colleberation between students of Mediacollege Amsterdam and the University of Amsterdam. The goal of the project was to create a App to collect marine data.
 
 ## Target devices
@@ -37,10 +41,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * [Measurement Component](#measurement-component)
 * [Media Component](#media-component)
 * [Overview Component](#overview-component)
+* [Reset Component](#reset-component)
 
 ## Account Component
 ### Usage
 The Account component consists of the following
+* Header
+  * Back arrow
+  * Account
 * Graph of the ammount of contributions
   * Ammount of contributions is based on a montly basis.
 * Account info
@@ -56,14 +64,94 @@ The Account Component is located at
 ```
 ### Attributes
 The Account Component accepts the following attributes
+
 Attribute | Type | Usage
 --- | --- | ---
-uid | string | The identifier of the user, used to get the user info etc.
-logout | function | The function to run when the user presses the Sign out button.
+Uid | string | The identifier of the user, used to get the user info etc.
+Logout | function | The function to run when the user presses the Sign out button.
 
 ## Add Component
+### Usage
+The Add component consists of the following
+* Header
+  * Back arrow
+  * Add Measurement
+* Form
+  * Longitude
+    * Label
+    * Input (type number)
+  * Latitude
+    * Label
+    * Input (type number)
+  * Date of measurement
+    * Label
+    * Input (type date)
+* Button +
+  * Adds a new form field
+    * Select (select the measurement type)
+    * Input of the measurement
+  * Remove Item button
+    * Removes the new form field
+* Button Submit Measurement
+  * Adds measurement to database
+  * Sends user to [Overview Component](#overview-component)
+
+### Location
+The Add Component is located at
+```
+  src/routes/add/
+```
+### Attributes
+The Add Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+handleSubmit | function | The function that handles the adding the measurement to the database.
+
 
 ## AddMedia Component
+### Usage
+The AddMedia component consists of the following
+* Header
+  * Back arrow
+  * Add Media
+* Form
+  * Longitude
+    * Label
+    * Input (type number)
+  * Latitude
+    * Label
+    * Input (type number)
+  * Date
+    * Label
+    * Input (type date)
+  * Category
+    * Label
+    * Input (type select)
+  * Description
+    * Label (Description (optional))
+    * Input (type text)
+* Button +
+  * Add media (camera roll or camera)
+* Currently uploaded media
+  * Picture
+    * X button to remove media
+* Button Submit Media
+  * Submits the media to the database
+  * Sends the user back to [Overview Component](#overview-component)
+
+### Location
+The AddMedia Component is located at
+```
+  src/routes/addMedia/
+```
+### Attributes
+The Add Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+handleImageSubmit | function | The function that handles uploading and handling the media to the database.
+
 
 ## Header Component
 ### Usage
@@ -79,15 +167,61 @@ The Header Component is located at
 ```
 ### Attributes
 The Header Component accepts the following attributes
+
 Attribute | Type | Usage
 --- | --- | ---
-to | string | Used to determen where the backarrow should send the user to. Don't define if page doesn't need a back arrow.
-title | string | The text that should be displayed on the top of the page.
-accic | boolean | Should there be a account circle to [Account Component](#account-component).
-backColor | string | The color code that the header should have.
+To | string | Used to determen where the backarrow should send the user to. Don't define if page doesn't need a back arrow.
+Title | string | The text that should be displayed on the top of the page.
+Accic | boolean | Should there be a account circle to [Account Component](#account-component).
+BackColor | string | The color code that the header should have.
 ## Item Component
+### Usage
+The Item Component consists of the following
+* Type (icon)
+* Date
+* Uploaded (V)
+* When clicked on the Item Component it will send them to [Measurement Component](#measurement-component).
+
+### Location
+The Item Component is located at
+```
+  src/components/item/
+```
+### Attributes
+The Item Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+Key | string | Unique identiier for item.
+Index | string | The key used for the item data.
+Details | object | The data of the item (type, date, uploaded).
 
 ## Login Component
+### Usage
+The Login component consists of the following
+* Logo of MyMarine
+* Login form
+  * Username
+    * Label
+    * Input (type email)
+  * Password
+    * Label
+    * Input (type password)
+* Log in button
+  * If the login is succesfull it will send the user to [Overview Component](#overview-component)
+* I forgot my password ( link to [Reset Component](#reset-component) )
+
+### Location
+The Login Component is located at
+```
+  src/routes/login/
+```
+### Attributes
+The Account Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+Signin | function | The function that handles the login.
 
 ## Measurement Component
 The Measurement component consists of the following
@@ -96,6 +230,33 @@ The Measurement component consists of the following
 * Map focused at the coordinates from the measurements.
 
 ## Media Component
+### Usage
+The Media Component consists of the following
+* Header
+  * Back arrow
+  * View Media
+* List of data (label - value)
+  * Longitude
+  * Latitude
+  * Date
+  * Category
+  * Description
+* Media
+  * The uploaded media (preview)
+
+### Location
+The Media Component is located at
+```
+  src/routes/media/
+```
+### Attributes
+The Media Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+Uid | string | Used to get the media of the user.
+mediaId | string | Used to get the media that was selected.
+
 
 ## Overview Component
 ### Usage
@@ -116,7 +277,6 @@ The Overview Component consists of the following
     * Date
     * Uploaded (V)
 
-
 ### Location
 The Overview Component is located at
 ```
@@ -124,6 +284,31 @@ The Overview Component is located at
 ```
 ### Attributes
 The Overview Component accepts the following attributes
+
 Attribute | Type | Usage
 --- | --- | ---
-uid | string | Used to get the measurements of the logged in user.
+Uid | string | Used to get the measurements of the logged in user.
+
+## Reset Component
+### Usage
+The Reset Component consists of the following
+* Header
+  * Back arrow
+  * Reset password
+* Email
+  * Label
+  * Input (type email)
+* Button
+  * Reset password
+
+### Location
+The Reset Component is located at
+```
+  src/routes/reset/
+```
+### Attributes
+The Reset Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+Reset | function | The function that handles the reset of the password.
