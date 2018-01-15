@@ -2,6 +2,7 @@
 ![Build](https://travis-ci.org/webgem-xyz/UVA-React.svg?branch=master)
 [![GitHub version](https://badge.fury.io/gh/webgem-xyz%2FUVA-React.svg)](https://badge.fury.io/gh/webgem-xyz%2FUVA-React)
 ![Coverage](https://img.shields.io/badge/coverage-99%25-brightgreen.svg)
+[![Maintainability](https://api.codeclimate.com/v1/badges/1d0d80ff5c2acd17b3d1/maintainability)](https://codeclimate.com/github/webgem-xyz/UVA-React/maintainability)
 
 The UVA is made as a colleberation between students of Mediacollege Amsterdam and the University of Amsterdam. The goal of the project was to create a App to collect marine data.
 
@@ -225,7 +226,7 @@ Signin | function | The function that handles the login.
 
 ## Measurement Component
 The Measurement component consists of the following
-* Information from the Measurements 
+* Information from the Measurements
 * A Delete button
 * Map focused at the coordinates from the measurements.
 
