@@ -1,0 +1,51 @@
+.itemLinkWrap{
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #fafafa;
+  border: 0.5px solid #333333;
+  padding: 5px;
+  height: 50px;
+  margin: 2.5px 0;
+}
+
+.icon{
+  display: inline-block;
+  padding: 0 20px 0 10px;
+}
+
+.date{
+  display: inline-block;
+  flex: 1;
+}
+
+.uploaded{
+  display: inline-block;
+  width: 20px;
+}
+
+// const styles = StyleSheet.create({
+//   itemLink: {
+//     width: '100%',
+//     backgroundColor: '#fafafa',
+//     height: 50,
+//     padding: 10,
+//     borderStyle: 'solid',
+//     borderWidth: 0.5,
+//     borderColor: '#333',
+//     marginTop: 2.5,
+//     marginBottom: 2.5,
+//   },
+//   itemLinkWrap: {
+//     flex: 1,
+//     flexDirection: 'row',
+//     justifyContent: 'space-between',
+//     alignItems: 'center',
+//   },
+//   date: {
+//     fontWeight: '700',
+//     fontFamily: 'Quattrocento Sans',
+//     fontSize: 16,
+//     color: '#333',
+//   },
+// });

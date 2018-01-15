@@ -29,7 +29,7 @@ export default class App extends Component {
     return (
       <div id="app">
         <Router onChange={this.handleRoute}>
-          <Overview path="/" />
+          <Overview path="/" uid={this.state.uid} />
           <Measurement path="/mes/:measurementId" uid={this.state.uid} />
           <Account path="/account" />
           <Add path="/add" />

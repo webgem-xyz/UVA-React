@@ -6,8 +6,10 @@
   padding: 16px;
 }
 
-.add{
-
+.header{
+  margin-left: -16px;
+  margin-right: -16px;
+  margin-top: -16px;
 }
 
 .addButtons{
@@ -19,7 +21,7 @@
   background: #656565;
   color: white;
   width: 49.5%;
-  padding: 10px;
+  padding: 20px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,4 +30,18 @@
 
 .button p{
   margin: 0;
+  padding: 7.5px 0 0;
+}
+
+.labels{
+  display: flex;
+  align-items: center;
+}
+
+.labels p:nth-child(1){
+  width: 55px;
+}
+
+.labels p:nth-child(2){
+  flex: 1;
 }
