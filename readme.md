@@ -224,6 +224,10 @@ Attribute | Type | Usage
 Signin | function | The function that handles the login.
 
 ## Measurement Component
+The Measurement component consists of the following
+* Information from the Measurements 
+* A Delete button
+* Map focused at the coordinates from the measurements.
 
 ## Media Component
 ### Usage
