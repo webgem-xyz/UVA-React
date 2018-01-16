@@ -1,0 +1,26 @@
+.mainInputs {
+  background: var(--main-light-color);
+  border-bottom: 1px solid var(--main-color);
+  padding-bottom: 16px;
+}
+
+.addButton {
+  outline: 0;
+  border: 0;
+  background: var(--main-color);
+  color: var(--main-bg-color);
+  font-size: 50px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+}
+
+.addButton i{
+  font-size: 40px;
+}
