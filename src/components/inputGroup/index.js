@@ -31,8 +31,8 @@ export default class InputGroup extends Component {
 }
 
 InputGroup.propTypes = {
-  handleState: PropTypes.func.isRequired,
   kind: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
+  handleState: PropTypes.func.isRequired,
 };
