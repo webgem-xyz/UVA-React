@@ -7,6 +7,7 @@ import style from './style';
 
 import base from '../../base';
 import Header from '../../components/header/index';
+import InputGroup from '../../components/inputGroup/index';
 
 export default class Add extends Component {
   constructor(props) {
@@ -17,6 +18,8 @@ export default class Add extends Component {
 
     this.createMeasurement = this.createMeasurement.bind(this);
     this.addMeasurement = this.addMeasurement.bind(this);
+
+    this.handleState = this.handleState.bind(this);
 
     const date = new Date();
     const month = date.getMonth() + 1;
@@ -79,6 +82,12 @@ export default class Add extends Component {
     this.setState({ inputType });
   }
 
+  handleState(kind, value) {
+    this.setState({
+      [kind]: value,
+    });
+  }
+
   removeField(i) {
     const value = this.state.value.slice();
     const inputType = this.state.inputType.slice();
@@ -94,8 +103,8 @@ export default class Add extends Component {
   createMeasurement(event) {
     event.preventDefault();
     const measurement = {
-      longitude: this.longitude.value,
-      latitude: this.latitude.value,
+      longitude: this.state.longitude,
+      latitude: this.state.latitude,
       date: moment(this.date.value, 'YYYY-MM-DD').format('YYYY-MM-DD'),
       type: 'mes',
     };
@@ -138,8 +147,18 @@ export default class Add extends Component {
             <option value="salinity">Salinity (PSU)</option>
             <option value="tempature">Tempature</option>
           </select>
-          <input type="number" value={this.state.value[i] || ''} onChange={e => this.handleChange(e, i)} class={style.addedInputField} />
-          <input type="button" value="remove item" class={style.remove} onClick={e => this.removeField(e, i)} />
+          <input
+            type="number"
+            value={this.state.value[i] || ''}
+            onChange={e => this.handleChange(e, i)}
+            class={style.addedInputField}
+          />
+          <input
+            type="button"
+            value="remove item"
+            class={style.remove}
+            onClick={e => this.removeField(e, i)}
+          />
         </div>
       );
     }
@@ -153,28 +172,18 @@ export default class Add extends Component {
         <form onSubmit={(e) => this.createMeasurement(e)}>
           <div class={style.mainInputs}>
             <div class={style.inputRow}>
-              <div class={style.inputGroup}>
-                <label for="longitude">Longitude</label>
-                <input
-                  ref={(input) => this.longitude = input}
-                  type="text"
-                  placeholder="getting location.."
-                  value={this.state.longitude}
-                  id="longitude"
-                  class={style.inputField}
-                />
-              </div>
-              <div class={style.inputGroup}>
-                <label for="latitude">Latitude</label>
-                <input
-                  ref={(input) => this.latitude = input}
-                  type="text"
-                  placeholder="getting location.."
-                  value={this.state.latitude}
-                  id="latitude"
-                  class={style.inputField}
-                />
-              </div>
+              <InputGroup
+                value={this.state.longitude}
+                kind="longitude"
+                label="Longitude"
+                handleState={this.handleState}
+              />
+              <InputGroup
+                value={this.state.latitude}
+                kind="latitude"
+                label="Latitude"
+                handleState={this.handleState}
+              />
             </div>
             <div class={style.inputGroupDate}>
               <label for="date">Date of measurement</label>

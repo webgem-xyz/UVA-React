@@ -60,6 +60,7 @@
       }
     ],
     "jsx-a11y/accessible-emoji": 0,
+    "jsx-a11y/label-has-for": 0,
     "react/jsx-filename-extension": [
       1,
       {
@@ -97,7 +98,7 @@
       {
         "trailingComma": "es5",
         "singleQuote": true,
-        "printWidth": 120
+        "printWidth": 100
       }
     ],
     "jsx-a11y/href-no-hash": "off",
