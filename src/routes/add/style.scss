@@ -5,64 +5,62 @@
 }
 
 .addButton {
-  outline: 0;
-  border: 0;
+  align-items: center;
   background: var(--main-color);
+  border: 0;
+  border-radius: 50%;
   color: var(--main-bg-color);
+  display: flex;
   font-size: 50px;
   font-weight: 400;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-  border-radius: 50%;
-  width: 55px;
   height: 55px;
-  position: relative;
+  justify-content: center;
   left: 50%;
-  transform: translateX(-50%);
   margin: 10px 0;
-}
-
-.addButton i {
-  font-size: 40px;
+  outline: 0;
+  padding: 0;
+  position: relative;
+  transform: translateX(-50%);
+  width: 55px;
+  i {
+    font-size: 40px;
+  }
 }
 
 .customFormfieldWrap {
+  border-bottom: .5px solid var(--main-color);
+  border-top: .5px solid var(--main-color);
   display: flex;
   flex-direction: column;
-  padding: 14px 16px;
   margin: 10px 0;
-  border-top: .5px solid var(--main-color);
-  border-bottom: .5px solid var(--main-color);
+  padding: 14px 16px;
 }
 
 .select {
-  border-radius: 0;
-  padding: 10px 5px;
-  font-size: 15px;
   border: 1px solid var(--main-color);
+  border-radius: 0;
+  font-size: 15px;
   margin-bottom: 5px;
+  padding: 10px 5px;
 }
 
 .addedInputField {
-  border-radius: 0;
-  padding: 10px 5px;
-  font-size: 15px;
   border: 1px solid var(--main-color);
+  border-radius: 0;
+  font-size: 15px;
   margin-top: 5px;
+  padding: 10px 5px;
 }
 
 .remove {
-  text-transform: uppercase;
-  font-size: 16px;
-  text-align: right;
-  font-weight: 700;
-  padding: 0;
-  margin-top: 10px;
-  float: right;
   color: var(--main-color);
+  float: right;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 10px;
+  padding: 0;
+  text-align: right;
+  text-transform: uppercase;
 }
 
 .inputRow {
@@ -77,11 +75,11 @@
 }
 
 .inputField {
-  border-radius: 0;
-  padding: 10px 5px;
-  font-size: 15px;
   border: 1px solid var(--main-color);
+  border-radius: 0;
+  font-size: 15px;
   margin-top: 5px;
+  padding: 10px 5px;
 }
 
 .inputGroup label,
@@ -97,18 +95,18 @@
 }
 
 .submit {
-  border: 0;
-  outline: 0;
-  border-radius: 0;
   background: var(--main-color);
+  border: 0;
+  border-radius: 0;
   color: var(--main-bg-color);
   font-size: 16px;
   font-weight: 700;
-  text-transform: uppercase;
-  padding: 20px;
-  margin-top: 10px;
-  margin-bottom: 16px;
-  position: relative;
   left: 50%;
+  margin-bottom: 16px;
+  margin-top: 10px;
+  outline: 0;
+  padding: 20px;
+  position: relative;
+  text-transform: uppercase;
   transform: translateX(-50%);
 }

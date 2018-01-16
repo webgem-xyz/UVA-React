@@ -1,50 +1,50 @@
-.overview{
-  height: 100%;
-  width: 100%;
+.overview {
   display: flex;
   flex-direction: column;
+  height: 100%;
   padding: 16px;
+  width: 100%;
 }
 
-.header{
+.header {
   margin-left: -16px;
   margin-right: -16px;
   margin-top: -16px;
 }
 
-.addButtons{
+.addButtons {
   display: flex;
   justify-content: space-between;
 }
 
-.labels{
-  display: flex;
+.labels {
   align-items: center;
+  display: flex;
 }
 
-.labels p{
+.labels p {
   font-weight: 700;
 }
 
-.labels p:nth-child(1){
+.labels p:nth-child(1) {
   width: 55px;
 }
 
-.labels p:nth-child(2){
+.labels p:nth-child(2) {
   flex: 1;
 }
 
-.buttonWrap{
+.buttonWrap {
   display: flex;
 }
 
-.headWrap{
-  display: flex;
+.headWrap {
   align-items: center;
+  display: flex;
   justify-content: space-between;
 }
 
 .oh2 {
-  text-transform: uppercase;
   font-weight: 700;
+  text-transform: uppercase;
 }

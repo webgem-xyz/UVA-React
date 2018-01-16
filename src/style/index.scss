@@ -8,15 +8,15 @@
 }
 
 html, body {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
   background: var(--main-bg-color);
-  font-family: 'Quattrocento Sans', sans-serif;
-  font-weight: 400;
-  font-size: 15px;
   color: var(--main-color);
+  font-family: 'Quattrocento Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

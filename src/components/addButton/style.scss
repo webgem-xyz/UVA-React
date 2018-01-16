@@ -1,16 +1,16 @@
-.button{
+.button {
+  align-items: center;
   background: #656565;
   color: white;
-  width: 49.5%;
-  padding: 20px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  padding: 20px 10px;
   text-decoration: none;
+  width: 49.5%;
 }
 
-.button p{
+.button p {
   margin: 0;
   padding: 7.5px 0 0;
 }

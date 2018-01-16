@@ -1,12 +1,12 @@
 .filterButton {
-  height: 55px;
   background: transparent;
-  outline: 0;
   border: 0;
+  height: 55px;
+  outline: 0;
   padding: 0;
 }
 
-.visiblebutton{
+.visiblebutton {
   border: 1px solid var(--main-color);
   display: inline-block;
   padding: 5px 10px;
