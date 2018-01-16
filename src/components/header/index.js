@@ -9,7 +9,7 @@ import accountIcon from '../../assets/black/account.svg';
 export default class Header extends Component {
   render() {
     return (
-      <header class={style.header}>
+      <header class={style.header} style={`--header-background: ${this.props.backCol}`}>
         <nav class={style.nav}>
           {this.props.to && (
             <Link class={style.backArrow} href={this.props.to}>
@@ -32,9 +32,11 @@ Header.propTypes = {
   to: PropTypes.string,
   title: PropTypes.string.isRequired,
   accic: PropTypes.bool,
+  backCol: PropTypes.string,
 };
 
 Header.defaultProps = {
   to: null,
   accic: false,
+  backCol: '#fafafa',
 };
