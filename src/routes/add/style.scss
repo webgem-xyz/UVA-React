@@ -77,15 +77,15 @@
   padding: 10px 5px;
 }
 
-.inputGroupDate label {
-  font-size: 16px;
-  font-weight: 700;
-}
-
 .inputGroupDate {
   display: flex;
   flex-direction: column;
   margin-top: 15px;
+
+  label {
+    font-size: 16px;
+    font-weight: 700;
+  }
 }
 
 .submit {
