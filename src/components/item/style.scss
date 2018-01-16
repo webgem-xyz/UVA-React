@@ -1,12 +1,12 @@
 .itemLinkWrap {
   align-items: center;
   background-color: var(--main-bg-color);
-  border: 0.5px solid var(--main-color);
+  border: .5px solid var(--main-color);
   display: flex;
   height: 50px;
+  margin: 2.5px 0;
   padding: 5px;
   position: relative;
-  margin: 2.5px 0;
 }
 
 .icon {
