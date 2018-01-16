@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "firebase": "^4.8.2",
+    "moment": "^2.20.1",
     "preact": "^8.2.7",
     "preact-compat": "^3.17.0",
     "preact-router": "^2.6.0",
