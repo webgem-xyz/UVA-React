@@ -2,8 +2,8 @@
   display: flex;
   align-items: center;
   position: relative;
-  background-color: #fafafa;
-  border: 0.5px solid #333333;
+  background-color: var(--main-bg-color);
+  border: 0.5px solid var(--main-color);
   padding: 5px;
   height: 50px;
   margin: 2.5px 0;
@@ -22,6 +22,11 @@
 .uploaded{
   display: inline-block;
   width: 20px;
+}
+
+.link{
+  text-decoration: none;
+  color: var(--main-color);
 }
 
 // const styles = StyleSheet.create({
