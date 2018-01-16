@@ -35,6 +35,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 # Table of Contents
 * [Account Component](#account-component)
 * [Add Component](#add-component)
+* [AddButton Component](#addbutton-component)
 * [AddMedia Component](#addmedia-component)
 * [Header Component](#header-component)
 * [Item Component](#item-component)
@@ -108,6 +109,28 @@ The Add Component accepts the following attributes
 Attribute | Type | Usage
 --- | --- | ---
 handleSubmit | function | The function that handles the adding the measurement to the database.
+
+## AddButton Component
+### Usage
+The AddButton component consists of the following
+* Link (button)
+  * Icon
+  * Text of button
+
+### Location
+The AddButton Component is located at
+```
+  src/components/addButton/
+```
+### Attributes
+The AddButton Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+To | string | Where should the button point to.
+Icon | image (string) | What should the icon be of the button.
+Alt | string | The alt text of the icon.
+Text | string | What should the text of the button be.
 
 
 ## AddMedia Component
@@ -266,8 +289,8 @@ The Overview Component consists of the following
   * Dashboard
   * Button to [Account Component](#account-component)
 * Add data
-  * Button Add Measurement to [Add Component](#add-component)
-  * Button Add Media to [AddMedia Component](#addmedia-component)
+  * [AddButton Component](#addbutton-component) Add Measurement to [Add Component](#add-component)
+  * [AddButton Component](#addbutton-component) Add Media to [AddMedia Component](#addmedia-component)
 * Overview
   * Filter
     * All
