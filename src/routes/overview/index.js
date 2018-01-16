@@ -19,8 +19,11 @@ export default class Overview extends Component {
   constructor(props) {
     super(props);
 
+    this.handleFilter = this.handleFilter.bind(this);
+
     this.state = {
       measurements: {},
+      filteredMeasurements: {},
     };
   }
 
@@ -28,11 +31,32 @@ export default class Overview extends Component {
     this.ref = base.syncState(`/${this.props.uid}/mes/`, {
       context: this,
       state: 'measurements',
+      then() {
+        this.setState({
+          filteredMeasurements: this.state.measurements,
+        });
+      },
     });
   }
 
   componentWillUnmount() {
     base.removeBinding(this.ref);
+  }
+
+  handleFilter(filter) {
+    if (filter === 'all') {
+      this.setState({
+        filteredMeasurements: this.state.measurements,
+      });
+    } else {
+      const filteredMes = Object.keys(this.state.measurements).reduce((r, e) => {
+        if (filter.includes(this.state.measurements[e].type)) r[e] = this.state.measurements[e];
+        return r;
+      }, {});
+      this.setState({
+        filteredMeasurements: filteredMes,
+      });
+    }
   }
 
   render() {
@@ -51,9 +75,9 @@ export default class Overview extends Component {
             <div class={style.headWrap}>
               <h2 class={style.oh2}>overview</h2>
               <div class={style.buttonWrap}>
-                <FilterButton filter="all" text="All" />
-                <FilterButton filter="mes" text="Measurements" />
-                <FilterButton filter="med" text="Media" />
+                <FilterButton filter="all" handleFilter={this.handleFilter} text="All" />
+                <FilterButton filter="mes" handleFilter={this.handleFilter} text="Measurements" />
+                <FilterButton filter="med" handleFilter={this.handleFilter} text="Media" />
               </div>
             </div>
             <div class={style.labels}>
@@ -64,7 +88,7 @@ export default class Overview extends Component {
             <div>
               {
                 Object
-                  .keys(this.state.measurements)
+                  .keys(this.state.filteredMeasurements)
                   .map((key) => <Item key={key} index={key} details={this.state.measurements[key]} />)
               }
             </div>

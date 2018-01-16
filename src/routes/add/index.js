@@ -1,4 +1,8 @@
 import { Component } from 'preact';
+import { PropTypes } from 'preact-compat';
+import { route } from 'preact-router';
+import moment from 'moment';
+
 import style from './style';
 
 import base from '../../base';
@@ -11,6 +15,9 @@ export default class Add extends Component {
     this.geoSuccess = this.geoSuccess.bind(this);
     this.geoError = this.geoError.bind(this);
 
+    this.createMeasurement = this.createMeasurement.bind(this);
+    this.addMeasurement = this.addMeasurement.bind(this);
+
     const date = new Date();
     const month = date.getMonth() + 1;
 
@@ -20,11 +27,11 @@ export default class Add extends Component {
       date: `${date.getFullYear()}-${month}-${date.getDate()}`,
       value: [],
       inputType: [],
-      count: 3,
+      count: 0,
       geoOptions: {
         enableHighAccuracy: true,
-        maximumAge: 30000,
-        timeout: 27000,
+        maximumAge: 0,
+        timeout: 15000,
       },
     };
   }
@@ -37,7 +44,7 @@ export default class Add extends Component {
   }
 
   componentDidMount() {
-    navigator.geolocation.watchPosition(this.geoSuccess, this.geoError, this.state.geoOptions);
+    navigator.geolocation.getCurrentPosition(this.geoSuccess, this.geoError, this.state.geoOptions);
   }
 
   componentWillUnmount() {
@@ -84,6 +91,34 @@ export default class Add extends Component {
     });
   }
 
+  createMeasurement(event) {
+    event.preventDefault();
+    const measurement = {
+      longitude: this.longitude.value,
+      latitude: this.latitude.value,
+      date: moment(this.date.value, 'YYYY-MM-DD').format('YYYY-MM-DD'),
+      type: 'mes',
+    };
+    for (let i = 0; i < this.state.count; i += 1) {
+      measurement[this.state.inputType[i]] = this.state.value[i];
+    }
+    this.addMeasurement(measurement);
+  }
+
+  addMeasurement(measurement) {
+    // Update our measurements state
+    const measurements = { ...this.state.measurements };
+    // add in our new measurement
+    const timestamp = Date.now();
+    const dateFormatted = moment(this.state.date, 'YYYY-MM-DD').format('YYYY-MM-DD');
+    measurements[`measurement_${dateFormatted}_${timestamp}`] = measurement;
+    // set state
+    this.setState({
+      measurements,
+    });
+    route('/');
+  }
+
   addField(e) {
     e.preventDefault();
     this.setState({ count: this.state.count + 1 });
@@ -94,8 +129,8 @@ export default class Add extends Component {
     const uiItems = [];
     for (let i = 0; i < this.state.count; i += 1) {
       uiItems.push(
-        <div key={i}>
-          <select onChange={e => this.handleSelectChange(e, i)}>
+        <div key={i} class={style.customFormfieldWrap}>
+          <select required onChange={e => this.handleSelectChange(e, i)} class={style.select}>
             <option disabled selected>
               Select measurement type
             </option>
@@ -103,7 +138,7 @@ export default class Add extends Component {
             <option value="salinity">Salinity (PSU)</option>
             <option value="tempature">Tempature</option>
           </select>
-          <input type="number" value={this.state.value[i] || ''} onChange={e => this.handleChange(e, i)} />
+          <input type="number" value={this.state.value[i] || ''} onChange={e => this.handleChange(e, i)} class={style.addedInputField} />
           <input type="button" value="remove item" class={style.remove} onClick={e => this.removeField(e, i)} />
         </div>
       );
@@ -115,33 +150,59 @@ export default class Add extends Component {
     return (
       <div class={style.add}>
         <Header to="/" backCol="#E7E7E7" title="add measurement" />
-        <form ref={(input) => this.addForm = input} onSubmit={this.addMeasurement}>
+        <form onSubmit={(e) => this.createMeasurement(e)}>
           <div class={style.mainInputs}>
-            <input
-              ref={(input) => this.longitude = input}
-              type="text"
-              placeholder="getting location.."
-              value={this.state.longitude}
-            />
-            <input
-              ref={(input) => this.latitude = input}
-              type="text"
-              placeholder="getting location.."
-              value={this.state.latitude}
-            />
-            <input
-              ref={(input) => this.date = input}
-              type="text"
-              placeholder="getting location.."
-              value={this.state.date}
-            />
+            <div class={style.inputRow}>
+              <div class={style.inputGroup}>
+                <label for="longitude">Longitude</label>
+                <input
+                  ref={(input) => this.longitude = input}
+                  type="text"
+                  placeholder="getting location.."
+                  value={this.state.longitude}
+                  id="longitude"
+                  class={style.inputField}
+                />
+              </div>
+              <div class={style.inputGroup}>
+                <label for="latitude">Latitude</label>
+                <input
+                  ref={(input) => this.latitude = input}
+                  type="text"
+                  placeholder="getting location.."
+                  value={this.state.latitude}
+                  id="latitude"
+                  class={style.inputField}
+                />
+              </div>
+            </div>
+            <div class={style.inputGroupDate}>
+              <label for="date">Date of measurement</label>
+              <input
+                ref={(input) => this.date = input}
+                type="text"
+                placeholder="getting location.."
+                value={this.state.date}
+                id="date"
+                class={style.inputField}
+              />
+            </div>
           </div>
           {this.createUI()}
           <button class={style.addButton} onClick={e => this.addField(e)}>
             <i className="material-icons">add</i>
           </button>
+          {this.state.count > 0 && (
+            <button class={style.submit} type="submit">
+              submit measurement
+            </button>
+          )}
         </form>
       </div>
     );
   }
 }
+
+Add.propTypes = {
+  uid: PropTypes.string.isRequired,
+};

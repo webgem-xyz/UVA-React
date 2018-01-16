@@ -1,7 +1,7 @@
 .mainInputs {
   background: var(--main-light-color);
   border-bottom: 1px solid var(--main-color);
-  padding-bottom: 16px;
+  padding: 16px;
 }
 
 .addButton {
@@ -10,7 +10,7 @@
   background: var(--main-color);
   color: var(--main-bg-color);
   font-size: 50px;
-  font-weight: 300;
+  font-weight: 400;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,8 +19,96 @@
   border-radius: 50%;
   width: 55px;
   height: 55px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 10px 0;
 }
 
-.addButton i{
+.addButton i {
   font-size: 40px;
+}
+
+.customFormfieldWrap {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 16px;
+  margin: 10px 0;
+  border-top: .5px solid var(--main-color);
+  border-bottom: .5px solid var(--main-color);
+}
+
+.select {
+  border-radius: 0;
+  padding: 10px 5px;
+  font-size: 15px;
+  border: 1px solid var(--main-color);
+  margin-bottom: 5px;
+}
+
+.addedInputField {
+  border-radius: 0;
+  padding: 10px 5px;
+  font-size: 15px;
+  border: 1px solid var(--main-color);
+  margin-top: 5px;
+}
+
+.remove {
+  text-transform: uppercase;
+  font-size: 16px;
+  text-align: right;
+  font-weight: 700;
+  padding: 0;
+  margin-top: 10px;
+  float: right;
+  color: var(--main-color);
+}
+
+.inputRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputGroup {
+  display: inline-flex;
+  flex-direction: column;
+  width: 49.5%;
+}
+
+.inputField {
+  border-radius: 0;
+  padding: 10px 5px;
+  font-size: 15px;
+  border: 1px solid var(--main-color);
+  margin-top: 5px;
+}
+
+.inputGroup label,
+.inputGroupDate label {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.inputGroupDate {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.submit {
+  border: 0;
+  outline: 0;
+  border-radius: 0;
+  background: var(--main-color);
+  color: var(--main-bg-color);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 16px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }

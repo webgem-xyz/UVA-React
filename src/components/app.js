@@ -32,7 +32,7 @@ export default class App extends Component {
           <Overview path="/" uid={this.state.uid} />
           <Measurement path="/mes/:measurementId" uid={this.state.uid} />
           <Account path="/account" />
-          <Add path="/add" />
+          <Add path="/add" uid={this.state.uid} />
           <AddMedia path="/addMedia" />
           <Media path="/media/:mediaId" />
         </Router>

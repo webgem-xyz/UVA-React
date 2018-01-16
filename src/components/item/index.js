@@ -11,7 +11,7 @@ import measurementIcon from '../../assets/black/measurements.svg';
 function defineImgSrc(details) {
   if (details.type === 'mes') {
     return measurementIcon;
-  } else if (details.type === 'media') {
+  } else if (details.type === 'med') {
     return mediaIcon;
   }
 }
@@ -19,7 +19,7 @@ function defineImgSrc(details) {
 function defineImgAlt(details) {
   if (details.type === 'mes') {
     return 'Measurement icon';
-  } else if (details.type === 'media') {
+  } else if (details.type === 'med') {
     return 'Media icon';
   }
 }

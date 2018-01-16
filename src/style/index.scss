@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700');
+
 :root {
   --main-bg-color: #fafafa;
   --main-color: #656565;
@@ -11,7 +13,7 @@ html, body {
   padding: 0;
   margin: 0;
   background: var(--main-bg-color);
-  font-family: 'Helvetica Neue', arial, sans-serif;
+  font-family: 'Quattrocento Sans', sans-serif;
   font-weight: 400;
   font-size: 15px;
   color: var(--main-color);
