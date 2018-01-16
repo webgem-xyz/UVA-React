@@ -64,8 +64,8 @@ export default class Add extends Component {
 
   geoError() {
     this.setState({
-      longitude: 0,
-      latitude: 0,
+      longitude: '0',
+      latitude: '0',
     });
   }
 
@@ -188,7 +188,7 @@ export default class Add extends Component {
             <div class={style.inputGroupDate}>
               <label for="date">Date of measurement</label>
               <input
-                ref={(input) => this.date = input}
+                ref={input => (this.date = input)}
                 type="text"
                 placeholder="getting location.."
                 value={this.state.date}
