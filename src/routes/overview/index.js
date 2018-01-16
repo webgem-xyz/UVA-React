@@ -6,6 +6,7 @@ import style from './style';
 import Header from '../../components/header';
 import Item from '../../components/item';
 import AddButton from '../../components/addButton/index';
+import FilterButton from '../../components/filterButton/index';
 
 // Import firebase
 import base from '../../base';
@@ -40,19 +41,19 @@ export default class Overview extends Component {
         <Header title="dashboard" accic />
         <div class={style.overview}>
           <div class={style.add}>
-            <h2>add data +</h2>
+            <h2 class={style.oh2}>add data +</h2>
             <div class={style.addButtons}>
               <AddButton to="/add" icon={addIcon} alt="Add measurement icon." text="Add Measurement" />
               <AddButton to="/addMedia" icon={mediaIconWhite} alt="Add media icon." text="Add Media" />
             </div>
           </div>
           <div>
-            <div>
-              <h2>overview</h2>
-              <div>
-                <button>All</button>
-                <button>Measurements</button>
-                <button>Media</button>
+            <div class={style.headWrap}>
+              <h2 class={style.oh2}>overview</h2>
+              <div class={style.buttonWrap}>
+                <FilterButton filter="all" text="All" />
+                <FilterButton filter="mes" text="Measurements" />
+                <FilterButton filter="med" text="Media" />
               </div>
             </div>
             <div class={style.labels}>

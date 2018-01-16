@@ -29,3 +29,17 @@
 .labels p:nth-child(2){
   flex: 1;
 }
+
+.buttonWrap{
+  display: flex;
+}
+
+.headWrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.oh2 {
+  text-transform: uppercase;
+}
