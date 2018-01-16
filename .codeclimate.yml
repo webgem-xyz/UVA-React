@@ -41,8 +41,8 @@ checks:
     config:
       threshold: #language-specific defaults. overrides affect all languages.
 plugins:
- eslint:
-  enabled: true
+  scss-lint:
+    enabled: true
 exclude_patterns:
 - "config/"
 - "db/"
