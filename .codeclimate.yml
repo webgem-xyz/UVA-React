@@ -35,7 +35,9 @@ checks:
   similar-code:
     enabled: true
     config:
-      threshold: 50 #language-specific defaults. overrides affect all languages.
+      languages:
+         javascript:
+           mass_threshold: 50 #language-specific defaults. overrides affect all languages.
   identical-code:
     enabled: true
     config:
