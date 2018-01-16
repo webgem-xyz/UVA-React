@@ -37,6 +37,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * [Add Component](#add-component)
 * [AddButton Component](#addbutton-component)
 * [AddMedia Component](#addmedia-component)
+* [FilterButton Component](#filterbutton-component)
 * [Header Component](#header-component)
 * [Item Component](#item-component)
 * [Login Component](#login-component)
@@ -176,6 +177,27 @@ Attribute | Type | Usage
 --- | --- | ---
 handleImageSubmit | function | The function that handles uploading and handling the media to the database.
 
+## FilterButton Component
+### Usage
+The FilterButton Component consists of the following
+* Button
+  * All
+  * Measurements
+  * Media
+* Filter Function
+
+### Location
+The FilterButton Component is located at
+```
+  src/components/filterButton/
+```
+### Attributes
+The FilterButton Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+Filter | string | What should the filter be.
+Text | string | What text should the button display.
 
 ## Header Component
 ### Usage
@@ -293,9 +315,7 @@ The Overview Component consists of the following
   * [AddButton Component](#addbutton-component) Add Media to [AddMedia Component](#addmedia-component)
 * Overview
   * Filter
-    * All
-    * Measurements
-    * Media
+    * [FilterButton Component](#filterbutton-component)
   * List of measurements
     * Type (icon)
     * Date
