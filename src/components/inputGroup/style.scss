@@ -2,6 +2,11 @@
   display: inline-flex;
   flex-direction: column;
   width: 49.5%;
+
+  label {
+    font-size: 16px;
+    font-weight: 700;
+  }
 }
 
 .inputField {
@@ -10,9 +15,4 @@
   font-size: 15px;
   margin-top: 5px;
   padding: 10px 5px;
-}
-
-.inputGroup label {
-  font-size: 16px;
-  font-weight: 700;
 }

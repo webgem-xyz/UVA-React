@@ -1,4 +1,5 @@
 import { Component } from 'preact';
+import { PropTypes } from 'preact-compat';
 import style from './style';
 
 export default class InputGroup extends Component {
@@ -28,3 +29,10 @@ export default class InputGroup extends Component {
     );
   }
 }
+
+InputGroup.propTypes = {
+  handleState: PropTypes.func.isRequired,
+  kind: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+};
