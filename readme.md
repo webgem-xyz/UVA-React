@@ -109,7 +109,7 @@ The Add Component accepts the following attributes
 
 Attribute | Type | Usage
 --- | --- | ---
-handleSubmit | function | The function that handles the adding the measurement to the database.
+Uid | string | User identifier so it knows where to write to.
 
 ## AddButton Component
 ### Usage
@@ -198,6 +198,7 @@ Attribute | Type | Usage
 --- | --- | ---
 Filter | string | What should the filter be.
 Text | string | What text should the button display.
+HandleFilter | function | function that handles the filtering.
 
 ## Header Component
 ### Usage
@@ -220,6 +221,7 @@ To | string | Used to determen where the backarrow should send the user to. Don'
 Title | string | The text that should be displayed on the top of the page.
 Accic | boolean | Should there be a account circle to [Account Component](#account-component).
 BackColor | string | The color code that the header should have.
+
 ## Item Component
 ### Usage
 The Item Component consists of the following
