@@ -8,6 +8,9 @@ All notable changes to this project will be documented in this file.
 - Login Component.
 - Account Component.
 
+### Changed
+- The InputGroup Component now accepts autocomplete as a prop.
+
 ## [0.0.2] - 2018-01-17
 ### Added
 - RemoveButton Component.

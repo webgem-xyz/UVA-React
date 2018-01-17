@@ -271,6 +271,7 @@ Value | string | What should the default value of the input field be.
 handleState | function | The function that handles user input in the inputfield.
 FullWidth | bool | Should the input field be 50% of the width or 100%.
 Placeholder | string | What should the placeholder of the input field be.
+AutoComplete | string | What should the browser autofill the field with (leave empy to disable autofill).
 
 ## Item Component
 ### Usage
