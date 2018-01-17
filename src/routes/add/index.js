@@ -1,11 +1,9 @@
 import { Component } from 'preact';
 import { PropTypes } from 'preact-compat';
-import { route } from 'preact-router';
 import moment from 'moment';
 
 import style from './style';
 
-import base from '../../base';
 import Header from '../../components/header/index';
 import InputGroup from '../../components/inputGroup/index';
 
@@ -17,7 +15,6 @@ export default class Add extends Component {
     this.geoError = this.geoError.bind(this);
 
     this.createMeasurement = this.createMeasurement.bind(this);
-    this.addMeasurement = this.addMeasurement.bind(this);
 
     this.handleState = this.handleState.bind(this);
 
@@ -39,19 +36,8 @@ export default class Add extends Component {
     };
   }
 
-  componentWillMount() {
-    this.ref = base.syncState(`/${this.props.uid}/mes/`, {
-      context: this,
-      state: 'measurements',
-    });
-  }
-
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(this.geoSuccess, this.geoError, this.state.geoOptions);
-  }
-
-  componentWillUnmount() {
-    base.removeBinding(this.ref);
   }
 
   // Getting Users GEO location
@@ -111,21 +97,7 @@ export default class Add extends Component {
     for (let i = 0; i < this.state.count; i += 1) {
       measurement[this.state.inputType[i]] = this.state.value[i];
     }
-    this.addMeasurement(measurement);
-  }
-
-  addMeasurement(measurement) {
-    // Update our measurements state
-    const measurements = { ...this.state.measurements };
-    // add in our new measurement
-    const timestamp = Date.now();
-    const dateFormatted = moment(this.state.date, 'YYYY-MM-DD').format('YYYY-MM-DD');
-    measurements[`measurement_${dateFormatted}_${timestamp}`] = measurement;
-    // set state
-    this.setState({
-      measurements,
-    });
-    route('/');
+    this.props.addMeasurement(measurement);
   }
 
   addField(e) {
@@ -176,12 +148,14 @@ export default class Add extends Component {
                 value={this.state.longitude}
                 kind="longitude"
                 label="Longitude"
+                placeholder="Getting coordinates..."
                 handleState={this.handleState}
               />
               <InputGroup
                 value={this.state.latitude}
                 kind="latitude"
                 label="Latitude"
+                placeholder="Getting coordinates..."
                 handleState={this.handleState}
               />
             </div>
@@ -190,7 +164,7 @@ export default class Add extends Component {
               <input
                 ref={input => (this.date = input)}
                 type="text"
-                placeholder="getting location.."
+                placeholder="YYYY-MM-DD"
                 value={this.state.date}
                 id="date"
                 class={style.inputField}
@@ -213,5 +187,5 @@ export default class Add extends Component {
 }
 
 Add.propTypes = {
-  uid: PropTypes.string.isRequired,
+  addMeasurement: PropTypes.func.isRequired,
 };

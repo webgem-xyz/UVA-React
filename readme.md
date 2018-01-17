@@ -1,7 +1,7 @@
 # UVA app
 ![Build](https://travis-ci.org/webgem-xyz/UVA-React.svg?branch=master)
 [![GitHub version](https://badge.fury.io/gh/webgem-xyz%2FUVA-React.svg)](https://badge.fury.io/gh/webgem-xyz%2FUVA-React)
-![Coverage](https://img.shields.io/badge/coverage-99%25-brightgreen.svg)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/1d0d80ff5c2acd17b3d1/test_coverage)](https://codeclimate.com/github/webgem-xyz/UVA-React/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/1d0d80ff5c2acd17b3d1/maintainability)](https://codeclimate.com/github/webgem-xyz/UVA-React/maintainability)
 
 The UVA is made as a colleberation between students of Mediacollege Amsterdam and the University of Amsterdam. The goal of the project was to create a App to collect marine data.
@@ -39,6 +39,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * [AddMedia Component](#addmedia-component)
 * [FilterButton Component](#filterbutton-component)
 * [Header Component](#header-component)
+* [Home Component](#home-component)
+* [InputGroup Component](#inputgroup-component)
 * [Item Component](#item-component)
 * [Login Component](#login-component)
 * [Measurement Component](#measurement-component)
@@ -109,7 +111,7 @@ The Add Component accepts the following attributes
 
 Attribute | Type | Usage
 --- | --- | ---
-Uid | string | User identifier so it knows where to write to.
+addMeasurement | function | The function that handles adding the measurement to the database.
 
 ## AddButton Component
 ### Usage
@@ -175,7 +177,8 @@ The Add Component accepts the following attributes
 
 Attribute | Type | Usage
 --- | --- | ---
-handleImageSubmit | function | The function that handles uploading and handling the media to the database.
+AddMeasurement | function | The function that handles adding the media and data to the measurement.
+Uid | string | The user identifier used to decide where the image should be uploaded to.
 
 ## FilterButton Component
 ### Usage
@@ -221,6 +224,48 @@ To | string | Used to determen where the backarrow should send the user to. Don'
 Title | string | The text that should be displayed on the top of the page.
 Accic | boolean | Should there be a account circle to [Account Component](#account-component).
 BackColor | string | The color code that the header should have.
+
+## Home Component
+### Usage
+The Home component consists of the following
+* syncstate of measurements
+* addMeasurement function
+* Router
+
+### Location
+The Home Component is located at
+```
+  src/components/home/
+```
+### Attributes
+The Home Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+uid | string | User identifier, used to get the measurements of the specific user.
+
+## InputGroup Component
+### Usage
+The InputGroup Component consists of the following
+* Label
+* Input field
+
+### Location
+The InputGroup Component is located at
+```
+  src/components/inputGroup/
+```
+### Attributes
+The InputGroup Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+Kind | string | What is the identifier of the input field.
+Label | string | What should the label of the input field be.
+Value | string | What should the default value of the input field be.
+handleState | function | The function that handles user input in the inputfield.
+FullWidth | bool | Should the input field be 50% of the width or 100%.
+Placeholder | string | What should the placeholder of the input field be.
 
 ## Item Component
 ### Usage
@@ -333,7 +378,7 @@ The Overview Component accepts the following attributes
 
 Attribute | Type | Usage
 --- | --- | ---
-Uid | string | Used to get the measurements of the logged in user.
+Measurements | object | The measurements of the logged in user.
 
 ## Reset Component
 ### Usage
