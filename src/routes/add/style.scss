@@ -1,0 +1,106 @@
+.mainInputs {
+  background: var(--main-light-color);
+  border-bottom: 1px solid var(--main-color);
+  padding: 16px;
+}
+
+.addButton {
+  align-items: center;
+  background: var(--main-color);
+  border: 0;
+  border-radius: 50%;
+  color: var(--main-bg-color);
+  display: flex;
+  font-size: 50px;
+  font-weight: 400;
+  height: 55px;
+  justify-content: center;
+  left: 50%;
+  margin: 10px 0;
+  outline: 0;
+  padding: 0;
+  position: relative;
+  transform: translateX(-50%);
+  width: 55px;
+
+  i {
+    font-size: 40px;
+  }
+}
+
+.customFormfieldWrap {
+  border-bottom: .5px solid var(--main-color);
+  border-top: .5px solid var(--main-color);
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  padding: 14px 16px;
+}
+
+.select {
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  font-size: 15px;
+  margin-bottom: 5px;
+  padding: 10px 5px;
+}
+
+.addedInputField {
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  font-size: 15px;
+  margin-top: 5px;
+  padding: 10px 5px;
+}
+
+.remove {
+  color: var(--main-color);
+  float: right;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 10px;
+  padding: 0;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.inputRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputField {
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  font-size: 15px;
+  margin-top: 5px;
+  padding: 10px 5px;
+}
+
+.inputGroupDate {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+
+  label {
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
+.submit {
+  background: var(--main-color);
+  border: 0;
+  border-radius: 0;
+  color: var(--main-bg-color);
+  font-size: 16px;
+  font-weight: 700;
+  left: 50%;
+  margin-bottom: 16px;
+  margin-top: 10px;
+  outline: 0;
+  padding: 20px;
+  position: relative;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}

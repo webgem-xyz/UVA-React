@@ -35,7 +35,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 # Table of Contents
 * [Account Component](#account-component)
 * [Add Component](#add-component)
+* [AddButton Component](#addbutton-component)
 * [AddMedia Component](#addmedia-component)
+* [FilterButton Component](#filterbutton-component)
 * [Header Component](#header-component)
 * [Item Component](#item-component)
 * [Login Component](#login-component)
@@ -107,7 +109,29 @@ The Add Component accepts the following attributes
 
 Attribute | Type | Usage
 --- | --- | ---
-handleSubmit | function | The function that handles the adding the measurement to the database.
+Uid | string | User identifier so it knows where to write to.
+
+## AddButton Component
+### Usage
+The AddButton component consists of the following
+* Link (button)
+  * Icon
+  * Text of button
+
+### Location
+The AddButton Component is located at
+```
+  src/components/addButton/
+```
+### Attributes
+The AddButton Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+To | string | Where should the button point to.
+Icon | image (string) | What should the icon be of the button.
+Alt | string | The alt text of the icon.
+Text | string | What should the text of the button be.
 
 
 ## AddMedia Component
@@ -153,6 +177,28 @@ Attribute | Type | Usage
 --- | --- | ---
 handleImageSubmit | function | The function that handles uploading and handling the media to the database.
 
+## FilterButton Component
+### Usage
+The FilterButton Component consists of the following
+* Button
+  * All
+  * Measurements
+  * Media
+* Filter Function
+
+### Location
+The FilterButton Component is located at
+```
+  src/components/filterButton/
+```
+### Attributes
+The FilterButton Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+Filter | string | What should the filter be.
+Text | string | What text should the button display.
+HandleFilter | function | function that handles the filtering.
 
 ## Header Component
 ### Usage
@@ -175,6 +221,7 @@ To | string | Used to determen where the backarrow should send the user to. Don'
 Title | string | The text that should be displayed on the top of the page.
 Accic | boolean | Should there be a account circle to [Account Component](#account-component).
 BackColor | string | The color code that the header should have.
+
 ## Item Component
 ### Usage
 The Item Component consists of the following
@@ -266,13 +313,11 @@ The Overview Component consists of the following
   * Dashboard
   * Button to [Account Component](#account-component)
 * Add data
-  * Button Add Measurement to [Add Component](#add-component)
-  * Button Add Media to [AddMedia Component](#addmedia-component)
+  * [AddButton Component](#addbutton-component) Add Measurement to [Add Component](#add-component)
+  * [AddButton Component](#addbutton-component) Add Media to [AddMedia Component](#addmedia-component)
 * Overview
   * Filter
-    * All
-    * Measurements
-    * Media
+    * [FilterButton Component](#filterbutton-component)
   * List of measurements
     * Type (icon)
     * Date

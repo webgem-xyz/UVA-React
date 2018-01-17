@@ -1,11 +1,12 @@
 import { Component } from 'preact';
-import { Link } from 'preact-router/match';
 import { PropTypes } from 'preact-compat';
 import style from './style';
 
 // Import Components
 import Header from '../../components/header';
 import Item from '../../components/item';
+import AddButton from '../../components/addButton/index';
+import FilterButton from '../../components/filterButton/index';
 
 // Import firebase
 import base from '../../base';
@@ -18,8 +19,11 @@ export default class Overview extends Component {
   constructor(props) {
     super(props);
 
+    this.handleFilter = this.handleFilter.bind(this);
+
     this.state = {
       measurements: {},
+      filteredMeasurements: {},
     };
   }
 
@@ -27,11 +31,32 @@ export default class Overview extends Component {
     this.ref = base.syncState(`/${this.props.uid}/mes/`, {
       context: this,
       state: 'measurements',
+      then() {
+        this.setState({
+          filteredMeasurements: this.state.measurements,
+        });
+      },
     });
   }
 
   componentWillUnmount() {
     base.removeBinding(this.ref);
+  }
+
+  handleFilter(filter) {
+    if (filter === 'all') {
+      this.setState({
+        filteredMeasurements: this.state.measurements,
+      });
+    } else {
+      const filteredMes = Object.keys(this.state.measurements).reduce((r, e) => {
+        if (filter.includes(this.state.measurements[e].type)) r[e] = this.state.measurements[e];
+        return r;
+      }, {});
+      this.setState({
+        filteredMeasurements: filteredMes,
+      });
+    }
   }
 
   render() {
@@ -40,25 +65,19 @@ export default class Overview extends Component {
         <Header title="dashboard" accic />
         <div class={style.overview}>
           <div class={style.add}>
-            <h2>add data +</h2>
+            <h2 class={style.oh2}>add data +</h2>
             <div class={style.addButtons}>
-              <Link class={style.button}>
-                <img src={addIcon} height="30" alt="Add measurement icon." />
-                <p>Add Measurement</p>
-              </Link>
-              <Link class={style.button}>
-                <img src={mediaIconWhite} height="30" alt="Add media icon." />
-                <p>Add Media</p>
-              </Link>
+              <AddButton to="/add" icon={addIcon} alt="Add measurement icon." text="Add Measurement" />
+              <AddButton to="/addMedia" icon={mediaIconWhite} alt="Add media icon." text="Add Media" />
             </div>
           </div>
           <div>
-            <div>
-              <h2>overview</h2>
-              <div>
-                <button>All</button>
-                <button>Measurements</button>
-                <button>Media</button>
+            <div class={style.headWrap}>
+              <h2 class={style.oh2}>overview</h2>
+              <div class={style.buttonWrap}>
+                <FilterButton filter="all" handleFilter={this.handleFilter} text="All" />
+                <FilterButton filter="mes" handleFilter={this.handleFilter} text="Measurements" />
+                <FilterButton filter="med" handleFilter={this.handleFilter} text="Media" />
               </div>
             </div>
             <div class={style.labels}>
@@ -69,7 +88,7 @@ export default class Overview extends Component {
             <div>
               {
                 Object
-                  .keys(this.state.measurements)
+                  .keys(this.state.filteredMeasurements)
                   .map((key) => <Item key={key} index={key} details={this.state.measurements[key]} />)
               }
             </div>

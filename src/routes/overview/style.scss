@@ -1,47 +1,50 @@
-.overview{
-  height: 100%;
-  width: 100%;
+.overview {
   display: flex;
   flex-direction: column;
+  height: 100%;
   padding: 16px;
+  width: 100%;
 }
 
-.header{
+.header {
   margin-left: -16px;
   margin-right: -16px;
   margin-top: -16px;
 }
 
-.addButtons{
+.addButtons {
   display: flex;
   justify-content: space-between;
 }
 
-.button{
-  background: #656565;
-  color: white;
-  width: 49.5%;
-  padding: 20px 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.labels {
   align-items: center;
-}
-
-.button p{
-  margin: 0;
-  padding: 7.5px 0 0;
-}
-
-.labels{
   display: flex;
-  align-items: center;
 }
 
-.labels p:nth-child(1){
+.labels p {
+  font-weight: 700;
+}
+
+.labels p:nth-child(1) {
   width: 55px;
 }
 
-.labels p:nth-child(2){
+.labels p:nth-child(2) {
   flex: 1;
+}
+
+.buttonWrap {
+  display: flex;
+}
+
+.headWrap {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.oh2 {
+  font-weight: 700;
+  text-transform: uppercase;
 }
