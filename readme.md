@@ -46,6 +46,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * [Measurement Component](#measurement-component)
 * [Media Component](#media-component)
 * [Overview Component](#overview-component)
+* [ProgressBar Component](#progressbar-component)
+* [RemoveButton Component](#removebutton-component)
 * [Reset Component](#reset-component)
 
 ## Account Component
@@ -379,6 +381,44 @@ The Overview Component accepts the following attributes
 Attribute | Type | Usage
 --- | --- | ---
 Measurements | object | The measurements of the logged in user.
+
+## ProgressBar Component
+### Usage
+The ProgressBar Component consists of the following
+* Bar wrapper
+* Progress bar showing the ammount of progress made
+
+### Location
+The ProgressBar Component is located at
+```
+  src/components/progress/
+```
+### Attributes
+The ProgressBar Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+progress | number | How mutch % is uploaded.
+
+## RemoveButton Component
+### Usage
+The RemoveButton Component consists of the following
+* Input field (type button)
+
+### Location
+The RemoveButton Component is located at
+```
+  src/components/removeButton/
+```
+### Attributes
+The RemoveButton Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+removeField | function | The function that handles deleting the field.
+i | number | Identifier of what field it should remove.
+value | string | What should the text in the button be.
+
 
 ## Reset Component
 ### Usage

@@ -8,6 +8,7 @@ import style from './style';
 
 import InputGroup from '../../components/inputGroup/index';
 import Header from '../../components/header/index';
+import ProgressBar from '../../components/progress';
 
 export default class AddMedia extends Component {
   constructor() {
@@ -121,7 +122,7 @@ export default class AddMedia extends Component {
     const measurement = {
       longitude: this.state.longitude,
       latitude: this.state.latitude,
-      date: moment(this.date.value, 'YYYY-MM-DD').format('YYYY-MM-DD'),
+      date: moment(this.state.date, 'YYYY-MM-DD').format('YYYY-MM-DD'),
       category: this.category.value,
       desc: this.state.desc || null,
       type: 'med',
@@ -138,12 +139,6 @@ export default class AddMedia extends Component {
     for (let i = 0; i < this.state.count; i += 1) {
       imagesUI.push(
         <div key={i} class={style.uploadedImage}>
-          <input
-            type="button"
-            value="x"
-            class={style.remove}
-            onClick={e => this.removeImage(e, i)}
-          />
           <button class={style.remove} onClick={e => this.removeImage(e, i)}>
             <i className={`material-icons ${style.icon}`}>close</i>
           </button>
@@ -158,7 +153,7 @@ export default class AddMedia extends Component {
     return (
       <div class={style.addMedia}>
         <Header to="/" backCol="#E7E7E7" title="add media" />
-        <form onSubmit={(e) => this.createMeasurement(e)}>
+        <form onSubmit={e => this.createMeasurement(e)}>
           <div class={style.mainInputs}>
             <div class={style.inputRow}>
               <InputGroup
@@ -176,17 +171,14 @@ export default class AddMedia extends Component {
                 handleState={this.handleState}
               />
             </div>
-            <div class={style.inputGroupDate}>
-              <label for="date">Date of measurement</label>
-              <input
-                ref={input => (this.date = input)}
-                type="text"
-                placeholder="YYYY-MM-DD"
-                value={this.state.date}
-                id="date"
-                class={style.inputField}
-              />
-            </div>
+            <InputGroup
+              value={this.state.date}
+              kind="date"
+              label="Date of measurement"
+              handleState={this.handleState}
+              fullWidth
+              placeholder="YYYY-MM-DD"
+            />
             <div class={style.inputGroupDate}>
               <label for="category">Category</label>
               <select id="category" class={style.select} ref={input => (this.category = input)}>
@@ -208,11 +200,7 @@ export default class AddMedia extends Component {
               placeholder=""
             />
           </div>
-          {this.state.isUploading && (
-            <div class={style.progress}>
-              <span class={style.progressBar} style={`width: ${this.state.progress}%;`} />
-            </div>
-          )}
+          {this.state.isUploading && <ProgressBar progress={this.state.progress} />}
           <div class={style.imageWrap}>{this.renderImages()}</div>
           <label class={style.uploadButton}>
             <i className="material-icons">add</i>

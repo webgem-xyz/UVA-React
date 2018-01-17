@@ -6,6 +6,7 @@ import style from './style';
 
 import Header from '../../components/header/index';
 import InputGroup from '../../components/inputGroup/index';
+import RemoveButton from '../../components/removeButton/index';
 
 export default class Add extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ export default class Add extends Component {
 
     this.geoSuccess = this.geoSuccess.bind(this);
     this.geoError = this.geoError.bind(this);
+    this.removeField = this.removeField.bind(this);
 
     this.createMeasurement = this.createMeasurement.bind(this);
 
@@ -91,7 +93,7 @@ export default class Add extends Component {
     const measurement = {
       longitude: this.state.longitude,
       latitude: this.state.latitude,
-      date: moment(this.date.value, 'YYYY-MM-DD').format('YYYY-MM-DD'),
+      date: moment(this.state.date, 'YYYY-MM-DD').format('YYYY-MM-DD'),
       type: 'mes',
     };
     for (let i = 0; i < this.state.count; i += 1) {
@@ -125,12 +127,7 @@ export default class Add extends Component {
             onChange={e => this.handleChange(e, i)}
             class={style.addedInputField}
           />
-          <input
-            type="button"
-            value="remove item"
-            class={style.remove}
-            onClick={e => this.removeField(e, i)}
-          />
+          <RemoveButton value="remove item" removeField={this.removeField} i={i} />
         </div>
       );
     }
@@ -159,17 +156,14 @@ export default class Add extends Component {
                 handleState={this.handleState}
               />
             </div>
-            <div class={style.inputGroupDate}>
-              <label for="date">Date of measurement</label>
-              <input
-                ref={input => (this.date = input)}
-                type="text"
-                placeholder="YYYY-MM-DD"
-                value={this.state.date}
-                id="date"
-                class={style.inputField}
-              />
-            </div>
+            <InputGroup
+              value={this.state.date}
+              kind="date"
+              label="Date of measurement"
+              handleState={this.handleState}
+              fullWidth
+              placeholder="YYYY-MM-DD"
+            />
           </div>
           {this.createUI()}
           <button class={style.addButton} onClick={e => this.addField(e)}>

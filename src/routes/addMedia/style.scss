@@ -31,6 +31,7 @@
 .inputRow {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .inputField {
@@ -63,8 +64,8 @@
 
 .imageWrap {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .uploadedImage {
@@ -90,8 +91,8 @@
     outline: 0;
     padding: 0;
     position: absolute;
-    top: 5px;
     right: 5px;
+    top: 5px;
     width: 40px;
 
     .icon {
@@ -105,23 +106,6 @@
     object-position: center;
     width: 100%;
   }
-}
-
-.progress {
-  background: var(--main-light-color);
-  display: block;
-  height: 2px;
-  margin: -11px 0 11px;
-  padding: 0;
-  position: relative;
-  width: 100%;
-}
-
-.progressBar {
-  background: rgba(10.6%, 81.2%, 54.1%, 0.596);
-  display: inline-block;
-  height: 100%;
-  min-width: 4%;
 }
 
 .submit {
