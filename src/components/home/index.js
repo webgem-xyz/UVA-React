@@ -12,6 +12,7 @@ import Measurement from '../../routes/measurement';
 import Add from '../../routes/add/index';
 import AddMedia from '../../routes/addMedia/index';
 import Media from '../../routes/Media/index';
+import Account from '../../routes/account';
 
 export default class Home extends Component {
   constructor(props) {
@@ -74,6 +75,13 @@ export default class Home extends Component {
           addMeasurement={this.addMeasurement}
         />
         <Media path="/media/:mediaId" uid={this.props.uid} />
+        <Account
+          path="/account"
+          uid={this.props.uid}
+          measurements={this.state.measurements}
+          email={this.props.email}
+          logout={this.props.logout}
+        />
       </Router>
     );
   }
@@ -81,4 +89,6 @@ export default class Home extends Component {
 
 Home.propTypes = {
   uid: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  logout: PropTypes.func.isRequired,
 };
