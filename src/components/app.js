@@ -4,7 +4,6 @@ import firebase from 'firebase/app';
 
 // Import Routes
 import Login from '../routes/login';
-import Account from '../routes/account/index';
 import Home from '../components/home';
 
 // Import Firebase Login
@@ -21,13 +20,16 @@ export default class App extends Component {
 
     this.state = {
       uid: 'hl8tgg53mkQIUmIh6D8SUsReTGD2',
+      email: 'user@uva.nl',
+      // email: null,
       // uid: null,
     };
   }
 
-  logout() {
+  logout(e) {
+    e.preventDefault();
     firebase.auth(fireApp).signOut();
-    this.setState({ uid: null });
+    this.setState({ uid: null, email: null });
   }
 
   authenticate(e, email, password) {
@@ -38,6 +40,7 @@ export default class App extends Component {
       .then(user => {
         this.setState({
           uid: user.user.uid,
+          email: user.user.email,
         });
       });
   }
@@ -58,7 +61,12 @@ export default class App extends Component {
           <Home path="/add" uid={this.state.uid} />
           <Home path="/addMedia" uid={this.state.uid} />
           <Home path="/media/:mediaId" uid={this.state.uid} />
-          <Account path="/account" />
+          <Home
+            path="/account"
+            uid={this.state.uid}
+            email={this.state.email}
+            logout={this.logout}
+          />
         </Router>
       </div>
     );

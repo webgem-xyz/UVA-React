@@ -76,6 +76,7 @@ Attribute | Type | Usage
 --- | --- | ---
 Uid | string | The identifier of the user, used to get the user info etc.
 Logout | function | The function to run when the user presses the Sign out button.
+Email | string | The email of the user, used to show what account the user is currently logged in to.
 
 ## Add Component
 ### Usage
@@ -245,6 +246,8 @@ The Home Component accepts the following attributes
 Attribute | Type | Usage
 --- | --- | ---
 uid | string | User identifier, used to get the measurements of the specific user.
+email | string | Email of the logged in user.
+logout | function | The function that handles the logout process.
 
 ## InputGroup Component
 ### Usage
