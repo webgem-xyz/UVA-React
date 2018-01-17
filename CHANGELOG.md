@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Login Component.
 - Account Component.
+- Added browser support to README
 
 ### Changed
 - The InputGroup Component now accepts autocomplete as a prop.
