@@ -8,12 +8,14 @@ The UVA is made as a colleberation between students of Mediacollege Amsterdam an
 
 ## Target devices
 Our target devices are all recent mobile devices. The devices will not always have a internet connection so the app is required to work offline. Data must be visible offline and when you are offline you should be able to submit data.
-![Chrome](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/chrome/chrome_48x48.png) | ![Firefox](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/firefox/firefox_48x48.png) | ![Safari](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/safari/safari_48x48.png) | ![Opera](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/opera/opera_48x48.png) | ![Edge](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/edge/edge_48x48.png)
---- | --- | --- | --- | ---
-macOS latest | macOS latest | macOS latest | macOS latest |
-Windows latest | Windows latest |  | Windows latest |Windows latest
-| iOS latest | iOS latest | ios 9.3 and up | - |
-| Android latest | Android latest |  | - |
+
+| ![Chrome](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/chrome/chrome_48x48.png) | ![Firefox](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/firefox/firefox_48x48.png) | ![Safari](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/safari/safari_48x48.png) | ![Opera](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/opera/opera_48x48.png) | ![Edge](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/edge/edge_48x48.png) |
+| --- | --- | --- | --- | --- |
+| macOS latest | macOS latest | macOS latest | macOS latest |  |
+| Windows latest | Windows latest |  | Windows latest | Windows latest |
+| iOS latest | iOS latest | ios 9.3 and up | - |  |
+| Android latest | Android latest |  | - |  |
+
 
 ## Getting Started
 To get started clone the respority.
