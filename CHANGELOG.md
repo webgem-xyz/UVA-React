@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - The InputGroup Component now accepts autocomplete as a prop.
 
+### Fixed
+- Missing trailing newline at end of login/style.scss & account/style.scss
+
 ## [0.0.2] - 2018-01-17
 ### Added
 - RemoveButton Component.
