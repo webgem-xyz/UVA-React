@@ -1,0 +1,38 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.loginForm {
+  padding: 16px;
+
+  div {
+    margin: 7.5px 0;
+  }
+}
+
+.loginSub {
+  display: inline-block;
+  background: var(--main-color);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 17px;
+  text-transform: uppercase;
+  color: white;
+  margin: 7.5px 0;
+}
+
+.forgot {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--main-color);
+  text-align: center;
+  padding: 25px;
+  margin-top: auto;
+}

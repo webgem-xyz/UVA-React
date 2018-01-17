@@ -20,12 +20,13 @@ export default class InputGroup extends Component {
       >
         <label for={this.props.kind}>{this.props.label}</label>
         <input
-          onChange={(e) => this.handleChange(e, this.props.kind)}
-          type="text"
+          onChange={e => this.handleChange(e, this.props.kind)}
+          type={this.props.type}
           placeholder={this.props.placeholder}
           value={this.props.value}
           id={this.props.kind}
           class={style.inputField}
+          autocomplete={this.props.autoComplete}
         />
       </div>
     );
@@ -39,8 +40,12 @@ InputGroup.propTypes = {
   handleState: PropTypes.func.isRequired,
   fullWidth: PropTypes.bool,
   placeholder: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  autoComplete: PropTypes.sring,
 };
 
 InputGroup.defaultProps = {
   fullWidth: false,
+  type: 'text',
+  autoComplete: 'off',
 };
