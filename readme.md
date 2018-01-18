@@ -365,6 +365,7 @@ Attribute | Type | Usage
 --- | --- | ---
 measurementId | string | Used to get the measurement that was selected.
 measurements | object | Object of al the meaurements, reduced to the measurement the user is currently being viewed.
+removeMeasurement | func | Function that handles deleting the measurement from the database.
 
 ## MeasurementRow Component
 ### Usage
