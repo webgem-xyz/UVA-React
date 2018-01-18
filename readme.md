@@ -342,6 +342,20 @@ The Measurement component consists of the following
 * A Delete button
 * Map focused at the coordinates from the measurements.
 
+### Usage
+The Measurement component consists of the following
+* Header 
+  * Back Arrow 
+  * View Measurement
+* List of data (label - value)
+  * Longitude 
+  * Latitude
+  * Date
+  * Acidity (pH)
+  * Salinity (PSU)
+  * Tempature
+
+
 ## Media Component
 ### Usage
 The Media Component consists of the following

@@ -1,6 +1,7 @@
 import { Component } from 'preact';
 import { PropTypes } from 'preact-compat';
 import Header from '../../components/header';
+import MeasurementRow from '../../components/measurementRow';
 import style from './style';
 import base from '../../base';
 
@@ -30,40 +31,22 @@ export default class Measurement extends Component {
       <div class={style.container}>
         <Header title="view measurement" to="/" />
         {measurement.longitude && (
-          <div class={style.row}>
-            <p class={style.label}>Longitude</p>
-            <p class={style.value}>{measurement.longitude}</p>
-          </div>
+          <MeasurementRow label="Longitude" value={measurement.longitude} />
         )}
         {measurement.latitude && (
-          <div class={style.row}>
-            <p class={style.label}>Latitude</p>
-            <p class={style.value}>{measurement.latitude}</p>
-          </div>
+          <MeasurementRow label="Latitude" value={measurement.latitude} />
         )}
         {measurement.date && (
-          <div class={style.row}>
-            <p class={style.label}>Date</p>
-            <p class={style.value}>{measurement.date}</p>
-          </div>
+          <MeasurementRow label="Date" value={measurement.date} />
         )}
         {measurement.acidity && (
-          <div class={style.row}>
-            <p class={style.label}>Acidity (pH)</p>
-            <p class={style.value}>{measurement.acidity}</p>
-          </div>
+          <MeasurementRow label="Acidity" value={measurement.acidity} />
         )}
         {measurement.salinity && (
-          <div class={style.row}>
-            <p class={style.label}>Salinity (PSU)</p>
-            <p class={style.value}>{measurement.salinity}</p>
-          </div>
+          <MeasurementRow label="Salinity" value={measurement.salinity} />
         )}
         {measurement.tempature && (
-          <div class={style.row}>
-            <p class={style.label}>Tempature</p>
-            <p class={style.value}>{measurement.tempature}</p>
-          </div>
+          <MeasurementRow label="Tempature" value={measurement.tempature} />
         )}
       </div>
     );
