@@ -37,7 +37,7 @@ All notable changes to this project will be documented in this file.
 - Media component. (Still needs the new measurement component)
 
 ### Changed
-- Item component now uses measurement type to determen if it should send it to /mes/:measurementId or /med/:mediaId
+- Item component now uses measurement type to determine if it should send it to /mes/:measurementId or /med/:mediaId
 - Router path changed from "/media/:mediaId" to "/med/:mediaId"
 
 ## [0.0.3] - 2018-01-18
