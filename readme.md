@@ -71,7 +71,7 @@ The Account component consists of the following
   * Back arrow
   * Account
 * Graph of the ammount of contributions
-  * Ammount of contributions is based on a montly basis.
+  * Ammount of contributions is based on a monthly basis.
 * Account info
   * Username
   * Logged in since
@@ -416,7 +416,7 @@ The ProgressBar Component accepts the following attributes
 
 Attribute | Type | Usage
 --- | --- | ---
-progress | number | How mutch % is uploaded.
+progress | number | How much % is uploaded.
 
 ## RemoveButton Component
 ### Usage
