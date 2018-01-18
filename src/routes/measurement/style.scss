@@ -1,6 +1,6 @@
 .container {
   align-items: center;
-  background-color: #fff;
+  background-color: var(--main-bg-color);
   flex: 1;
   justify-content: center;
 }
@@ -14,7 +14,7 @@ p {margin: 0;}
 }
 
 .row {
-  background: #fafafa;
+  background: var(--main-bg-color);
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -24,18 +24,18 @@ p {margin: 0;}
 }
 
 .row:nth-of-type(even) {
-  background: #e7e7e7;
+  background: var(--main-light-color);
 }
 
 .value {
-  color: #333;
+  color: var(--main-color);
   font-weight: 300;
   font-size: 15px;
   width: 50%;
 }
 
 label {
-  color: #555;
+  color: var(--main-color);
   font-weight: 900;
   font-size: 16px;
 }
