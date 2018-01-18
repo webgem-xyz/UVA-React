@@ -74,7 +74,7 @@ export default class Home extends Component {
           measurements={this.state.measurements}
           addMeasurement={this.addMeasurement}
         />
-        <Media path="/media/:mediaId" uid={this.props.uid} />
+        <Media path="/med/:mediaId" uid={this.props.uid} measurements={this.state.measurements} />
         <Account
           path="/account"
           uid={this.props.uid}
