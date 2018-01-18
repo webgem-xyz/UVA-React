@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 ## [0.0.6] - 2018-01-18
 ## Fixed
 - Spelling mistakes in ISSUE_TEMPLATE.md
+- Moved syncState out of Measurement Component in to Home.js [#31](https://github.com/webgem-xyz/UVA-React/issues/31)
 
 ## [0.0.5] - 2018-01-18
 ### Changed
