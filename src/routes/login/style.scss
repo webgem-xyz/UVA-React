@@ -1,0 +1,40 @@
+.login {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+.loginForm {
+  padding: 16px;
+
+  div {
+    margin: 7.5px 0;
+  }
+}
+
+.loginSub {
+  background: var(--main-color);
+  border: 0;
+  color: var(--main-bg-color);
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 7.5px 0;
+  outline: 0;
+  padding: 17px;
+  text-transform: uppercase;
+}
+
+.forgot {
+  color: var(--main-color);
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: auto;
+  padding: 25px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}

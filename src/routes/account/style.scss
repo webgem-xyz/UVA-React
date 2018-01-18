@@ -1,0 +1,28 @@
+.contributions {
+  padding: 5px 16px 0;
+}
+
+.accountSec {
+  padding: 2.5px 16px 5px;
+
+  p {
+    font-size: 16px;
+
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
+.logout {
+  background: var(--main-color);
+  border: 0;
+  color: var(--main-bg-color);
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  outline: 0;
+  padding: 17px;
+  text-transform: uppercase;
+}

@@ -29,7 +29,7 @@ export default class Measurement extends Component {
     const measurement = this.state.measurement;
     return (
       <div class={style.container}>
-        <Header head={this.props.head} backCol="#ffffff" />
+        <Header title="view measurement" to="/" />
         {measurement.longitude && (
           <MeasurementRow label="Longitude" value={measurement.longitude} />
         )}
@@ -55,6 +55,5 @@ export default class Measurement extends Component {
 
 Measurement.propTypes = {
   uid: PropTypes.string.isRequired,
-  head: PropTypes.string.isRequired,
   measurementId: PropTypes.string.isRequired,
 };

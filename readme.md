@@ -1,12 +1,21 @@
 # UVA app
 ![Build](https://travis-ci.org/webgem-xyz/UVA-React.svg?branch=master)
 [![GitHub version](https://badge.fury.io/gh/webgem-xyz%2FUVA-React.svg)](https://badge.fury.io/gh/webgem-xyz%2FUVA-React)
-![Coverage](https://img.shields.io/badge/coverage-99%25-brightgreen.svg)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/1d0d80ff5c2acd17b3d1/test_coverage)](https://codeclimate.com/github/webgem-xyz/UVA-React/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/1d0d80ff5c2acd17b3d1/maintainability)](https://codeclimate.com/github/webgem-xyz/UVA-React/maintainability)
 
-The UVA is made as a colleberation between students of Mediacollege Amsterdam and the University of Amsterdam. The goal of the project was to create a App to collect marine data.
+The UVA is made as a collaboration between students of Mediacollege Amsterdam and the University of Amsterdam. The goal of the project was to create a App to collect marine data.
 
 ## Target devices
 Our target devices are all recent mobile devices. The devices will not always have a internet connection so the app is required to work offline. Data must be visible offline and when you are offline you should be able to submit data.
+
+| ![Chrome](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/chrome/chrome_48x48.png) | ![Firefox](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/firefox/firefox_48x48.png) | ![Safari](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/safari/safari_48x48.png) | ![Opera](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/opera/opera_48x48.png) | ![Edge](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/42.4.2/edge/edge_48x48.png) |
+| --- | --- | --- | --- | --- |
+| macOS latest | macOS latest | macOS latest | macOS latest |  |
+| Windows latest | Windows latest |  | Windows latest | Windows latest |
+| iOS latest | iOS latest | ios 9.3 and up | - |  |
+| Android latest | Android latest |  | - |  |
+
 
 ## Getting Started
 To get started clone the respority.
@@ -31,16 +40,28 @@ Copyright (c) 2018 Webgem ALL RIGHTS RESERVED
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+## Team
+<img src="https://avatars0.githubusercontent.com/u/19853448?s=296&v=4" width="150" height="150" alt="Yannick1691" /> | <img src="https://avatars1.githubusercontent.com/u/25220164?s=296&v=4" width="150" height="150" alt="ThijsvanRijn" /> | <img src="https://avatars1.githubusercontent.com/u/15909945?s=296&v=4" width="150" height="150" alt="Coen" />
+--- | --- | ---
+[Yannick Frisart](https://github.com/yannick1691) | [Thijs van Rijn](https://github.com/ThijsvanRijn) | [Coen Filipsen](https://github.com/Coen)
+
+
 # Table of Contents
 * [Account Component](#account-component)
 * [Add Component](#add-component)
+* [AddButton Component](#addbutton-component)
 * [AddMedia Component](#addmedia-component)
+* [FilterButton Component](#filterbutton-component)
 * [Header Component](#header-component)
+* [Home Component](#home-component)
+* [InputGroup Component](#inputgroup-component)
 * [Item Component](#item-component)
 * [Login Component](#login-component)
 * [Measurement Component](#measurement-component)
 * [Media Component](#media-component)
 * [Overview Component](#overview-component)
+* [ProgressBar Component](#progressbar-component)
+* [RemoveButton Component](#removebutton-component)
 * [Reset Component](#reset-component)
 
 ## Account Component
@@ -50,7 +71,7 @@ The Account component consists of the following
   * Back arrow
   * Account
 * Graph of the ammount of contributions
-  * Ammount of contributions is based on a montly basis.
+  * Ammount of contributions is based on a monthly basis.
 * Account info
   * Username
   * Logged in since
@@ -69,6 +90,7 @@ Attribute | Type | Usage
 --- | --- | ---
 Uid | string | The identifier of the user, used to get the user info etc.
 Logout | function | The function to run when the user presses the Sign out button.
+Email | string | The email of the user, used to show what account the user is currently logged in to.
 
 ## Add Component
 ### Usage
@@ -106,7 +128,29 @@ The Add Component accepts the following attributes
 
 Attribute | Type | Usage
 --- | --- | ---
-handleSubmit | function | The function that handles the adding the measurement to the database.
+addMeasurement | function | The function that handles adding the measurement to the database.
+
+## AddButton Component
+### Usage
+The AddButton component consists of the following
+* Link (button)
+  * Icon
+  * Text of button
+
+### Location
+The AddButton Component is located at
+```
+  src/components/addButton/
+```
+### Attributes
+The AddButton Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+To | string | Where should the button point to.
+Icon | image (string) | What should the icon be of the button.
+Alt | string | The alt text of the icon.
+Text | string | What should the text of the button be.
 
 
 ## AddMedia Component
@@ -150,8 +194,31 @@ The Add Component accepts the following attributes
 
 Attribute | Type | Usage
 --- | --- | ---
-handleImageSubmit | function | The function that handles uploading and handling the media to the database.
+AddMeasurement | function | The function that handles adding the media and data to the measurement.
+Uid | string | The user identifier used to decide where the image should be uploaded to.
 
+## FilterButton Component
+### Usage
+The FilterButton Component consists of the following
+* Button
+  * All
+  * Measurements
+  * Media
+* Filter Function
+
+### Location
+The FilterButton Component is located at
+```
+  src/components/filterButton/
+```
+### Attributes
+The FilterButton Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+Filter | string | What should the filter be.
+Text | string | What text should the button display.
+HandleFilter | function | function that handles the filtering.
 
 ## Header Component
 ### Usage
@@ -174,6 +241,52 @@ To | string | Used to determen where the backarrow should send the user to. Don'
 Title | string | The text that should be displayed on the top of the page.
 Accic | boolean | Should there be a account circle to [Account Component](#account-component).
 BackColor | string | The color code that the header should have.
+
+## Home Component
+### Usage
+The Home component consists of the following
+* syncstate of measurements
+* addMeasurement function
+* Router
+
+### Location
+The Home Component is located at
+```
+  src/components/home/
+```
+### Attributes
+The Home Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+uid | string | User identifier, used to get the measurements of the specific user.
+email | string | Email of the logged in user.
+logout | function | The function that handles the logout process.
+
+## InputGroup Component
+### Usage
+The InputGroup Component consists of the following
+* Label
+* Input field
+
+### Location
+The InputGroup Component is located at
+```
+  src/components/inputGroup/
+```
+### Attributes
+The InputGroup Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+Kind | string | What is the identifier of the input field.
+Label | string | What should the label of the input field be.
+Value | string | What should the default value of the input field be.
+handleState | function | The function that handles user input in the inputfield.
+FullWidth | bool | Should the input field be 50% of the width or 100%.
+Placeholder | string | What should the placeholder of the input field be.
+AutoComplete | string | What should the browser autofill the field with (leave empy to disable autofill).
+
 ## Item Component
 ### Usage
 The Item Component consists of the following
@@ -225,7 +338,7 @@ Signin | function | The function that handles the login.
 
 ## Measurement Component
 The Measurement component consists of the following
-* Information from the Measurements 
+* Information from the Measurements
 * A Delete button
 * Map focused at the coordinates from the measurements.
 
@@ -279,13 +392,11 @@ The Overview Component consists of the following
   * Dashboard
   * Button to [Account Component](#account-component)
 * Add data
-  * Button Add Measurement to [Add Component](#add-component)
-  * Button Add Media to [AddMedia Component](#addmedia-component)
+  * [AddButton Component](#addbutton-component) Add Measurement to [Add Component](#add-component)
+  * [AddButton Component](#addbutton-component) Add Media to [AddMedia Component](#addmedia-component)
 * Overview
   * Filter
-    * All
-    * Measurements
-    * Media
+    * [FilterButton Component](#filterbutton-component)
   * List of measurements
     * Type (icon)
     * Date
@@ -301,7 +412,45 @@ The Overview Component accepts the following attributes
 
 Attribute | Type | Usage
 --- | --- | ---
-Uid | string | Used to get the measurements of the logged in user.
+Measurements | object | The measurements of the logged in user.
+
+## ProgressBar Component
+### Usage
+The ProgressBar Component consists of the following
+* Bar wrapper
+* Progress bar showing the ammount of progress made
+
+### Location
+The ProgressBar Component is located at
+```
+  src/components/progress/
+```
+### Attributes
+The ProgressBar Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+progress | number | How much % is uploaded.
+
+## RemoveButton Component
+### Usage
+The RemoveButton Component consists of the following
+* Input field (type button)
+
+### Location
+The RemoveButton Component is located at
+```
+  src/components/removeButton/
+```
+### Attributes
+The RemoveButton Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+removeField | function | The function that handles deleting the field.
+i | number | Identifier of what field it should remove.
+value | string | What should the text in the button be.
+
 
 ## Reset Component
 ### Usage
