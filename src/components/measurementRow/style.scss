@@ -1,5 +1,5 @@
 .row {
-  background: #fafafa;
+  background: var(--main-bg-color);
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -9,20 +9,20 @@
 }
 
 .row:nth-of-type(even) {
-  background: #e7e7e7;
+  background: var(--main-light-color);
 }
 
 .value {
-  color: #333;
+  color: var(--main-color);
   font-size: 15px;
   font-weight: 300;
   width: 50%;
 }
 
-label {
-  color: #555;
+.label {
+  color: var(--main-color);
   font-size: 16px;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 p {margin: 0;}

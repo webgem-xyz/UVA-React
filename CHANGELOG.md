@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.0.5] - 2018-01-18
+### Changed
+- Made code more DRY
+- Updated Media to use MeasurementRow Component
+- Changed color values to the global variable
+- Fixed font-weight 900 to 700
+
 ## [0.0.4] - 2018-01-18
 ### Added
 - Media component. (Still needs the new measurement component)

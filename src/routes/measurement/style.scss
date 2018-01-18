@@ -14,7 +14,7 @@ p {margin: 0;}
 }
 
 .row {
-  background: var(--main-bg-color);
+  background: var(--main-light-color);
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -24,7 +24,7 @@ p {margin: 0;}
 }
 
 .row:nth-of-type(even) {
-  background: var(--main-light-color);
+  background: var(--main-bg-color);
 }
 
 .value {
@@ -32,10 +32,4 @@ p {margin: 0;}
   font-weight: 300;
   font-size: 15px;
   width: 50%;
-}
-
-label {
-  color: var(--main-color);
-  font-weight: 900;
-  font-size: 16px;
 }

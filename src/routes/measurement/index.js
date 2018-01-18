@@ -1,10 +1,13 @@
 import { Component } from 'preact';
 import { PropTypes } from 'preact-compat';
+
+import base from '../../base';
+
 import Header from '../../components/header';
 import MeasurementRow from '../../components/measurementRow';
 import style from './style';
-import base from '../../base';
 
+// TODO move measurement sync etc from here to App.
 export default class Measurement extends Component {
   constructor(props) {
     super(props);
@@ -33,18 +36,10 @@ export default class Measurement extends Component {
         {measurement.longitude && (
           <MeasurementRow label="Longitude" value={measurement.longitude} />
         )}
-        {measurement.latitude && (
-          <MeasurementRow label="Latitude" value={measurement.latitude} />
-        )}
-        {measurement.date && (
-          <MeasurementRow label="Date" value={measurement.date} />
-        )}
-        {measurement.acidity && (
-          <MeasurementRow label="Acidity" value={measurement.acidity} />
-        )}
-        {measurement.salinity && (
-          <MeasurementRow label="Salinity" value={measurement.salinity} />
-        )}
+        {measurement.latitude && <MeasurementRow label="Latitude" value={measurement.latitude} />}
+        {measurement.date && <MeasurementRow label="Date" value={measurement.date} />}
+        {measurement.acidity && <MeasurementRow label="Acidity" value={measurement.acidity} />}
+        {measurement.salinity && <MeasurementRow label="Salinity" value={measurement.salinity} />}
         {measurement.tempature && (
           <MeasurementRow label="Tempature" value={measurement.tempature} />
         )}

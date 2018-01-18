@@ -1,14 +1,14 @@
 .imgWrap {
   display: inline-block;
-  width: calc(50vw - 17px);
   height: calc(50vw - 17px);
   position: relative;
+  width: calc(50vw - 17px);
 
   img {
+    height: 100%;
     object-fit: cover;
     object-position: center;
     width: 100%;
-    height: 100%;
   }
 }
 
@@ -22,44 +22,50 @@
 }
 
 .mediaWrap {
-  padding: 0;
   display: flex;
   justify-content: space-between;
+  padding: 0;
 }
 
 .label {
-  color: #555;
+  color: var(--main-color);
   font-size: 16px;
-  font-weight: 900;
+  font-weight: 700;
 }
 
-.row{
-  background: #e7e7e7;
+.labelMedia {
+  padding: 10px;
+}
+
+.row {
+  background: var(--main-light-color);
   display: flex;
   flex: 1;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
   padding: 10px;
-}
-.row:nth-of-type(even){
-  background: #fafafa;
-}
-
-.value{
-  font-weight: 300;
-  font-size: 15px;
-  width: 50%;
-  color:#333;
-}
-
-.valueEdited{
-  font-weight: 300;
-  font-size: 15px;
   width: 100%;
-  color:#333;
+}
+
+.row:nth-of-type(even) {
+  background: var(--main-bg-color);
+}
+
+.value {
+  color: var(--main-color);
+  font-size: 15px;
+  font-weight: 400;
+  width: 50%;
+}
+
+.valueEdited {
+  color: var(--main-color);
+  font-size: 15px;
+  font-weight: 400;
+  width: 100%;
 }
 
 .rowDesc {
-  flex-wrap: wrap;
+  background: var(--main-bg-color);
+  flex-direction: column;
 }

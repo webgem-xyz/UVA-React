@@ -2,6 +2,8 @@ import { Component } from 'preact';
 import { PropTypes } from 'preact-compat';
 
 import Header from '../../components/header/index';
+import MeasurementRow from '../../components/measurementRow/';
+
 import style from './style';
 
 export default class Media extends Component {
@@ -40,36 +42,18 @@ export default class Media extends Component {
         <div class={style.dataWrap}>
           {/* TODO ADD MEASUREMENTS COMPONENT DATA, Awaiting new version of measurements from COEN */}
           {measurement.longitude && (
-            <div class={style.row}>
-              <p class={style.label}>Longitude</p>
-              <p class={style.value}>{measurement.longitude}</p>
-            </div>
+            <MeasurementRow label="Longitude" value={measurement.longitude} />
           )}
-          {measurement.latitude && (
-            <div class={style.row}>
-              <p class={style.label}>Latitude</p>
-              <p class={style.value}>{measurement.latitude}</p>
-            </div>
-          )}
-          {measurement.date && (
-            <div class={style.row}>
-              <p class={style.label}>Date</p>
-              <p class={style.value}>{measurement.date}</p>
-            </div>
-          )}
-          {measurement.category && (
-            <div class={style.row}>
-              <p class={style.label}>Category</p>
-              <p class={style.value}>{measurement.category}</p>
-            </div>
-          )}
+          {measurement.latitude && <MeasurementRow label="Latitude" value={measurement.latitude} />}
+          {measurement.date && <MeasurementRow label="Date" value={measurement.date} />}
+          {measurement.category && <MeasurementRow label="Category" value={measurement.category} />}
           {measurement.desc && (
             <div className={`${style.row} ${style.rowDesc}`}>
               <p class={style.label}>Description</p>
               <p class={style.valueEditet}>{measurement.desc}</p>
             </div>
           )}
-          <p class={style.label}>Media</p>
+          <p className={`${style.label} ${style.labelMedia}`}>Media</p>
           <div class={style.mediaWrap}>{this.renderImagesUI()}</div>
         </div>
       </div>
