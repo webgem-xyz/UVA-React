@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.0.3] - 2018-01-18
+### Fixed
+- Spelling mistake in README (line 7)
+- Spelling mistake in InputGroup Component (Proptypes.sring > PropTypes.string - line 44)
+
 ## [0.0.3] - 2018-01-17
 ### Added
 - Login Component.

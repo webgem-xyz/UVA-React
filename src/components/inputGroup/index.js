@@ -41,7 +41,7 @@ InputGroup.propTypes = {
   fullWidth: PropTypes.bool,
   placeholder: PropTypes.string.isRequired,
   type: PropTypes.string,
-  autoComplete: PropTypes.sring,
+  autoComplete: PropTypes.string,
 };
 
 InputGroup.defaultProps = {

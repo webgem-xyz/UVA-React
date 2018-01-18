@@ -4,7 +4,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/1d0d80ff5c2acd17b3d1/test_coverage)](https://codeclimate.com/github/webgem-xyz/UVA-React/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/1d0d80ff5c2acd17b3d1/maintainability)](https://codeclimate.com/github/webgem-xyz/UVA-React/maintainability)
 
-The UVA is made as a colleberation between students of Mediacollege Amsterdam and the University of Amsterdam. The goal of the project was to create a App to collect marine data.
+The UVA is made as a collaboration between students of Mediacollege Amsterdam and the University of Amsterdam. The goal of the project was to create a App to collect marine data.
 
 ## Target devices
 Our target devices are all recent mobile devices. The devices will not always have a internet connection so the app is required to work offline. Data must be visible offline and when you are offline you should be able to submit data.
@@ -39,6 +39,12 @@ To create a production build run
 Copyright (c) 2018 Webgem ALL RIGHTS RESERVED
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## Team
+<img src="https://avatars0.githubusercontent.com/u/19853448?s=296&v=4" width="150" height="150" alt="Yannick1691" /> | <img src="https://avatars1.githubusercontent.com/u/25220164?s=296&v=4" width="150" height="150" alt="ThijsvanRijn" /> | <img src="https://avatars1.githubusercontent.com/u/15909945?s=296&v=4" width="150" height="150" alt="Coen" />
+--- | --- | ---
+[Yannick Frisart](https://github.com/yannick1691) | [Thijs van Rijn](https://github.com/ThijsvanRijn) | [Coen Filipsen](https://github.com/Coen)
+
 
 # Table of Contents
 * [Account Component](#account-component)
