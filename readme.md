@@ -416,7 +416,7 @@ The ProgressBar Component accepts the following attributes
 
 Attribute | Type | Usage
 --- | --- | ---
-progress | number | How mutch % is uploaded.
+progress | number | How much % is uploaded.
 
 ## RemoveButton Component
 ### Usage
