@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.0.7] - 2018-01-18
+### Added
+- Map to measurement page.
+- Remove button to view measurement.
+
+### Fixed
+- A quickfix for #46 and #47 (Still needs proper fixing!) ❗
+- Fixed items being in the wrong order in the Overview Component [#41](https://github.com/webgem-xyz/UVA-React/issues/41)
+
+
 ## [0.0.6] - 2018-01-18
 ### Added
 - MeasurementRow Component to README [#44](https://github.com/webgem-xyz/UVA-React/issues/44)

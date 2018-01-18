@@ -1,6 +1,8 @@
 import { Component } from 'preact';
 import { PropTypes } from 'preact-compat';
 
+import base from '../../base';
+
 import Header from '../../components/header/index';
 import MeasurementRow from '../../components/measurementRow/';
 
@@ -17,11 +19,24 @@ export default class Media extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      measurement: nextProps.measurements[this.props.mediaId],
+  // QuickFix for issue #47 & #46 ❌
+  componentWillMount(nextProps) {
+    this.ref = base.bindToState(`/${this.props.uid}/mes/${this.props.mediaId}`, {
+      context: this,
+      state: 'measurement',
     });
   }
+
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
+  }
+
+  // Proper way due to issue #47 and #46 this doesn't work properly at this time. https://github.com/webgem-xyz/UVA-React/issues/47 & https://github.com/webgem-xyz/UVA-React/issues/46
+  // componentWillReceiveProps(nextProps) {
+  //   this.setState({
+  //     measurement: nextProps.measurements[this.props.measurementId],
+  //   });
+  // }
 
   renderImagesUI() {
     const images = [];
@@ -61,6 +76,6 @@ export default class Media extends Component {
 }
 
 Media.propTypes = {
-  measurements: PropTypes.object.isRequired,
+  uid: PropTypes.string.isRequired,
   mediaId: PropTypes.string.isRequired,
 };

@@ -10,6 +10,8 @@ import {
   CartesianGrid,
 } from 'recharts';
 
+import base from '../../base';
+
 // Import Components
 import Header from '../../components/header/index';
 
@@ -37,22 +39,49 @@ export default class Account extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.handleFilter('01', '0', 'Jan', nextProps.measurements);
-    this.handleFilter('02', '1', 'Feb', nextProps.measurements);
-    this.handleFilter('03', '2', 'Mar', nextProps.measurements);
-    this.handleFilter('04', '3', 'Apr', nextProps.measurements);
-    this.handleFilter('05', '4', 'May', nextProps.measurements);
-    this.handleFilter('06', '5', 'Jun', nextProps.measurements);
-    this.handleFilter('07', '6', 'Jul', nextProps.measurements);
-    this.handleFilter('08', '7', 'Aug', nextProps.measurements);
-    this.handleFilter('09', '8', 'Sep', nextProps.measurements);
-    this.handleFilter('10', '9', 'Oct', nextProps.measurements);
-    this.handleFilter('11', '10', 'Nov', nextProps.measurements);
-    this.handleFilter('12', '11', 'Dec', nextProps.measurements);
+  // QuickFix for issue #47 & #46 ❌
+  componentWillMount() {
+    this.ref = base.syncState(`/${this.props.uid}/mes/`, {
+      context: this,
+      state: 'measurements',
+      then() {
+        this.handleFilter('01', '0', 'Jan', this.state.measurements, false);
+        this.handleFilter('02', '1', 'Feb', this.state.measurements, false);
+        this.handleFilter('03', '2', 'Mar', this.state.measurements, false);
+        this.handleFilter('04', '3', 'Apr', this.state.measurements, false);
+        this.handleFilter('05', '4', 'May', this.state.measurements, false);
+        this.handleFilter('06', '5', 'Jun', this.state.measurements, false);
+        this.handleFilter('07', '6', 'Jul', this.state.measurements, false);
+        this.handleFilter('08', '7', 'Aug', this.state.measurements, false);
+        this.handleFilter('09', '8', 'Sep', this.state.measurements, false);
+        this.handleFilter('10', '9', 'Oct', this.state.measurements, false);
+        this.handleFilter('11', '10', 'Nov', this.state.measurements, false);
+        this.handleFilter('12', '11', 'Dec', this.state.measurements, true);
+      },
+    });
   }
 
-  handleFilter(month, numb, monthName, measurements) {
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
+  }
+
+  // Proper code due to issue #47 https://github.com/webgem-xyz/UVA-React/issues/47 this is currently disabled.
+  // componentWillReceiveProps(nextProps) {
+  //   this.handleFilter('01', '0', 'Jan', nextProps.measurements, false);
+  //   this.handleFilter('02', '1', 'Feb', nextProps.measurements, false);
+  //   this.handleFilter('03', '2', 'Mar', nextProps.measurements, false);
+  //   this.handleFilter('04', '3', 'Apr', nextProps.measurements, false);
+  //   this.handleFilter('05', '4', 'May', nextProps.measurements, false);
+  //   this.handleFilter('06', '5', 'Jun', nextProps.measurements, false);
+  //   this.handleFilter('07', '6', 'Jul', nextProps.measurements, false);
+  //   this.handleFilter('08', '7', 'Aug', nextProps.measurements, false);
+  //   this.handleFilter('09', '8', 'Sep', nextProps.measurements, false);
+  //   this.handleFilter('10', '9', 'Oct', nextProps.measurements, false);
+  //   this.handleFilter('11', '10', 'Nov', nextProps.measurements, false);
+  //   this.handleFilter('12', '11', 'Dec', nextProps.measurements, true);
+  // }
+
+  handleFilter(month, numb, monthName, measurements, ready) {
     const reducedMes = Object.keys(measurements).reduce((r, e) => {
       const splitted = measurements[e].date.split('-');
       if (month.includes(splitted[1])) r[e] = measurements[e];
@@ -69,12 +98,11 @@ export default class Account extends Component {
     this.setState({
       // [monthName]: contr,
       Data,
-      isReady: true,
     });
-    this.newData();
+    this.newData(ready);
   }
 
-  newData() {
+  newData(ready) {
     const curData = this.state.Data;
     if (this.state.curMonth + 6 > 12) {
       const newMonth = this.state.curMonth + 6 - 12;
@@ -82,11 +110,13 @@ export default class Account extends Component {
       const reducedData = curData.slice(minMonth, 12);
       this.setState({
         reducedData,
+        isReady: ready,
       });
     } else {
       const reducedData = curData.slice(this.state.curMonth, this.state.curMonth + 6);
       this.setState({
         reducedData,
+        isReady: ready,
       });
     }
   }
@@ -143,7 +173,8 @@ export default class Account extends Component {
 }
 
 Account.propTypes = {
-  measurements: PropTypes.object.isRequired,
+  // measurements: PropTypes.object.isRequired,
+  uid: PropTypes.string.isRequired,
   email: PropTypes.object.isRequired,
   logout: PropTypes.func.isRequired,
 };
