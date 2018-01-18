@@ -1,0 +1,25 @@
+.row{
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background: #fafafa;
+  padding: 10px;
+}
+.row:nth-of-type(even){
+  background: #e7e7e7;
+}
+
+.value{
+  font-weight: 300;
+  font-size: 15px;
+  width: 50%;
+  color:#333;
+}
+label{
+  font-weight: 900;
+  font-size: 16px;
+  color: #555;
+}
+p{margin: 0;}
