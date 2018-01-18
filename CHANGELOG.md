@@ -4,9 +4,16 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ## [0.0.6] - 2018-01-18
-## Fixed
+### Added
+- MeasurementRow Component to README [#44](https://github.com/webgem-xyz/UVA-React/issues/44)
+
+### Fixed
 - Spelling mistakes in ISSUE_TEMPLATE.md
 - Moved syncState out of Measurement Component in to Home.js [#31](https://github.com/webgem-xyz/UVA-React/issues/31)
+
+### Changed
+- readme.md to README.md (The standard).
+- Updated Media Component in README to show the proper props it accepts.
 
 ## [0.0.5] - 2018-01-18
 ### Changed

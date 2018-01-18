@@ -58,6 +58,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * [Item Component](#item-component)
 * [Login Component](#login-component)
 * [Measurement Component](#measurement-component)
+* [MeasurementRow Component](#measurement-component)
 * [Media Component](#media-component)
 * [Overview Component](#overview-component)
 * [ProgressBar Component](#progressbar-component)
@@ -337,24 +338,53 @@ Attribute | Type | Usage
 Signin | function | The function that handles the login.
 
 ## Measurement Component
-The Measurement component consists of the following
-* Information from the Measurements
-* A Delete button
-* Map focused at the coordinates from the measurements.
-
 ### Usage
 The Measurement component consists of the following
-* Header 
-  * Back Arrow 
+* Header
+  * Back Arrow
   * View Measurement
+* Map focused at the coordinates from the measurements.
 * List of data (label - value)
-  * Longitude 
+  * Longitude
   * Latitude
   * Date
   * Acidity (pH)
   * Salinity (PSU)
   * Tempature
+* A button to delete the measurements
 
+### Location
+The Measurement Component is located at
+```
+  src/routes/measurement/
+```
+### Attributes
+The Measurements Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+measurementId | string | Used to get the measurement that was selected.
+measurements | object | Object of al the meaurements, reduced to the measurement the user is currently being viewed.
+
+## MeasurementRow Component
+### Usage
+The MeasurementRow Component consists of the following
+* Wrapper row
+  * Label
+  * Value
+
+### Location
+The MeasurementRow Component is located at
+```
+  src/components/measurementRow/
+```
+### Attributes
+The MeasurementsRow Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+label | string | What should the label be of the data.
+value | string | The value of the measurementRow.
 
 ## Media Component
 ### Usage
@@ -381,8 +411,8 @@ The Media Component accepts the following attributes
 
 Attribute | Type | Usage
 --- | --- | ---
-Uid | string | Used to get the media of the user.
 mediaId | string | Used to get the media that was selected.
+measurements | object | Passes down all measurements, Media Component reduces the data to what the user is trying to view.
 
 
 ## Overview Component
