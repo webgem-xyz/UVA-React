@@ -8,9 +8,6 @@ import Item from '../../components/item';
 import AddButton from '../../components/addButton/index';
 import FilterButton from '../../components/filterButton/index';
 
-// Import firebase
-import base from '../../base';
-
 // Import image
 import addIcon from '../../assets/white/measurements.svg';
 import mediaIconWhite from '../../assets/white/media.svg';
@@ -22,35 +19,22 @@ export default class Overview extends Component {
     this.handleFilter = this.handleFilter.bind(this);
 
     this.state = {
-      measurements: {},
-      filteredMeasurements: {},
+      filteredMeasurements: props.measurements,
     };
   }
 
-  componentWillMount(nextProps) {
-    this.ref = base.syncState(`/${this.props.uid}/mes/`, {
-      context: this,
-      state: 'measurements',
-      then() {
-        this.setState({
-          filteredMeasurements: this.state.measurements,
-        });
-      },
-    });
-  }
-
-  componentWillUnmount() {
-    base.removeBinding(this.ref);
+  componentWillReceiveProps(nextProps) {
+    this.setState({ filteredMeasurements: nextProps.measurements });
   }
 
   handleFilter(filter) {
     if (filter === 'all') {
       this.setState({
-        filteredMeasurements: this.state.measurements,
+        filteredMeasurements: this.props.measurements,
       });
     } else {
-      const filteredMes = Object.keys(this.state.measurements).reduce((r, e) => {
-        if (filter.includes(this.state.measurements[e].type)) r[e] = this.state.measurements[e];
+      const filteredMes = Object.keys(this.props.measurements).reduce((r, e) => {
+        if (filter.includes(this.props.measurements[e].type)) r[e] = this.props.measurements[e];
         return r;
       }, {});
       this.setState({
@@ -67,8 +51,18 @@ export default class Overview extends Component {
           <div class={style.add}>
             <h2 class={style.oh2}>add data +</h2>
             <div class={style.addButtons}>
-              <AddButton to="/add" icon={addIcon} alt="Add measurement icon." text="Add Measurement" />
-              <AddButton to="/addMedia" icon={mediaIconWhite} alt="Add media icon." text="Add Media" />
+              <AddButton
+                to="/add"
+                icon={addIcon}
+                alt="Add measurement icon."
+                text="Add Measurement"
+              />
+              <AddButton
+                to="/addMedia"
+                icon={mediaIconWhite}
+                alt="Add media icon."
+                text="Add Media"
+              />
             </div>
           </div>
           <div>
@@ -89,7 +83,7 @@ export default class Overview extends Component {
               {
                 Object
                   .keys(this.state.filteredMeasurements)
-                  .map((key) => <Item key={key} index={key} details={this.state.measurements[key]} />)
+                  .map((key) => <Item key={key} index={key} details={this.props.measurements[key]} />)
               }
             </div>
           </div>
@@ -100,5 +94,6 @@ export default class Overview extends Component {
 }
 
 Overview.propTypes = {
-  uid: PropTypes.string.isRequired,
+  measurements: PropTypes.object.isRequired,
+  type: PropTypes.string.isRequired,
 };

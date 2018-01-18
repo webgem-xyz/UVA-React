@@ -1,0 +1,16 @@
+.progress {
+  background: var(--main-light-color);
+  display: block;
+  height: 2px;
+  margin: -11px 0 11px;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+.progressBar {
+  background: rgba(10.6%, 81.2%, 54.1%, .596);
+  display: inline-block;
+  height: 100%;
+  min-width: 4%;
+}

@@ -15,15 +15,18 @@ export default class InputGroup extends Component {
 
   render() {
     return (
-      <div class={style.inputGroup}>
+      <div
+        className={`${style.inputGroup} ${this.props.fullWidth ? style.fullWidth : style.hidden}`}
+      >
         <label for={this.props.kind}>{this.props.label}</label>
         <input
-          onChange={(e) => this.handleChange(e, this.props.kind)}
-          type="text"
-          placeholder="getting location.."
+          onChange={e => this.handleChange(e, this.props.kind)}
+          type={this.props.type}
+          placeholder={this.props.placeholder}
           value={this.props.value}
           id={this.props.kind}
           class={style.inputField}
+          autocomplete={this.props.autoComplete}
         />
       </div>
     );
@@ -35,4 +38,14 @@ InputGroup.propTypes = {
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   handleState: PropTypes.func.isRequired,
+  fullWidth: PropTypes.bool,
+  placeholder: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  autoComplete: PropTypes.string,
+};
+
+InputGroup.defaultProps = {
+  fullWidth: false,
+  type: 'text',
+  autoComplete: 'off',
 };

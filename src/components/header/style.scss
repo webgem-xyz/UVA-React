@@ -7,44 +7,45 @@
   position: relative;
   right: 0;
   width: 100%;
-}
 
-.header .nav {
-  align-items: center;
-  display: flex;
-  height: 70px;
-  position: relative;
-  width: 100%;
-}
+  .nav {
+    align-items: center;
+    display: flex;
+    height: 70px;
+    position: relative;
+    width: 100%;
 
-.header .nav .backArrow {
-  align-items: center;
-  display: flex;
-  height: 50px;
-  justify-content: center;
-  left: 5px;
-  position: absolute;
-  top: 10px;
-  width: 50px;
-}
-.header .nav .account {
-  align-items: center;
-  display: flex;
-  height: 50px;
-  justify-content: center;
-  position: absolute;
-  right: 5px;
-  top: 10px;
-  width: 50px;
-}
+    h1 {
+      align-items: center;
+      display: flex;
+      height: 50px;
+      justify-content: center;
+      margin: 0;
+      text-align: center;
+      text-transform: uppercase;
+      width: 100%;
+    }
 
-.header .nav h1 {
-  align-items: center;
-  display: flex;
-  height: 50px;
-  justify-content: center;
-  margin: 0;
-  text-align: center;
-  text-transform: uppercase;
-  width: 100%;
+    .backArrow {
+      align-items: center;
+      display: flex;
+      height: 50px;
+      justify-content: center;
+      left: 5px;
+      position: absolute;
+      top: 10px;
+      width: 50px;
+    }
+
+    .account {
+      align-items: center;
+      display: flex;
+      height: 50px;
+      justify-content: center;
+      position: absolute;
+      right: 5px;
+      top: 10px;
+      width: 50px;
+    }
+  }
 }
