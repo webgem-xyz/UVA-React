@@ -40,7 +40,6 @@ export default class Media extends Component {
       <div class={style.media}>
         <Header title="view media" to="/" />
         <div class={style.dataWrap}>
-          {/* TODO ADD MEASUREMENTS COMPONENT DATA, Awaiting new version of measurements from COEN */}
           {measurement.longitude && (
             <MeasurementRow label="Longitude" value={measurement.longitude} />
           )}

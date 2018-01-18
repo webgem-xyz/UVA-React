@@ -1,13 +1,10 @@
 import { Component } from 'preact';
 import { PropTypes } from 'preact-compat';
 
-import base from '../../base';
-
 import Header from '../../components/header';
 import MeasurementRow from '../../components/measurementRow';
 import style from './style';
 
-// TODO move measurement sync etc from here to App.
 export default class Measurement extends Component {
   constructor(props) {
     super(props);
@@ -17,15 +14,10 @@ export default class Measurement extends Component {
     };
   }
 
-  componentWillMount(nextProps) {
-    this.ref = base.bindToState(`/${this.props.uid}/mes/${this.props.measurementId}`, {
-      context: this,
-      state: 'measurement',
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      measurement: nextProps.measurements[this.props.measurementId],
     });
-  }
-
-  componentWillUnmount() {
-    base.removeBinding(this.ref);
   }
 
   render() {
@@ -49,6 +41,6 @@ export default class Measurement extends Component {
 }
 
 Measurement.propTypes = {
-  uid: PropTypes.string.isRequired,
+  measurements: PropTypes.object.isRequired,
   measurementId: PropTypes.string.isRequired,
 };

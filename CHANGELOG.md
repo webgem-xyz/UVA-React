@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.0.6] - 2018-01-18
+## Fixed
+- Spelling mistakes in ISSUE_TEMPLATE.md
+
 ## [0.0.5] - 2018-01-18
 ### Changed
 - Made code more DRY
