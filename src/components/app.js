@@ -60,7 +60,7 @@ export default class App extends Component {
           <Home path="/mes/:measurementId" uid={this.state.uid} />
           <Home path="/add" uid={this.state.uid} />
           <Home path="/addMedia" uid={this.state.uid} />
-          <Home path="/media/:mediaId" uid={this.state.uid} />
+          <Home path="/med/:mediaId" uid={this.state.uid} />
           <Home
             path="/account"
             uid={this.state.uid}

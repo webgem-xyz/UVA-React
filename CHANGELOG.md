@@ -3,6 +3,43 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.0.7] - 2018-01-18
+### Added
+- Map to measurement page.
+- Remove button to view measurement.
+
+### Fixed
+- A quickfix for #46 and #47 (Still needs proper fixing!) ❗
+- Fixed items being in the wrong order in the Overview Component [#41](https://github.com/webgem-xyz/UVA-React/issues/41)
+
+
+## [0.0.6] - 2018-01-18
+### Added
+- MeasurementRow Component to README [#44](https://github.com/webgem-xyz/UVA-React/issues/44)
+
+### Fixed
+- Spelling mistakes in ISSUE_TEMPLATE.md
+- Moved syncState out of Measurement Component in to Home.js [#31](https://github.com/webgem-xyz/UVA-React/issues/31)
+
+### Changed
+- readme.md to README.md (The standard).
+- Updated Media Component in README to show the proper props it accepts.
+
+## [0.0.5] - 2018-01-18
+### Changed
+- Made code more DRY
+- Updated Media to use MeasurementRow Component
+- Changed color values to the global variable
+- Fixed font-weight 900 to 700
+
+## [0.0.4] - 2018-01-18
+### Added
+- Media component. (Still needs the new measurement component)
+
+### Changed
+- Item component now uses measurement type to determine if it should send it to /mes/:measurementId or /med/:mediaId
+- Router path changed from "/media/:mediaId" to "/med/:mediaId"
+
 ## [0.0.3] - 2018-01-18
 ### Fixed
 - Spelling mistake in README (line 7)

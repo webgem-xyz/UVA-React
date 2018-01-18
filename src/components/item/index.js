@@ -28,7 +28,7 @@ export default class Item extends Component {
   render() {
     const details = this.props.details;
     return (
-      <Link href={`/mes/${this.props.index}`} class={style.link}>
+      <Link href={`/${details.type}/${this.props.index}`} class={style.link}>
         <div class={style.itemLinkWrap}>
           <img src={defineImgSrc(details)} alt={defineImgAlt(details)} height="20" class={style.icon} />
           <p class={style.date}>{details.date}</p>

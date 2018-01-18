@@ -80,11 +80,9 @@ export default class Overview extends Component {
               <p>Uploaded</p>
             </div>
             <div>
-              {
-                Object
-                  .keys(this.state.filteredMeasurements)
-                  .map((key) => <Item key={key} index={key} details={this.props.measurements[key]} />)
-              }
+              {Object.keys(this.state.filteredMeasurements)
+                .reverse()
+                .map(key => <Item key={key} index={key} details={this.props.measurements[key]} />)}
             </div>
           </div>
         </div>

@@ -185,10 +185,10 @@ export default class AddMedia extends Component {
                 <option selected disabled>
                   Select category
                 </option>
-                <option value="SOTW">State of the water</option>
-                <option value="SA">Sea Animals</option>
-                <option value="Co">Coral</option>
-                <option value="SB">Sea Bedding</option>
+                <option value="State of the water">State of the water</option>
+                <option value="Sea Animals">Sea Animals</option>
+                <option value="Coral">Coral</option>
+                <option value="Sea Bedding">Sea Bedding</option>
               </select>
             </div>
             <InputGroup

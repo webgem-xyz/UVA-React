@@ -1,4 +1,4 @@
-import { Component } from 'preact';
+import { Component, h } from 'preact';
 import { PropTypes } from 'preact-compat';
 import { Router, route } from 'preact-router';
 import moment from 'moment';
@@ -19,6 +19,7 @@ export default class Home extends Component {
     super(props);
 
     this.addMeasurement = this.addMeasurement.bind(this);
+    this.removeMeasurement = this.removeMeasurement.bind(this);
 
     this.state = {
       measurements: {},
@@ -50,6 +51,14 @@ export default class Home extends Component {
     route('/');
   }
 
+  removeMeasurement = (e, key) => {
+    e.preventDefault();
+    const measurements = { ...this.state.measurements };
+    measurements[key] = null;
+    this.setState({ measurements });
+    route('/');
+  };
+
   handleRoute = e => {
     this.currentUrl = e.url;
   };
@@ -62,6 +71,7 @@ export default class Home extends Component {
           path="/mes/:measurementId"
           uid={this.props.uid}
           measurements={this.state.measurements}
+          removeMeasurement={this.removeMeasurement}
         />
         <Add
           path="/add"
@@ -74,7 +84,7 @@ export default class Home extends Component {
           measurements={this.state.measurements}
           addMeasurement={this.addMeasurement}
         />
-        <Media path="/media/:mediaId" uid={this.props.uid} />
+        <Media path="/med/:mediaId" uid={this.props.uid} measurements={this.state.measurements} />
         <Account
           path="/account"
           uid={this.props.uid}
