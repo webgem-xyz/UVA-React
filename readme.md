@@ -71,7 +71,7 @@ The Account component consists of the following
   * Back arrow
   * Account
 * Graph of the ammount of contributions
-  * Ammount of contributions is based on a montly basis.
+  * Ammount of contributions is based on a monthly basis.
 * Account info
   * Username
   * Logged in since
