@@ -19,11 +19,19 @@ export default class App extends Component {
     this.authenticate = this.authenticate.bind(this);
 
     this.state = {
-      uid: 'hl8tgg53mkQIUmIh6D8SUsReTGD2',
-      email: 'user@uva.nl',
-      // email: null,
-      // uid: null,
+      // uid: 'hl8tgg53mkQIUmIh6D8SUsReTGD2',
+      // email: 'user@uva.nl',
+      email: null,
+      uid: null,
     };
+  }
+
+  componentDidMount() {
+    firebase.auth(fireApp).onAuthStateChanged((user) => {
+      if (user) {
+        this.authHandler(null, { user });
+      }
+    });
   }
 
   logout(e) {
@@ -43,6 +51,19 @@ export default class App extends Component {
           email: user.user.email,
         });
       });
+  }
+
+  authHandler(err, authData) {
+    console.log(authData);
+    if (err) {
+      console.error(err);
+      return;
+    }
+
+    this.setState({
+      uid: authData.user.uid,
+      email: authData.user.email,
+    });
   }
 
   handleRoute = e => {
