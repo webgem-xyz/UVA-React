@@ -1,0 +1,16 @@
+.location {
+  border: 1px solid var(--main-color);
+  padding: 10px;
+}
+
+.map {
+  border: 1px solid var(--main-color);
+  margin-bottom: 5px;
+}
+
+.label {
+  color: var(--main-color);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 5px;
+}

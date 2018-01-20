@@ -1,8 +1,9 @@
 .imgWrap {
+  border: 1px solid var(--main-color);
   display: inline-block;
-  height: calc(50vw - 17px);
+  height: calc(50vw - 30px);
   position: relative;
-  width: calc(50vw - 17px);
+  width: calc(50vw - 30px);
 
   img {
     height: 100%;
@@ -33,39 +34,12 @@
   font-weight: 700;
 }
 
-.labelMedia {
-  padding: 10px;
-}
-
-.row {
-  background: var(--main-light-color);
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10px;
-  width: 100%;
-}
-
-.row:nth-of-type(even) {
-  background: var(--main-bg-color);
-}
-
-.value {
-  color: var(--main-color);
-  font-size: 15px;
-  font-weight: 400;
-  width: 50%;
-}
-
-.valueEdited {
-  color: var(--main-color);
-  font-size: 15px;
-  font-weight: 400;
-  width: 100%;
-}
-
 .rowDesc {
   background: var(--main-bg-color);
   flex-direction: column;
+}
+
+.mediaRow {
+  border: 1px solid var(--main-color);
+  padding: 10px;
 }

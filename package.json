@@ -1,6 +1,6 @@
 {
   "name": "uva-preact",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,8 +11,8 @@
     "dev": "preact watch"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Yannick Frisart",
+  "license": "AGPL-3.0",
   "eslintConfig": {
     "extends": "eslint-config-synacor"
   },

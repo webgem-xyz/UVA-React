@@ -24,15 +24,26 @@ function defineImgAlt(details) {
   }
 }
 
+function getNumber(mx) {
+  return Math.floor(Math.random() * Math.floor(mx));
+}
+
 export default class Item extends Component {
   render() {
     const details = this.props.details;
     return (
       <Link href={`/${details.type}/${this.props.index}`} class={style.link}>
         <div class={style.itemLinkWrap}>
-          <img src={defineImgSrc(details)} alt={defineImgAlt(details)} height="20" class={style.icon} />
+          <img
+            src={defineImgSrc(details)}
+            alt={defineImgAlt(details)}
+            height="20"
+            class={style.icon}
+          />
           <p class={style.date}>{details.date}</p>
-          <i className="material-icons">done</i>
+          <p class={style.edit}>{getNumber(25)} days</p>
+          <p>Received</p>
+          <i className={`material-icons ${style.uploadStat}`}>done</i>
         </div>
       </Link>
     );

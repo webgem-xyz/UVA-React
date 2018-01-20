@@ -24,6 +24,7 @@
 
 .labels p {
   font-weight: 700;
+  margin: 0;
 }
 
 .labels p:nth-child(1) {
@@ -31,7 +32,16 @@
 }
 
 .labels p:nth-child(2) {
-  flex: 1;
+  width: 30%;
+}
+
+.labels p:nth-child(3) {
+  width: 20%;
+}
+
+.labels p:nth-child(4) {
+  width: calc(50% - 55px);
+  text-align: right;
 }
 
 .buttonWrap {
@@ -41,7 +51,7 @@
 .headWrap {
   align-items: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .oh2 {
