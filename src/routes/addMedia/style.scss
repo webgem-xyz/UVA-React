@@ -1,0 +1,126 @@
+.mainInputs {
+  background: var(--main-light-color);
+  border-bottom: 1px solid var(--main-color);
+  padding: 16px;
+}
+
+.uploadButton {
+  align-items: center;
+  background: var(--main-color);
+  border: 0;
+  border-radius: 50%;
+  color: var(--main-bg-color);
+  display: flex;
+  font-size: 50px;
+  font-weight: 400;
+  height: 55px;
+  justify-content: center;
+  left: 50%;
+  margin: 10px 0;
+  outline: 0;
+  padding: 0;
+  position: relative;
+  transform: translateX(-50%);
+  width: 55px;
+
+  i {
+    font-size: 40px;
+  }
+}
+
+.inputRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.inputField {
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  font-size: 15px;
+  margin-top: 5px;
+  padding: 10px 5px;
+}
+
+.inputGroupDate {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+
+  label {
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
+.select {
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  font-size: 15px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding: 10px 5px;
+}
+
+.imageWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.uploadedImage {
+  background: var(--main-color);
+  border: 0;
+  display: inline-block;
+  height: calc(50vw - .5px);
+  outline: 0;
+  position: relative;
+  width: calc(50vw - .5px);
+
+  .remove {
+    align-items: center;
+    background: var(--main-color);
+    border: 0;
+    border-radius: 50%;
+    color: var(--main-bg-color);
+    display: flex;
+    font-size: 30px;
+    height: 40px;
+    justify-content: center;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 40px;
+
+    .icon {
+      color: var(--main-bg-color);
+    }
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
+}
+
+.submit {
+  background: var(--main-color);
+  border: 0;
+  border-radius: 0;
+  color: var(--main-bg-color);
+  font-size: 16px;
+  font-weight: 700;
+  left: 50%;
+  margin-bottom: 16px;
+  margin-top: 10px;
+  outline: 0;
+  padding: 20px;
+  position: relative;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}

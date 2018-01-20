@@ -1,0 +1,30 @@
+.itemLinkWrap {
+  align-items: center;
+  background-color: var(--main-bg-color);
+  border: .5px solid var(--main-color);
+  display: flex;
+  height: 50px;
+  margin: 2.5px 0;
+  padding: 5px;
+  position: relative;
+}
+
+.icon {
+  display: inline-block;
+  padding: 0 20px 0 10px;
+}
+
+.date {
+  display: inline-block;
+  flex: 1;
+}
+
+.uploaded {
+  display: inline-block;
+  width: 20px;
+}
+
+.link {
+  color: var(--main-color);
+  text-decoration: none;
+}
