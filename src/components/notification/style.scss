@@ -1,0 +1,16 @@
+.notificationWrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--main-color);
+  justify-content: space-around;
+  margin: 5px 0;
+
+  p {
+    display: inline-block;
+    font-weight: 700;
+  }
+
+  p:nth-child(2) {
+    font-weight: 400;
+  }
+}
