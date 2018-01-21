@@ -25,10 +25,8 @@ export default class Header extends Component {
 Header.propTypes = {
   to: PropTypes.string,
   title: PropTypes.string.isRequired,
-  backCol: PropTypes.string,
 };
 
 Header.defaultProps = {
   to: null,
-  backCol: '#fafafa',
 };

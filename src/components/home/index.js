@@ -1,4 +1,4 @@
-import { Component, h } from 'preact';
+import { Component } from 'preact';
 import { PropTypes } from 'preact-compat';
 import { Router, route } from 'preact-router';
 import moment from 'moment';
@@ -116,4 +116,5 @@ Home.propTypes = {
   uid: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   logout: PropTypes.func.isRequired,
+  login: PropTypes.string.isRequired,
 };

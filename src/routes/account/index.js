@@ -17,7 +17,6 @@ import Header from '../../components/header/index';
 
 // Import css
 import style from './style';
-import Footer from '../../components/footer/index';
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max) + Math.floor(Math.random() * 2.5));
@@ -190,4 +189,5 @@ Account.propTypes = {
   uid: PropTypes.string.isRequired,
   email: PropTypes.object.isRequired,
   logout: PropTypes.func.isRequired,
+  login: PropTypes.string.isRequired,
 };

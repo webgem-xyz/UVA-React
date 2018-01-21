@@ -1,4 +1,5 @@
 import { Component } from 'preact';
+import { PropTypes } from 'preact-compat';
 import { route } from 'preact-router';
 
 import base from '../../base';
@@ -6,7 +7,6 @@ import base from '../../base';
 import LocationPopup from '../../components/locationPopup/';
 import Header from '../../components/header';
 import InputGroup from '../../components/inputGroup/index';
-import FormItem from '../../components/formItem/';
 
 import style from './style';
 
@@ -133,3 +133,8 @@ export default class EditMedia extends Component {
     );
   }
 }
+
+EditMedia.propTypes = {
+  uid: PropTypes.string.isRequired,
+  mediaId: PropTypes.string.isRequired,
+};

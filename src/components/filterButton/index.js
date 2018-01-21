@@ -24,4 +24,9 @@ FilterButton.propTypes = {
   filter: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   handleFilter: PropTypes.func.isRequired,
+  active: PropTypes.bool,
+};
+
+FilterButton.defaultProps = {
+  active: false,
 };

@@ -1,4 +1,5 @@
 import { Component } from 'preact';
+import { PropTypes } from 'preact-compat';
 import { Gmaps, Marker } from 'react-gmaps';
 
 import InputGroup from '../inputGroup';
@@ -56,3 +57,16 @@ export default class LocationPopup extends Component {
     );
   }
 }
+
+LocationPopup.propTypes = {
+  open: PropTypes.bool,
+  longitude: PropTypes.string.isRequired,
+  latitude: PropTypes.string.isRequired,
+  handleState: PropTypes.func.isRequired,
+  handleReset: PropTypes.func.isRequired,
+  handleSave: PropTypes.func.isRequired,
+};
+
+LocationPopup.defaultProps = {
+  open: false,
+};

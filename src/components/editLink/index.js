@@ -16,4 +16,5 @@ export default class EditLink extends Component {
 
 EditLink.propTypes = {
   type: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
 };

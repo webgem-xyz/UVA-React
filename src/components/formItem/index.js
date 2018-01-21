@@ -1,7 +1,8 @@
 import { Component } from 'preact';
-import style from './style';
+import { PropTypes } from 'preact-compat';
 
 import RemoveButton from '../../components/removeButton/';
+import style from './style';
 
 export default class FormItem extends Component {
   render() {
@@ -20,3 +21,8 @@ export default class FormItem extends Component {
     );
   }
 }
+
+FormItem.propTypes = {
+  item: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+};

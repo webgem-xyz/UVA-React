@@ -30,7 +30,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    firebase.auth(fireApp).onAuthStateChanged((user) => {
+    firebase.auth(fireApp).onAuthStateChanged(user => {
       if (user) {
         this.authHandler(null, { user });
       }

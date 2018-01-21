@@ -74,5 +74,5 @@ export default class Measurement extends Component {
 Measurement.propTypes = {
   uid: PropTypes.string.isRequired,
   measurementId: PropTypes.string.isRequired,
-  removeMeasurement: PropTypes.func.isRequired,
+  // removeMeasurement: PropTypes.func.isRequired,
 };

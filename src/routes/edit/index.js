@@ -1,4 +1,5 @@
 import { Component } from 'preact';
+import { PropTypes } from 'preact-compat';
 import { route } from 'preact-router';
 
 import base from '../../base';
@@ -107,3 +108,8 @@ export default class Edit extends Component {
     );
   }
 }
+
+Edit.propTypes = {
+  uid: PropTypes.string.isRequired,
+  measurementId: PropTypes.string.isRequired,
+};
