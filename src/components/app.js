@@ -5,6 +5,7 @@ import firebase from 'firebase/app';
 // Import Routes
 import Login from '../routes/login';
 import Home from '../components/home';
+import Notifications from '../routes/notifications';
 
 // Import Firebase Login
 import fireApp from '../base2';
@@ -88,6 +89,7 @@ export default class App extends Component {
             email={this.state.email}
             logout={this.logout}
           />
+          <Notifications path="/notification" />
         </Router>
       </div>
     );
