@@ -1,0 +1,29 @@
+.footer {
+  background: var(--main-bg-color);
+  border-top: 1px solid var(--main-color);
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  left: 0;
+  padding: 5px 10px;
+  position: fixed;
+  width: 100%;
+
+  a {
+    align-items: center;
+    color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    justify-content: center;
+    text-decoration: none;
+
+    i {
+      font-size: 30px;
+    }
+  }
+
+  .active {
+    color: var(--main-blue);
+  }
+}

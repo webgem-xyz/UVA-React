@@ -54,12 +54,18 @@ export default class Login extends Component {
             type="password"
             autoComplete="current-password"
           />
-          <button type="submit" class={style.loginSub}>
-            log in
-          </button>
+          <section class={style.formButtons}>
+            <button type="submit" class={style.loginSub}>
+              log in
+            </button>
+            <Link class={style.forgot} href="/forgot">
+              forgot password?
+            </Link>
+          </section>
         </form>
-        <Link class={style.forgot} href="/forgot">
-          i forgot my password
+        <p class={style.devider}>- or -</p>
+        <Link class={style.createAccount} href="/createAccount">
+          Create an account
         </Link>
       </div>
     );

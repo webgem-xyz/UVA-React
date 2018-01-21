@@ -1,16 +1,38 @@
 import { Component } from 'preact';
-import { Router } from 'preact-router';
+import { Router, route } from 'preact-router';
 import firebase from 'firebase/app';
 
 // Import Routes
 import Login from '../routes/login';
 import Home from '../components/home';
+import Footer from '../components/footer/';
 import Notifications from '../routes/notifications';
+import CreateAccount from '../routes/createAccount';
+import Redirect from './redirect/index';
 
 // Import Firebase Login
 import fireApp from '../base2';
 
 require('firebase/auth');
+
+function createAccount(e, email, password) {
+  e.preventDefault();
+  fireApp
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .catch(error => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      if (errorCode === 'auth/weak-password') {
+        alert('The password is too weak.');
+      } else {
+        alert(errorMessage);
+      }
+    })
+    .then(() => {
+      route('/');
+    });
+}
 
 export default class App extends Component {
   constructor() {
@@ -24,11 +46,12 @@ export default class App extends Component {
       // email: 'user@uva.nl',
       email: null,
       uid: null,
+      login: null,
     };
   }
 
   componentDidMount() {
-    firebase.auth(fireApp).onAuthStateChanged((user) => {
+    firebase.auth(fireApp).onAuthStateChanged(user => {
       if (user) {
         this.authHandler(null, { user });
       }
@@ -50,6 +73,7 @@ export default class App extends Component {
         this.setState({
           uid: user.user.uid,
           email: user.user.email,
+          login: user.user.metadata.lastSignInTime,
         });
       });
   }
@@ -64,6 +88,7 @@ export default class App extends Component {
     this.setState({
       uid: authData.user.uid,
       email: authData.user.email,
+      login: authData.user.metadata.lastSignInTime,
     });
   }
 
@@ -73,7 +98,12 @@ export default class App extends Component {
 
   render() {
     if (this.state.uid === null) {
-      return <Login authenticate={this.authenticate} />;
+      return (
+        <Router>
+          <Login authenticate={this.authenticate} default />
+          <CreateAccount path="/createAccount" createAccount={createAccount} />
+        </Router>
+      );
     }
     return (
       <div id="app">
@@ -82,15 +112,20 @@ export default class App extends Component {
           <Home path="/mes/:measurementId" uid={this.state.uid} />
           <Home path="/add" uid={this.state.uid} />
           <Home path="/addMedia" uid={this.state.uid} />
+          <Home path="/edit/:measurementId" uid={this.state.uid} />
+          <Home path="/editMedia/:mediaId" uid={this.state.uid} />
           <Home path="/med/:mediaId" uid={this.state.uid} />
           <Home
             path="/account"
             uid={this.state.uid}
             email={this.state.email}
             logout={this.logout}
+            login={this.state.login}
           />
-          <Notifications path="/notification" />
+          <Notifications path="/notifications" />
+          <Redirect path="/createAccount" to="/" />
         </Router>
+        <Footer />
       </div>
     );
   }

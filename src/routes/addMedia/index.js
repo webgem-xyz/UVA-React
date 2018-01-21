@@ -10,6 +10,10 @@ import InputGroup from '../../components/inputGroup/index';
 import Header from '../../components/header/index';
 import ProgressBar from '../../components/progress';
 
+import LocationPopup from '../../components/locationPopup/';
+import LinkRequestButton from '../../components/linkRequestButton/index';
+import DateSelect from '../../components/datePicker/index';
+
 export default class AddMedia extends Component {
   constructor() {
     super();
@@ -25,6 +29,8 @@ export default class AddMedia extends Component {
     this.renderImages = this.renderImages.bind(this);
 
     this.handleState = this.handleState.bind(this);
+    this.handleResetLoc = this.handleResetLoc.bind(this);
+    this.handleSave = this.handleSave.bind(this);
 
     const date = new Date();
     const month = date.getMonth() + 1;
@@ -35,6 +41,8 @@ export default class AddMedia extends Component {
       fileUrl: [],
       longitude: '',
       latitude: '',
+      show: 'Current location',
+      open: false,
       date: `${date.getFullYear()}-${month}-${date.getDate()}`,
       desc: null,
       count: 0,
@@ -87,6 +95,28 @@ export default class AddMedia extends Component {
           count: this.state.count + 1,
         });
       });
+  }
+
+  handleResetLoc() {
+    navigator.geolocation.getCurrentPosition(this.geoSuccess, this.geoError, this.state.geoOptions);
+    this.setState({
+      open: false,
+      show: 'Current location',
+    });
+  }
+
+  handleSave() {
+    this.setState({
+      show: `${this.state.longitude}, ${this.state.latitude}`,
+      open: false,
+    });
+  }
+
+  showPopup(e) {
+    e.preventDefault();
+    this.setState({
+      open: true,
+    });
   }
 
   // Getting Users GEO location
@@ -155,29 +185,20 @@ export default class AddMedia extends Component {
         <Header to="/" backCol="#E7E7E7" title="add media" />
         <form onSubmit={e => this.createMeasurement(e)}>
           <div class={style.mainInputs}>
-            <div class={style.inputRow}>
-              <InputGroup
-                value={this.state.longitude}
-                kind="longitude"
-                label="Longitude"
-                placeholder="getting location.."
-                handleState={this.handleState}
-              />
-              <InputGroup
-                value={this.state.latitude}
-                kind="latitude"
-                label="Latitude"
-                placeholder="getting location.."
-                handleState={this.handleState}
-              />
-            </div>
-            <InputGroup
-              value={this.state.date}
-              kind="date"
-              label="Date of measurement"
+            <DateSelect handleState={this.handleState} label="Date of media" />
+            <section class={style.locationEdit}>
+              <label>Location of media</label>
+              <button onClick={e => this.showPopup(e)}>
+                {this.state.show} <i class="material-icons">edit</i>
+              </button>
+            </section>
+            <LocationPopup
+              longitude={this.state.longitude}
+              latitude={this.state.latitude}
               handleState={this.handleState}
-              fullWidth
-              placeholder="YYYY-MM-DD"
+              handleReset={this.handleResetLoc}
+              open={this.state.open}
+              handleSave={this.handleSave}
             />
             <div class={style.inputGroupDate}>
               <label for="category">Category</label>
@@ -199,6 +220,7 @@ export default class AddMedia extends Component {
               fullWidth
               placeholder=""
             />
+            <LinkRequestButton />
           </div>
           {this.state.isUploading && <ProgressBar progress={this.state.progress} />}
           <div class={style.imageWrap}>{this.renderImages()}</div>
@@ -216,6 +238,7 @@ export default class AddMedia extends Component {
               onProgress={this.handleProgress}
             />
           </label>
+          <p class={style.addButtonLabel}>add media</p>
           {this.state.count > 0 && (
             <button class={style.submit} type="submit">
               submit measurement

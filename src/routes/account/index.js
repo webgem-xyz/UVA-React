@@ -124,9 +124,9 @@ export default class Account extends Component {
   render() {
     return (
       <div class={style.account}>
-        <Header to="/" title="account" />
+        <Header title="account" />
         <div class={style.contributions}>
-          <h2>Contribution</h2>
+          <h2 class={style.uploadsH2}>Uploads</h2>
           {this.state.isReady && (
             <ResponsiveContainer width="100%" height={250}>
               <AreaChart data={this.state.reducedData}>
@@ -161,7 +161,19 @@ export default class Account extends Component {
         </div>
         <div class={style.accountSec}>
           <p>
-            <span>Account:</span> {this.props.email}
+            <span>Last connection:</span> {this.props.login}
+          </p>
+          <p>
+            <span>Username:</span> {this.props.email}
+          </p>
+          <p>
+            <span>First name:</span> User
+          </p>
+          <p>
+            <span>Last name:</span> uva
+          </p>
+          <p>
+            <span>Birth date:</span> 20-04-1990
           </p>
           <button onClick={e => this.props.logout(e)} class={style.logout}>
             SIGN OUT
@@ -177,4 +189,5 @@ Account.propTypes = {
   uid: PropTypes.string.isRequired,
   email: PropTypes.object.isRequired,
   logout: PropTypes.func.isRequired,
+  login: PropTypes.string.isRequired,
 };

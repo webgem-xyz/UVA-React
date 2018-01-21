@@ -6,10 +6,12 @@
   label {
     font-size: 16px;
     font-weight: 700;
+    margin-top: 10px;
   }
 }
 
 .inputField {
+  background: var(--main-bg-color);
   border: 1px solid var(--main-color);
   border-radius: 0;
   font-size: 15px;

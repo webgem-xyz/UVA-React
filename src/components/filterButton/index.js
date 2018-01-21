@@ -12,7 +12,7 @@ export default class FilterButton extends Component {
   render() {
     return (
       <button class={style.filterButton} onClick={e => this.runFilter(e, this.props.filter)}>
-        <div class={style.visiblebutton}>
+        <div className={`${style.visiblebutton} ${this.props.active ? style.active : ''}`}>
           <p>{this.props.text}</p>
         </div>
       </button>
@@ -24,4 +24,9 @@ FilterButton.propTypes = {
   filter: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   handleFilter: PropTypes.func.isRequired,
+  active: PropTypes.bool,
+};
+
+FilterButton.defaultProps = {
+  active: false,
 };

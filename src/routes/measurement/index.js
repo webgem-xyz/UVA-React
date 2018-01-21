@@ -1,14 +1,14 @@
 import { Component } from 'preact';
 import { PropTypes } from 'preact-compat';
-import { Gmaps, Marker } from 'react-gmaps';
 
 import base from '../../base';
 
 import Header from '../../components/header';
 import MeasurementRow from '../../components/measurementRow';
-import style from './style';
+import MapComponent from '../../components/map/';
+import EditLink from '../../components/editLink/';
 
-const params = { v: '3.exp', key: 'AIzaSyD7u386wnnjYBWpHTIioniysgDLzUdrPR4' };
+import style from './style';
 
 export default class Measurement extends Component {
   constructor(props) {
@@ -39,50 +39,33 @@ export default class Measurement extends Component {
   //   });
   // }
 
-  onMapCreated = map => {
-    map.setOptions({
-      disableDefaultUI: true,
-    });
-  };
-
   render() {
     const measurement = this.state.measurement;
-    const latitude = Number(measurement.latitude);
-    const longitude = Number(measurement.longitude);
     return (
       <div class={style.container}>
-        <Header title="view measurement" to="/" />
-        <div class={style.map}>
-          <Gmaps
-            width="100%"
-            height="200px"
-            zoom={12}
-            lat={latitude}
-            lng={longitude}
-            params={params}
-            onMapCreated={this.onMapCreated}
+        <Header title={measurement.date} to="/" />
+        <div class={style.measurementWrapper}>
+          <EditLink type="measurement" to={`/edit/${this.props.measurementId}`} />
+          {measurement.date && <MeasurementRow label="Date" value={measurement.date} />}
+          <MapComponent
+            latitude={measurement.latitude}
+            longitude={measurement.longitude}
+            label="Location"
+          />
+          {measurement.acidity && <MeasurementRow label="Acidity" value={measurement.acidity} />}
+          {measurement.salinity && <MeasurementRow label="Salinity" value={measurement.salinity} />}
+          {measurement.tempature && (
+            <MeasurementRow label="Tempature" value={measurement.tempature} />
+          )}
+          {/* <button
+            onClick={e => {
+              this.props.removeMeasurement(e, this.props.measurementId);
+            }}
+            class={style.removeButton}
           >
-            <Marker draggable={false} lat={latitude} lng={longitude} />
-          </Gmaps>
+            Delete measurement
+          </button> */}
         </div>
-        {measurement.longitude && (
-          <MeasurementRow label="Longitude" value={measurement.longitude} />
-        )}
-        {measurement.latitude && <MeasurementRow label="Latitude" value={measurement.latitude} />}
-        {measurement.date && <MeasurementRow label="Date" value={measurement.date} />}
-        {measurement.acidity && <MeasurementRow label="Acidity" value={measurement.acidity} />}
-        {measurement.salinity && <MeasurementRow label="Salinity" value={measurement.salinity} />}
-        {measurement.tempature && (
-          <MeasurementRow label="Tempature" value={measurement.tempature} />
-        )}
-        <button
-          onClick={e => {
-            this.props.removeMeasurement(e, this.props.measurementId);
-          }}
-          class={style.removeButton}
-        >
-          Delete measurement
-        </button>
       </div>
     );
   }
@@ -91,5 +74,5 @@ export default class Measurement extends Component {
 Measurement.propTypes = {
   uid: PropTypes.string.isRequired,
   measurementId: PropTypes.string.isRequired,
-  removeMeasurement: PropTypes.func.isRequired,
+  // removeMeasurement: PropTypes.func.isRequired,
 };

@@ -1,0 +1,185 @@
+.mainInputs {
+  background: var(--main-bg-color);
+  border-bottom: 1px solid var(--main-color);
+  padding: 16px;
+}
+
+.addButton {
+  align-items: center;
+  background: var(--main-color);
+  border: 0;
+  border-radius: 50%;
+  color: var(--main-bg-color);
+  display: flex;
+  font-size: 50px;
+  font-weight: 400;
+  height: 55px;
+  justify-content: center;
+  left: 50%;
+  margin: 10px 0;
+  outline: 0;
+  padding: 0;
+  position: relative;
+  transform: translateX(-50%);
+  width: 55px;
+
+  i {
+    font-size: 40px;
+  }
+}
+
+.customFormfieldWrap {
+  border-bottom: .5px solid var(--main-color);
+  border-top: .5px solid var(--main-color);
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  padding: 14px 16px;
+
+  label {
+    color: var(--main-color);
+    font-size: 16px;
+    font-weight: 700;
+    margin: 5px 0 4px;
+  }
+}
+
+.select {
+  background: var(--main-bg-color);
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  font-size: 15px;
+  margin: 5px 0;
+  padding: 10px 5px;
+}
+
+.addedInputField {
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  font-size: 15px;
+  margin-top: 0;
+  padding: 10px 5px;
+}
+
+.inputRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.inputField {
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  font-size: 15px;
+  margin-top: 5px;
+  padding: 10px 5px;
+}
+
+.inputGroupDate {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+
+  label {
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
+.locationEdit {
+  display: block;
+  padding: 10px 0 0;
+  width: 100%;
+
+  button {
+    align-items: center;
+    background: none;
+    border: 1px solid var(--main-color);
+    border-radius: 0;
+    color: var(--main-color);
+    display: flex;
+    font-size: 15px;
+    justify-content: space-between;
+    margin-top: 5px;
+    padding: 10px 5px;
+    width: 100%;
+
+    i {
+      font-size: 15px;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  label {
+    color: var(--main-color);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0;
+  }
+}
+
+.addButtonLabel {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.editMain {
+  background: var(--main-bg-color);
+  border-bottom: 1px solid var(--main-color);
+  display: block;
+  padding: 16px;
+}
+
+.submit {
+  background: var(--main-bg-color);
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  color: var(--main-color);
+  font-size: 16px;
+  font-weight: 700;
+  left: 50%;
+  margin-bottom: 16px;
+  margin-top: 10px;
+  outline: 0;
+  padding: 20px;
+  position: relative;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}
+
+.imgWrap {
+  border: 1px solid var(--main-color);
+  display: inline-block;
+  height: calc(50vw - 20px);
+  position: relative;
+  width: calc(50vw - 20px);
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
+}
+
+.mediaWrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.label {
+  color: var(--main-color);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.mediaRow {
+  padding: 10px 16px;
+}
+

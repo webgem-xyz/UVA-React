@@ -5,6 +5,8 @@ import base from '../../base';
 
 import Header from '../../components/header/index';
 import MeasurementRow from '../../components/measurementRow/';
+import MapComponent from '../../components/map/';
+import EditLink from '../../components/editLink/';
 
 import style from './style';
 
@@ -53,22 +55,21 @@ export default class Media extends Component {
     const measurement = this.state.measurement;
     return (
       <div class={style.media}>
-        <Header title="view media" to="/" />
+        <Header title={measurement.date} to="/" />
         <div class={style.dataWrap}>
-          {measurement.longitude && (
-            <MeasurementRow label="Longitude" value={measurement.longitude} />
-          )}
-          {measurement.latitude && <MeasurementRow label="Latitude" value={measurement.latitude} />}
+          <EditLink type="media" to={`/editMedia/${this.props.mediaId}`} />
           {measurement.date && <MeasurementRow label="Date" value={measurement.date} />}
+          <MapComponent
+            latitude={measurement.latitude}
+            longitude={measurement.longitude}
+            label="Location"
+          />
+          <section class={style.mediaRow}>
+            <p className={`${style.label} ${style.labelMedia}`}>Items</p>
+            <div class={style.mediaWrap}>{this.renderImagesUI()}</div>
+          </section>
           {measurement.category && <MeasurementRow label="Category" value={measurement.category} />}
-          {measurement.desc && (
-            <div className={`${style.row} ${style.rowDesc}`}>
-              <p class={style.label}>Description</p>
-              <p class={style.valueEditet}>{measurement.desc}</p>
-            </div>
-          )}
-          <p className={`${style.label} ${style.labelMedia}`}>Media</p>
-          <div class={style.mediaWrap}>{this.renderImagesUI()}</div>
+          {measurement.desc && <MeasurementRow label="Description" value={measurement.desc} desc />}
         </div>
       </div>
     );

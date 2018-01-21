@@ -1,0 +1,14 @@
+.edit {
+  align-items: center;
+  color: var(--main-color);
+  display: flex;
+  float: right;
+  font-weight: 700;
+  text-align: right;
+  text-decoration: none;
+
+  i {
+    font-size: .98em;
+    padding: 5px;
+  }
+}

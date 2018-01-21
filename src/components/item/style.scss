@@ -5,18 +5,20 @@
   display: flex;
   height: 50px;
   margin: 2.5px 0;
-  padding: 5px;
+  padding: 5px 0;
   position: relative;
 }
 
 .icon {
   display: inline-block;
-  padding: 0 20px 0 10px;
+  opacity: .6;
+  padding: 0 15px 0 10px;
 }
 
 .date {
   display: inline-block;
-  flex: 1;
+  font-size: 14px;
+  width: 30%;
 }
 
 .uploaded {
@@ -27,4 +29,19 @@
 .link {
   color: var(--main-color);
   text-decoration: none;
+}
+
+.edit {
+  flex: 1;
+  font-size: 14px;
+  width: 20%;
+}
+
+.uploadStatText {
+  font-size: 14px;
+}
+
+.uploadStat {
+  font-size: 14px;
+  padding: 0 7.5px;
 }

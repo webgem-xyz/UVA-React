@@ -9,8 +9,8 @@ import AddButton from '../../components/addButton/index';
 import FilterButton from '../../components/filterButton/index';
 
 // Import image
-import addIcon from '../../assets/white/measurements.svg';
-import mediaIconWhite from '../../assets/white/media.svg';
+import addIcon from '../../assets/black/measurements.svg';
+import mediaIcon from '../../assets/black/media.png';
 
 export default class Overview extends Component {
   constructor(props) {
@@ -20,6 +20,9 @@ export default class Overview extends Component {
 
     this.state = {
       filteredMeasurements: props.measurements,
+      all: true,
+      mes: false,
+      med: false,
     };
   }
 
@@ -31,6 +34,9 @@ export default class Overview extends Component {
     if (filter === 'all') {
       this.setState({
         filteredMeasurements: this.props.measurements,
+        all: true,
+        mes: false,
+        med: false,
       });
     } else {
       const filteredMes = Object.keys(this.props.measurements).reduce((r, e) => {
@@ -39,6 +45,10 @@ export default class Overview extends Component {
       }, {});
       this.setState({
         filteredMeasurements: filteredMes,
+        all: false,
+        mes: false,
+        med: false,
+        [filter]: true,
       });
     }
   }
@@ -46,10 +56,9 @@ export default class Overview extends Component {
   render() {
     return (
       <div class={style.wrapper}>
-        <Header title="dashboard" accic />
+        <Header title="overview" />
         <div class={style.overview}>
           <div class={style.add}>
-            <h2 class={style.oh2}>add data +</h2>
             <div class={style.addButtons}>
               <AddButton
                 to="/add"
@@ -57,27 +66,37 @@ export default class Overview extends Component {
                 alt="Add measurement icon."
                 text="Add Measurement"
               />
-              <AddButton
-                to="/addMedia"
-                icon={mediaIconWhite}
-                alt="Add media icon."
-                text="Add Media"
-              />
+              <AddButton to="/addMedia" icon={mediaIcon} alt="Add media icon." text="Add Media" />
             </div>
           </div>
           <div>
             <div class={style.headWrap}>
-              <h2 class={style.oh2}>overview</h2>
               <div class={style.buttonWrap}>
-                <FilterButton filter="all" handleFilter={this.handleFilter} text="All" />
-                <FilterButton filter="mes" handleFilter={this.handleFilter} text="Measurements" />
-                <FilterButton filter="med" handleFilter={this.handleFilter} text="Media" />
+                <FilterButton
+                  filter="all"
+                  active={this.state.all}
+                  handleFilter={this.handleFilter}
+                  text="All"
+                />
+                <FilterButton
+                  filter="mes"
+                  active={this.state.mes}
+                  handleFilter={this.handleFilter}
+                  text="Measurements"
+                />
+                <FilterButton
+                  filter="med"
+                  active={this.state.med}
+                  handleFilter={this.handleFilter}
+                  text="Media"
+                />
               </div>
             </div>
             <div class={style.labels}>
               <p>Type</p>
               <p>Date</p>
-              <p>Uploaded</p>
+              <p>Editable</p>
+              <p>Status</p>
             </div>
             <div>
               {Object.keys(this.state.filteredMeasurements)

@@ -2,15 +2,19 @@
   align-items: center;
   border: 1px solid var(--main-color);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 5px 0;
+  padding: 15px 10px;
 
   p {
     display: inline-block;
+    font-size: 14px;
     font-weight: 700;
+    margin: 0;
   }
 
   p:nth-child(2) {
     font-weight: 400;
+    white-space: nowrap;
   }
 }
