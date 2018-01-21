@@ -1,4 +1,5 @@
 import { Component } from 'preact';
+import { PropTypes } from 'preact-compat';
 import { Link } from 'preact-router/match';
 
 import InputGroup from '../../components/inputGroup/';
@@ -66,3 +67,7 @@ export default class CreateAccount extends Component {
     );
   }
 }
+
+CreateAccount.propTypes = {
+  createAccount: PropTypes.func.isRequired,
+};
