@@ -67,16 +67,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 16px;
 }
 
 .uploadedImage {
   background: var(--main-color);
-  border: 0;
+  border: 1px solid var(--main-color);
   display: inline-block;
-  height: calc(50vw - .5px);
+  height: calc(50vw - 18.5px);
   outline: 0;
   position: relative;
-  width: calc(50vw - .5px);
+  width: calc(50vw - 18.5px);
 
   .remove {
     align-items: center;

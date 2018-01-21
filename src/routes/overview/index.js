@@ -10,7 +10,7 @@ import FilterButton from '../../components/filterButton/index';
 
 // Import image
 import addIcon from '../../assets/black/measurements.svg';
-import mediaIconWhite from '../../assets/black/media.svg';
+import mediaIcon from '../../assets/black/media.png';
 
 export default class Overview extends Component {
   constructor(props) {
@@ -66,12 +66,7 @@ export default class Overview extends Component {
                 alt="Add measurement icon."
                 text="Add Measurement"
               />
-              <AddButton
-                to="/addMedia"
-                icon={mediaIconWhite}
-                alt="Add media icon."
-                text="Add Media"
-              />
+              <AddButton to="/addMedia" icon={mediaIcon} alt="Add media icon." text="Add Media" />
             </div>
           </div>
           <div>

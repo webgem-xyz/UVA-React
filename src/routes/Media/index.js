@@ -55,7 +55,7 @@ export default class Media extends Component {
     const measurement = this.state.measurement;
     return (
       <div class={style.media}>
-        <Header title="view media" to="/" />
+        <Header title={measurement.date} to="/" />
         <div class={style.dataWrap}>
           <EditLink type="media" to={`/editMedia/${this.props.mediaId}`} />
           {measurement.date && <MeasurementRow label="Date" value={measurement.date} />}

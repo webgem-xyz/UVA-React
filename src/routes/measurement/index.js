@@ -43,7 +43,7 @@ export default class Measurement extends Component {
     const measurement = this.state.measurement;
     return (
       <div class={style.container}>
-        <Header title="view measurement" to="/" />
+        <Header title={measurement.date} to="/" />
         <div class={style.measurementWrapper}>
           <EditLink type="measurement" to={`/edit/${this.props.measurementId}`} />
           {measurement.date && <MeasurementRow label="Date" value={measurement.date} />}

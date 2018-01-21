@@ -1,22 +1,20 @@
 import { Component } from 'preact';
-import { PropTypes } from 'preact-compat';
-import { Link } from 'preact-router';
+import { Link } from 'preact-router/match';
 
-import InputGroup from '../../components/inputGroup';
-import style from './style';
-
-// Images
+import InputGroup from '../../components/inputGroup/';
 import logo from '../../assets/logo.svg';
 
-export default class Login extends Component {
+import style from './style';
+
+export default class CreateAccount extends Component {
   constructor(props) {
     super(props);
 
     this.handleState = this.handleState.bind(this);
 
     this.state = {
-      email: '',
-      password: '',
+      email: null,
+      password: null,
     };
   }
 
@@ -28,11 +26,12 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div class={style.login}>
+      <div class={style.createAccountWrapper}>
         <img src={logo} alt="Logo MyMarine" />
         <form
-          class={style.loginForm}
-          onSubmit={e => this.props.authenticate(e, this.state.email, this.state.password)}
+          class={style.createAccountForm}
+          onSubmit={e => this.props.createAccount(e, this.state.email, this.state.password)}
+          name="Create account"
         >
           <InputGroup
             value={this.state.email}
@@ -52,26 +51,18 @@ export default class Login extends Component {
             fullWidth
             placeholder="*********"
             type="password"
-            autoComplete="current-password"
+            autoComplete="new-password"
           />
           <section class={style.formButtons}>
-            <button type="submit" class={style.loginSub}>
-              log in
+            <button type="submit" class={style.createAccountSubmit}>
+              SIGN UP
             </button>
-            <Link class={style.forgot} href="/forgot">
-              forgot password?
+            <Link href="/" class={style.cancel}>
+              cancel
             </Link>
           </section>
         </form>
-        <p class={style.devider}>- or -</p>
-        <Link class={style.createAccount} href="/createAccount">
-          Create an account
-        </Link>
       </div>
     );
   }
 }
-
-Login.propTypes = {
-  authenticate: PropTypes.func.isRequired,
-};

@@ -8,22 +8,18 @@
 
 .loginForm {
   padding: 16px;
-
-  div {
-    margin: 7.5px 0;
-  }
 }
 
 .loginSub {
-  background: var(--main-color);
-  border: 0;
-  color: var(--main-bg-color);
+  background: var(--main-bg-color);
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
   display: inline-block;
   font-size: 16px;
   font-weight: 700;
   margin: 7.5px 0;
   outline: 0;
-  padding: 17px;
+  padding: 15px 17px;
   text-transform: uppercase;
 }
 
@@ -32,9 +28,33 @@
   display: inline-block;
   font-size: 16px;
   font-weight: 700;
-  margin-top: auto;
-  padding: 25px;
+  margin-left: auto;
+  text-align: right;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.formButtons {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.devider {
+  display: block;
   text-align: center;
+  text-transform: uppercase;
+}
+
+.createAccount {
+  color: var(--main-color);
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: auto;
+  margin-top: auto;
+  text-align: right;
   text-decoration: none;
   text-transform: uppercase;
 }
