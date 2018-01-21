@@ -1,0 +1,28 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: var(--main-bg-color);
+  border-top: 1px solid var(--main-color);
+  padding: 5px 10px;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    color: var(--main-color);
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      font-size: 30px;
+    }
+  }
+}
+
+a.active {
+  color: var(--main-blue) !important;
+}

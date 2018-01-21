@@ -5,8 +5,11 @@ import moment from 'moment';
 import style from './style';
 
 import Header from '../../components/header/index';
-import InputGroup from '../../components/inputGroup/index';
+// import InputGroup from '../../components/inputGroup/index';
+import LocationPopup from '../../components/locationPopup/';
 import RemoveButton from '../../components/removeButton/index';
+import LinkRequestButton from '../../components/linkRequestButton/index';
+import DateSelect from '../../components/datePicker/index';
 
 export default class Add extends Component {
   constructor(props) {
@@ -17,6 +20,8 @@ export default class Add extends Component {
     this.removeField = this.removeField.bind(this);
 
     this.createMeasurement = this.createMeasurement.bind(this);
+    this.handleResetLoc = this.handleResetLoc.bind(this);
+    this.handleSave = this.handleSave.bind(this);
 
     this.handleState = this.handleState.bind(this);
 
@@ -30,6 +35,8 @@ export default class Add extends Component {
       value: [],
       inputType: [],
       count: 0,
+      show: 'Current location',
+      open: false,
       geoOptions: {
         enableHighAccuracy: true,
         maximumAge: 0,
@@ -76,6 +83,28 @@ export default class Add extends Component {
     });
   }
 
+  handleResetLoc() {
+    navigator.geolocation.getCurrentPosition(this.geoSuccess, this.geoError, this.state.geoOptions);
+    this.setState({
+      open: false,
+      show: 'Current location',
+    });
+  }
+
+  handleSave() {
+    this.setState({
+      show: `${this.state.longitude}, ${this.state.latitude}`,
+      open: false,
+    });
+  }
+
+  showPopup(e) {
+    e.preventDefault();
+    this.setState({
+      open: true,
+    });
+  }
+
   removeField(i) {
     const value = this.state.value.slice();
     const inputType = this.state.inputType.slice();
@@ -95,6 +124,8 @@ export default class Add extends Component {
       latitude: this.state.latitude,
       date: moment(this.state.date, 'YYYY-MM-DD').format('YYYY-MM-DD'),
       type: 'mes',
+      count: this.state.count,
+      show: this.state.show,
     };
     for (let i = 0; i < this.state.count; i += 1) {
       measurement[this.state.inputType[i]] = this.state.value[i];
@@ -113,14 +144,14 @@ export default class Add extends Component {
     for (let i = 0; i < this.state.count; i += 1) {
       uiItems.push(
         <div key={i} class={style.customFormfieldWrap}>
+          <label>Measurement type</label>
           <select required onChange={e => this.handleSelectChange(e, i)} class={style.select}>
-            <option disabled selected>
-              Select measurement type
-            </option>
+            <option label=" " disabled selected />
             <option value="acidity">Acidity (Ph)</option>
             <option value="salinity">Salinity (PSU)</option>
             <option value="tempature">Tempature</option>
           </select>
+          <label>Value</label>
           <input
             type="number"
             value={this.state.value[i] || ''}
@@ -138,37 +169,30 @@ export default class Add extends Component {
     return (
       <div class={style.add}>
         <Header to="/" backCol="#E7E7E7" title="add measurement" />
-        <form onSubmit={(e) => this.createMeasurement(e)}>
+        <form onSubmit={e => this.createMeasurement(e)}>
           <div class={style.mainInputs}>
-            <div class={style.inputRow}>
-              <InputGroup
-                value={this.state.longitude}
-                kind="longitude"
-                label="Longitude"
-                placeholder="Getting coordinates..."
-                handleState={this.handleState}
-              />
-              <InputGroup
-                value={this.state.latitude}
-                kind="latitude"
-                label="Latitude"
-                placeholder="Getting coordinates..."
-                handleState={this.handleState}
-              />
-            </div>
-            <InputGroup
-              value={this.state.date}
-              kind="date"
-              label="Date of measurement"
+            <DateSelect handleState={this.handleState} label="Date" />
+            <section class={style.locationEdit}>
+              <label>Location</label>
+              <button onClick={e => this.showPopup(e)}>
+                {this.state.show} <i class="material-icons">edit</i>
+              </button>
+            </section>
+            <LocationPopup
+              longitude={this.state.longitude}
+              latitude={this.state.latitude}
               handleState={this.handleState}
-              fullWidth
-              placeholder="YYYY-MM-DD"
+              handleReset={this.handleResetLoc}
+              open={this.state.open}
+              handleSave={this.handleSave}
             />
+            <LinkRequestButton />
           </div>
           {this.createUI()}
           <button class={style.addButton} onClick={e => this.addField(e)}>
             <i className="material-icons">add</i>
           </button>
+          <p class={style.addButtonLabel}>add item</p>
           {this.state.count > 0 && (
             <button class={style.submit} type="submit">
               submit measurement

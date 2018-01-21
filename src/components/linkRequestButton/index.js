@@ -1,8 +1,8 @@
 import { Component } from 'preact';
 import style from './style';
 
-export default class ComponentName extends Component {
+export default class LinkRequestButton extends Component {
   render() {
-    return <button class={style.linkRequest}>Link to request</button>;
+    return <input type="button" value="Link to request" class={style.linkRequest} />;
   }
 }

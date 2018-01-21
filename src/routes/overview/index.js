@@ -20,6 +20,9 @@ export default class Overview extends Component {
 
     this.state = {
       filteredMeasurements: props.measurements,
+      all: true,
+      mes: false,
+      med: false,
     };
   }
 
@@ -31,6 +34,9 @@ export default class Overview extends Component {
     if (filter === 'all') {
       this.setState({
         filteredMeasurements: this.props.measurements,
+        all: true,
+        mes: false,
+        med: false,
       });
     } else {
       const filteredMes = Object.keys(this.props.measurements).reduce((r, e) => {
@@ -39,6 +45,10 @@ export default class Overview extends Component {
       }, {});
       this.setState({
         filteredMeasurements: filteredMes,
+        all: false,
+        mes: false,
+        med: false,
+        [filter]: true,
       });
     }
   }
@@ -67,9 +77,24 @@ export default class Overview extends Component {
           <div>
             <div class={style.headWrap}>
               <div class={style.buttonWrap}>
-                <FilterButton filter="all" handleFilter={this.handleFilter} text="All" />
-                <FilterButton filter="mes" handleFilter={this.handleFilter} text="Measurements" />
-                <FilterButton filter="med" handleFilter={this.handleFilter} text="Media" />
+                <FilterButton
+                  filter="all"
+                  active={this.state.all}
+                  handleFilter={this.handleFilter}
+                  text="All"
+                />
+                <FilterButton
+                  filter="mes"
+                  active={this.state.mes}
+                  handleFilter={this.handleFilter}
+                  text="Measurements"
+                />
+                <FilterButton
+                  filter="med"
+                  active={this.state.med}
+                  handleFilter={this.handleFilter}
+                  text="Media"
+                />
               </div>
             </div>
             <div class={style.labels}>

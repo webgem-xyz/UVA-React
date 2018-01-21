@@ -1,6 +1,5 @@
 import { Component } from 'preact';
 import { PropTypes } from 'preact-compat';
-import { Link } from 'preact-router';
 
 import base from '../../base';
 
@@ -46,9 +45,13 @@ export default class Measurement extends Component {
       <div class={style.container}>
         <Header title="view measurement" to="/" />
         <div class={style.measurementWrapper}>
-          <EditLink type="measurement" />
+          <EditLink type="measurement" to={`/edit/${this.props.measurementId}`} />
           {measurement.date && <MeasurementRow label="Date" value={measurement.date} />}
-          <MapComponent latitude={measurement.latitude} longitude={measurement.longitude} />
+          <MapComponent
+            latitude={measurement.latitude}
+            longitude={measurement.longitude}
+            label="Location"
+          />
           {measurement.acidity && <MeasurementRow label="Acidity" value={measurement.acidity} />}
           {measurement.salinity && <MeasurementRow label="Salinity" value={measurement.salinity} />}
           {measurement.tempature && (

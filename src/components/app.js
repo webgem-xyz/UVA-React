@@ -5,6 +5,7 @@ import firebase from 'firebase/app';
 // Import Routes
 import Login from '../routes/login';
 import Home from '../components/home';
+import Footer from '../components/footer/';
 
 // Import Firebase Login
 import fireApp from '../base2';
@@ -23,6 +24,7 @@ export default class App extends Component {
       // email: 'user@uva.nl',
       email: null,
       uid: null,
+      login: null,
     };
   }
 
@@ -49,6 +51,7 @@ export default class App extends Component {
         this.setState({
           uid: user.user.uid,
           email: user.user.email,
+          login: user.user.metadata.lastSignInTime,
         });
       });
   }
@@ -63,6 +66,7 @@ export default class App extends Component {
     this.setState({
       uid: authData.user.uid,
       email: authData.user.email,
+      login: authData.user.metadata.lastSignInTime,
     });
   }
 
@@ -81,14 +85,18 @@ export default class App extends Component {
           <Home path="/mes/:measurementId" uid={this.state.uid} />
           <Home path="/add" uid={this.state.uid} />
           <Home path="/addMedia" uid={this.state.uid} />
+          <Home path="/edit/:measurementId" uid={this.state.uid} />
+          <Home path="/editMedia/:mediaId" uid={this.state.uid} />
           <Home path="/med/:mediaId" uid={this.state.uid} />
           <Home
             path="/account"
             uid={this.state.uid}
             email={this.state.email}
             logout={this.logout}
+            login={this.state.login}
           />
         </Router>
+        <Footer />
       </div>
     );
   }

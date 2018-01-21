@@ -11,6 +11,8 @@ import Overview from '../../routes/overview';
 import Measurement from '../../routes/measurement';
 import Add from '../../routes/add/index';
 import AddMedia from '../../routes/addMedia/index';
+import Edit from '../../routes/edit/';
+import EditMedia from '../../routes/editMedia/';
 import Media from '../../routes/Media/index';
 import Account from '../../routes/account';
 
@@ -84,6 +86,18 @@ export default class Home extends Component {
           measurements={this.state.measurements}
           addMeasurement={this.addMeasurement}
         />
+        <Edit
+          path="/edit/:measurementId"
+          addMeasurement={this.addMeasurement}
+          uid={this.props.uid}
+          measurements={this.state.measurements}
+        />
+        <EditMedia
+          path="/editMedia/:mediaId"
+          uid={this.props.uid}
+          measurements={this.state.measurements}
+          addMeasurement={this.addMeasurement}
+        />
         <Media path="/med/:mediaId" uid={this.props.uid} measurements={this.state.measurements} />
         <Account
           path="/account"
@@ -91,6 +105,7 @@ export default class Home extends Component {
           measurements={this.state.measurements}
           email={this.props.email}
           logout={this.props.logout}
+          login={this.props.login}
         />
       </Router>
     );

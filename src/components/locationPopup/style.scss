@@ -1,0 +1,50 @@
+.popup {
+  background: var(--main-bg-color);
+  border: 1px solid var(--main-color);
+  box-shadow: 0 0 5px 50vh rgba(40,40,40,.6);
+  display: block;
+  left: 16px;
+  padding: 0 10px 10px;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(100vw - 32px);
+  z-index: 10;
+}
+
+.inputRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.inlineMap {
+  display: block;
+  margin: 0;
+  padding: 0;
+
+  label {
+    color: var(--main-color);
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 5px;
+  }
+}
+
+.locationSave {
+  display: flex;
+  justify-content: space-between;
+
+  input {
+    background: none;
+    border: 0;
+    border-radius: 0;
+    color: var(--main-color);
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0;
+    outline: 0;
+    padding: 15px 0 5px;
+    text-transform: uppercase;
+  }
+}

@@ -6,10 +6,10 @@
 
 .addButton {
   align-items: center;
-  background: none;
-  border: 1px solid var(--main-color);
+  background: var(--main-color);
+  border: 0;
   border-radius: 50%;
-  color: var(--main-color);
+  color: var(--main-bg-color);
   display: flex;
   font-size: 50px;
   font-weight: 400;
@@ -49,7 +49,7 @@
   border: 1px solid var(--main-color);
   border-radius: 0;
   font-size: 15px;
-  margin-bottom: 5px;
+  margin: 5px 0;
   padding: 10px 5px;
 }
 
@@ -87,10 +87,10 @@
 }
 
 .submit {
-  background: var(--main-bg-color);
-  border: 1px solid var(--main-color);
+  background: var(--main-color);
+  border: 0;
   border-radius: 0;
-  color: var(--main-color);
+  color: var(--main-bg-color);
   font-size: 16px;
   font-weight: 700;
   left: 50%;
@@ -124,6 +124,10 @@
     i {
       font-size: 15px;
     }
+
+    p {
+      margin: 0;
+    }
   }
 
   label {
@@ -140,3 +144,59 @@
   margin: 0;
   text-transform: uppercase;
 }
+
+.editMain {
+  background: var(--main-bg-color);
+  border-bottom: 1px solid var(--main-color);
+  display: block;
+  padding: 16px;
+}
+
+.submit {
+  background: var(--main-bg-color);
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  color: var(--main-color);
+  font-size: 16px;
+  font-weight: 700;
+  left: 50%;
+  margin-bottom: 16px;
+  margin-top: 10px;
+  outline: 0;
+  padding: 20px;
+  position: relative;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}
+
+.imgWrap {
+  border: 1px solid var(--main-color);
+  display: inline-block;
+  height: calc(50vw - 20px);
+  position: relative;
+  width: calc(50vw - 20px);
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
+}
+
+.mediaWrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.label {
+  color: var(--main-color);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.mediaRow {
+  padding: 10px 16px;
+}
+

@@ -57,9 +57,13 @@ export default class Media extends Component {
       <div class={style.media}>
         <Header title="view media" to="/" />
         <div class={style.dataWrap}>
-          <EditLink type="media" />
+          <EditLink type="media" to={`/editMedia/${this.props.mediaId}`} />
           {measurement.date && <MeasurementRow label="Date" value={measurement.date} />}
-          <MapComponent latitude={measurement.latitude} longitude={measurement.longitude} />
+          <MapComponent
+            latitude={measurement.latitude}
+            longitude={measurement.longitude}
+            label="Location"
+          />
           <section class={style.mediaRow}>
             <p className={`${style.label} ${style.labelMedia}`}>Items</p>
             <div class={style.mediaWrap}>{this.renderImagesUI()}</div>

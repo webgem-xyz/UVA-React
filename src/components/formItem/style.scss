@@ -1,0 +1,32 @@
+.customFormfieldWrap {
+  border-bottom: .5px solid var(--main-color);
+  border-top: .5px solid var(--main-color);
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  padding: 14px 16px;
+
+  label {
+    color: var(--main-color);
+    font-size: 16px;
+    font-weight: 700;
+    margin: 5px 0 4px;
+  }
+}
+
+.select {
+  background: var(--main-bg-color);
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  font-size: 15px;
+  margin-bottom: 5px;
+  padding: 10px 5px;
+}
+
+.addedInputField {
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  font-size: 15px;
+  margin-top: 0;
+  padding: 10px 5px;
+}

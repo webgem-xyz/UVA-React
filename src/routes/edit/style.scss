@@ -4,12 +4,12 @@
   padding: 16px;
 }
 
-.uploadButton {
+.addButton {
   align-items: center;
-  background: var(--main-bg-color);
-  border: 1px solid var(--main-color);
+  background: var(--main-color);
+  border: 0;
   border-radius: 50%;
-  color: var(--main-color);
+  color: var(--main-bg-color);
   display: flex;
   font-size: 50px;
   font-weight: 400;
@@ -26,6 +26,39 @@
   i {
     font-size: 40px;
   }
+}
+
+.customFormfieldWrap {
+  border-bottom: .5px solid var(--main-color);
+  border-top: .5px solid var(--main-color);
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  padding: 14px 16px;
+
+  label {
+    color: var(--main-color);
+    font-size: 16px;
+    font-weight: 700;
+    margin: 5px 0 4px;
+  }
+}
+
+.select {
+  background: var(--main-bg-color);
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  font-size: 15px;
+  margin-bottom: 5px;
+  padding: 10px 5px;
+}
+
+.addedInputField {
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  font-size: 15px;
+  margin-top: 0;
+  padding: 10px 5px;
 }
 
 .inputRow {
@@ -53,67 +86,11 @@
   }
 }
 
-.select {
-  background: none;
-  border: 1px solid var(--main-color);
-  border-radius: 0;
-  font-size: 15px;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  padding: 10px 5px;
-}
-
-.imageWrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.uploadedImage {
+.submit {
   background: var(--main-color);
   border: 0;
-  display: inline-block;
-  height: calc(50vw - .5px);
-  outline: 0;
-  position: relative;
-  width: calc(50vw - .5px);
-
-  .remove {
-    align-items: center;
-    background: var(--main-color);
-    border: 0;
-    border-radius: 50%;
-    color: var(--main-bg-color);
-    display: flex;
-    font-size: 30px;
-    height: 40px;
-    justify-content: center;
-    margin: 0;
-    outline: 0;
-    padding: 0;
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    width: 40px;
-
-    .icon {
-      color: var(--main-bg-color);
-    }
-  }
-
-  img {
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    width: 100%;
-  }
-}
-
-.submit {
-  background: var(--main-bg-color);
-  border: 1px solid var(--main-color);
   border-radius: 0;
-  color: var(--main-color);
+  color: var(--main-bg-color);
   font-size: 16px;
   font-weight: 700;
   left: 50%;
@@ -147,6 +124,10 @@
     i {
       font-size: 15px;
     }
+
+    p {
+      margin: 0;
+    }
   }
 
   label {
@@ -164,3 +145,26 @@
   text-transform: uppercase;
 }
 
+.editMain {
+  background: var(--main-bg-color);
+  border-bottom: 1px solid var(--main-color);
+  display: block;
+  padding: 16px;
+}
+
+.submit {
+  background: var(--main-bg-color);
+  border: 1px solid var(--main-color);
+  border-radius: 0;
+  color: var(--main-color);
+  font-size: 16px;
+  font-weight: 700;
+  left: 50%;
+  margin-bottom: 16px;
+  margin-top: 10px;
+  outline: 0;
+  padding: 20px;
+  position: relative;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}

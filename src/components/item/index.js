@@ -5,7 +5,7 @@ import { Link } from 'preact-router/match';
 import style from './style';
 
 // Import images
-import mediaIcon from '../../assets/black/media.svg';
+import mediaIcon from '../../assets/black/media.png';
 import measurementIcon from '../../assets/black/measurements.svg';
 
 function defineImgSrc(details) {
@@ -25,7 +25,7 @@ function defineImgAlt(details) {
 }
 
 function getNumber(mx) {
-  return Math.floor(Math.random() * Math.floor(mx));
+  return Math.floor(Math.random() * Math.floor(mx)) + 1;
 }
 
 export default class Item extends Component {
@@ -41,7 +41,7 @@ export default class Item extends Component {
             class={style.icon}
           />
           <p class={style.date}>{details.date}</p>
-          <p class={style.edit}>{getNumber(25)} days</p>
+          <p class={style.edit}>{getNumber(24)} days</p>
           <p>Received</p>
           <i className={`material-icons ${style.uploadStat}`}>done</i>
         </div>
