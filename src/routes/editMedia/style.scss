@@ -86,23 +86,6 @@
   }
 }
 
-.submit {
-  background: var(--main-color);
-  border: 0;
-  border-radius: 0;
-  color: var(--main-bg-color);
-  font-size: 16px;
-  font-weight: 700;
-  left: 50%;
-  margin-bottom: 16px;
-  margin-top: 10px;
-  outline: 0;
-  padding: 20px;
-  position: relative;
-  text-transform: uppercase;
-  transform: translateX(-50%);
-}
-
 .locationEdit {
   display: block;
   padding: 10px 0 0;

@@ -87,10 +87,10 @@
 }
 
 .submit {
-  background: var(--main-color);
-  border: 0;
+  background: var(--main-bg-color);
+  border: 1px solid var(--main-color);
   border-radius: 0;
-  color: var(--main-bg-color);
+  color: var(--main-color);
   font-size: 16px;
   font-weight: 700;
   left: 50%;
@@ -150,21 +150,4 @@
   border-bottom: 1px solid var(--main-color);
   display: block;
   padding: 16px;
-}
-
-.submit {
-  background: var(--main-bg-color);
-  border: 1px solid var(--main-color);
-  border-radius: 0;
-  color: var(--main-color);
-  font-size: 16px;
-  font-weight: 700;
-  left: 50%;
-  margin-bottom: 16px;
-  margin-top: 10px;
-  outline: 0;
-  padding: 20px;
-  position: relative;
-  text-transform: uppercase;
-  transform: translateX(-50%);
 }
