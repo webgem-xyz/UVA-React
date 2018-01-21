@@ -12,11 +12,12 @@
 .icon {
   display: inline-block;
   opacity: .6;
-  padding: 0 25px 0 10px;
+  padding: 0 15px 0 10px;
 }
 
 .date {
   display: inline-block;
+  font-size: 14px;
   width: 30%;
 }
 
@@ -32,9 +33,15 @@
 
 .edit {
   flex: 1;
+  font-size: 14px;
   width: 20%;
 }
 
+.uploadStatText {
+  font-size: 14px;
+}
+
 .uploadStat {
+  font-size: 14px;
   padding: 0 7.5px;
 }

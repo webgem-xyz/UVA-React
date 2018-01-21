@@ -42,7 +42,7 @@ export default class Item extends Component {
           />
           <p class={style.date}>{details.date}</p>
           <p class={style.edit}>{getNumber(24)} days</p>
-          <p>Received</p>
+          <p class={style.uploadStatText}>Received</p>
           <i className={`material-icons ${style.uploadStat}`}>done</i>
         </div>
       </Link>

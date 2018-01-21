@@ -126,7 +126,7 @@ export default class Account extends Component {
       <div class={style.account}>
         <Header title="account" />
         <div class={style.contributions}>
-          <h2>Uploads</h2>
+          <h2 class={style.uploadsH2}>Uploads</h2>
           {this.state.isReady && (
             <ResponsiveContainer width="100%" height={250}>
               <AreaChart data={this.state.reducedData}>
