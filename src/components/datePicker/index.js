@@ -22,7 +22,7 @@ export default class DateSelect extends Component {
     this.setState({
       startDate: date,
     });
-    this.props.handleState(date, formatDate);
+    this.props.handleState('date', formatDate);
   }
 
   render() {
