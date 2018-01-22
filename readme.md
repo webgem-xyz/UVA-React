@@ -216,10 +216,22 @@ Uid | string | The user identifier used to decide where the image should be uplo
 
 ## DatePicker
 ### Usage
-
+The DatePicker Component consists of the following
+* Label 
+* Input (date)
+  * You choose the date
 ### Location
+The DatePicker Component is located at 
+```
+  src/components/datePicker/
+```
+### Attributes 
+The DatePicker Component accepts the following attributes
 
-###
+Attribute | Type | Usage
+--- | --- | ---
+label | string | What should the label of the input field be.
+handleState | function | Saves what the date should be.
 
 ## FilterButton Component
 ### Usage
@@ -243,6 +255,59 @@ Attribute | Type | Usage
 Filter | string | What should the filter be.
 Text | string | What text should the button display.
 HandleFilter | function | function that handles the filtering.
+
+## Footer Component
+### Usage
+The Footer Component consists of the following 
+* Overview (icon)
+  * When clicked on Overview it will send them to [Overview Component](#overview-component).
+* Request (icon)
+  * When clicked on Request it will send them to [Request Component](#request-component).
+* Account (icon)
+  * When clicked on Account it will send them to [Account Component](#account-component).
+* Notifications (icon)
+  * When clicked on Notifications it will send them to [Notifications Component](#notifications-component).
+
+### Location
+The Footer Component is located at 
+```
+  src/components/footer/
+```
+### Attributes
+The Footer Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+--- | --- | ---
+
+## FormItem Component
+### Usage
+The FormItem Component consists of the following
+* Label (measurement type)
+* Select
+  * Option
+    * Value
+      * Acidity
+      * Salinity
+      * Tempature
+* Label (value)
+* Input (number)
+* Remove Button
+  * Value
+    * Remove item
+
+### Location
+The FormItem is located at 
+```
+  src/components/formItem/
+```
+### Attributes
+The FormItem Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+Item| string | Used to get the value that was selected.
+Value | string | What should the default value of the input field be.
 
 ## Header Component
 ### Usage
