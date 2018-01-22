@@ -7,6 +7,7 @@ import Header from '../../components/header';
 import MeasurementRow from '../../components/measurementRow';
 import MapComponent from '../../components/map/';
 import EditLink from '../../components/editLink/';
+import RemoveMeasurementButton from '../../components/removeMeasurementButton/index';
 
 import style from './style';
 
@@ -57,14 +58,11 @@ export default class Measurement extends Component {
           {measurement.tempature && (
             <MeasurementRow label="Tempature" value={measurement.tempature} />
           )}
-          {/* <button
-            onClick={e => {
-              this.props.removeMeasurement(e, this.props.measurementId);
-            }}
-            class={style.removeButton}
-          >
-            Delete measurement
-          </button> */}
+          <RemoveMeasurementButton
+            Id={this.props.measurementId}
+            label="measurement"
+            removeMeasurement={this.props.removeMeasurement}
+          />
         </div>
       </div>
     );
@@ -74,5 +72,5 @@ export default class Measurement extends Component {
 Measurement.propTypes = {
   uid: PropTypes.string.isRequired,
   measurementId: PropTypes.string.isRequired,
-  // removeMeasurement: PropTypes.func.isRequired,
+  removeMeasurement: PropTypes.func.isRequired,
 };

@@ -7,6 +7,7 @@ import Header from '../../components/header/index';
 import MeasurementRow from '../../components/measurementRow/';
 import MapComponent from '../../components/map/';
 import EditLink from '../../components/editLink/';
+import RemoveMeasurementButton from '../../components/removeMeasurementButton/index';
 
 import style from './style';
 
@@ -70,6 +71,11 @@ export default class Media extends Component {
           </section>
           {measurement.category && <MeasurementRow label="Category" value={measurement.category} />}
           {measurement.desc && <MeasurementRow label="Description" value={measurement.desc} desc />}
+          <RemoveMeasurementButton
+            Id={this.props.mediaId}
+            label="media"
+            removeMeasurement={this.props.removeMeasurement}
+          />
         </div>
       </div>
     );
@@ -79,4 +85,5 @@ export default class Media extends Component {
 Media.propTypes = {
   uid: PropTypes.string.isRequired,
   mediaId: PropTypes.string.isRequired,
+  removeMeasurement: PropTypes.func.isRequired,
 };
