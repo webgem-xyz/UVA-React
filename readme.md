@@ -54,17 +54,30 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * [Add Component](#add-component)
 * [AddButton Component](#addbutton-component)
 * [AddMedia Component](#addmedia-component)
+* [CreateAccount Component](#createaccount-component)
+* [DatePicker Component](#datepicker-component)
+* [Edit Component](#edit-component)
+* [EditMedia Component](#editmedia-component)
+* [EditLink Component](#editlink-component)
 * [FilterButton Component](#filterbutton-component)
+* [Footer Component](#footer-component)
+* [FormItem Component](#formitem-component)
 * [Header Component](#header-component)
 * [Home Component](#home-component)
 * [InputGroup Component](#inputgroup-component)
 * [Item Component](#item-component)
+* [LinkRequestButton Component](#linkrequestbutton-component)
+* [LocationPopup Component](#locationpopup-component)
 * [Login Component](#login-component)
+* [Map Component](#map-component)
 * [Measurement Component](#measurement-component)
 * [MeasurementRow Component](#measurement-component)
 * [Media Component](#media-component)
+* [Notification Component](#notification-component)
+* [Notifications Component](#notifications-component)
 * [Overview Component](#overview-component)
 * [ProgressBar Component](#progressbar-component)
+* [Redirect Component](#redirect-component)
 * [RemoveButton Component](#removebutton-component)
 * [Reset Component](#reset-component)
 
@@ -200,6 +213,13 @@ Attribute | Type | Usage
 --- | --- | ---
 AddMeasurement | function | The function that handles adding the media and data to the measurement.
 Uid | string | The user identifier used to decide where the image should be uploaded to.
+
+## DatePicker
+### Usage
+
+### Location
+
+###
 
 ## FilterButton Component
 ### Usage
