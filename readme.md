@@ -214,12 +214,106 @@ Attribute | Type | Usage
 AddMeasurement | function | The function that handles adding the media and data to the measurement.
 Uid | string | The user identifier used to decide where the image should be uploaded to.
 
-## DatePicker
+## CreateAccount Component
 ### Usage
+The CreateAccount Component consists the following
+* Logo
+* Form
+  * Email input
+  * Password input
+  * SIGN UP button.
+* Cancel button to [Login Component](#login-component)
 
 ### Location
+The CreateAccount Component is located at
+```
+  src/routes/createAccount/
+```
 
-###
+### Attributes
+Attribute | Type | Usage
+--- | --- | ---
+createAccount | function | Function that handles creating the user account and sends them to [Overview Component](#overview-component).
+
+## Edit Component
+### Usage
+The Edit Component consists of the following
+* Header
+  * Edit measurement
+  * Backarrow
+* Form
+  * Date input
+  * Location
+    * [LocationPopup Component](#locationpopup-component)
+  * User added form element
+    * Select
+    * Input type number
+  * Button save changes
+
+### Location
+The Edit Component is located at
+```
+  src/routes/edit/
+```
+
+### Attributes
+The Edit Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+uid | string | Used to identify what user to show data of.
+measurementId | string | Used to define what measurement is being edited.
+
+## EditMedia Component
+### Usage
+The EditMedia Component consists of the following
+* Header
+  * Edit Media
+  * Backarrow
+* Form
+  * Date input
+  * Location
+    * [LocationPopup Component](#locationpopup-component)
+  * Category
+  * Description
+  * Used uploaded Media
+  * Button save changes
+
+### Location
+The EditMedia Component is located at
+```
+  src/routes/editMedia/
+```
+
+### Attributes
+The EditMedia Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+uid | string | Used to identify what user to show data of.
+mediaId | string | Used to define what Media is being edited.
+
+## EditLink Component
+### Usage
+The EditLink Component consists of the following
+* Link
+  * Edit {type}
+  * Icon
+  * Sends to [Edit Component](#edit-component) or [EditMedia Component](#editmedia-component)
+
+### Location
+The EditLink Component is located at
+```
+  src/component/editLink/
+```
+
+### Attributes
+The EditLink Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+Type | string | What should the text after edit be.
+To | string | If the user clicks where should it be send through (accepts mes or med).
 
 ## FilterButton Component
 ### Usage
@@ -263,8 +357,8 @@ Attribute | Type | Usage
 --- | --- | ---
 To | string | Used to determen where the backarrow should send the user to. Don't define if page doesn't need a back arrow.
 Title | string | The text that should be displayed on the top of the page.
-Accic | boolean | Should there be a account circle to [Account Component](#account-component).
-BackColor | string | The color code that the header should have.
+~~Accic~~ | ~~boolean~~ | ~~Should there be a account circle to [Account Component](#account-component).~~
+~~BackColor~~ | ~~string~~ | ~~color code that the header should have.~~
 
 ## Home Component
 ### Usage
@@ -333,6 +427,54 @@ Key | string | Unique identiier for item.
 Index | string | The key used for the item data.
 Details | object | The data of the item (type, date, uploaded).
 
+## LinkRequestButton Component
+### Usage
+The LinkRequestButton Component consists of the following
+* Button
+  * Link to Request
+
+### Location
+The LinkRequestButton Component is located at
+```
+  src/components/linkRequestButton/
+```
+### Attributes
+The LinkRequestButton Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+--- | --- | ---
+
+## LocationPopup Component
+### Usage
+The LocationPopup component consists of the following
+* Form
+  * Longitude
+  * Latitude
+* Preview
+  * Map
+    * Marker on location of value of Longitude and Latitude
+* Button
+  * Reset to current
+  * Save changes
+
+### Location
+The LocationPopup Component is located at
+```
+  src/routes/locationPopup/
+```
+### Attributes
+The Account Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+open | boolean | Is the popup currently open.
+longitude | string | The longitude input value.
+latitude | string | The latitude input value.
+handleState | function | The function that handles input value changes.
+handleReset | function | What happens when the user clicks the reset button.
+handleSave | function | Function that executes when the user presses the SAVE CHANGES button.
+
 ## Login Component
 ### Usage
 The Login component consists of the following
@@ -359,6 +501,28 @@ The Account Component accepts the following attributes
 Attribute | Type | Usage
 --- | --- | ---
 Signin | function | The function that handles the login.
+
+## Map Component
+### Usage
+The Map component consists of the following
+* Google map
+  * marker
+* Longitude
+* Latitude
+
+### Location
+The Map Component is located at
+```
+  src/components/map/
+```
+### Attributes
+The Map Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+latitude | string | What is the latitude of the measurement.
+longitude | string | What is the longitude of the measurement.
+label | string | What should the text be above the map.
 
 ## Measurement Component
 ### Usage
@@ -438,6 +602,42 @@ Attribute | Type | Usage
 mediaId | string | Used to get the media that was selected.
 measurements | object | Passes down all measurements, Media Component reduces the data to what the user is trying to view.
 
+## Notification Component
+### Usage
+The Notification Component consists of the following
+* Message
+* Date
+
+### Location
+The Notification Component is located at
+```
+  src/components/notification/
+```
+### Attributes
+The Notification Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+details | object | The object that contains the message and the date of notification.
+
+## Notifications Component
+### Usage
+The Notifications Component consists of the following
+* Header
+  * Notifications
+* All the notifications [Notification Component](#notification-component)
+
+### Location
+The Notifications Component is located at
+```
+  src/routes/notifications/
+```
+### Attributes
+The Notifications Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+--- | --- | ---
 
 ## Overview Component
 ### Usage
@@ -485,6 +685,23 @@ The ProgressBar Component accepts the following attributes
 Attribute | Type | Usage
 --- | --- | ---
 progress | number | How much % is uploaded.
+
+## Redirect Component
+### Usage
+The Redirect Component consists of the following
+* Route to redirect
+
+### Location
+The Redirect Component is located at
+```
+  src/components/redirect/
+```
+### Attributes
+The Redirect Component accepts the following attributes
+
+Attribute | Type | Usage
+--- | --- | ---
+to | string | Where should the user be redirected to.
 
 ## RemoveButton Component
 ### Usage
