@@ -18,3 +18,15 @@
   padding: 10px 5px;
   width: calc(100vw - 32px);
 }
+
+.inputWrap {
+  position: relative;
+
+  i {
+    position: absolute;
+    pointer-events: none;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

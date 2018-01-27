@@ -7,6 +7,7 @@ import base from '../../base';
 import LocationPopup from '../../components/locationPopup/';
 import Header from '../../components/header';
 import InputGroup from '../../components/inputGroup/index';
+import LinkRequestButton from '../../components/linkRequestButton/index';
 
 import style from './style';
 
@@ -119,6 +120,7 @@ export default class EditMedia extends Component {
             fullWidth
             placeholder=""
           />
+          <LinkRequestButton />
         </section>
         <section class={style.mediaRow}>
           <div class={style.mediaWrap}>{this.renderImagesUI()}</div>

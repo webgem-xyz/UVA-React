@@ -8,6 +8,7 @@ import LocationPopup from '../../components/locationPopup/';
 import Header from '../../components/header';
 import InputGroup from '../../components/inputGroup/index';
 import FormItem from '../../components/formItem/';
+import LinkRequestButton from '../../components/linkRequestButton/index';
 
 import style from './style';
 
@@ -73,6 +74,7 @@ export default class Edit extends Component {
             fullWidth
             placeholder=""
           />
+
           <section class={style.locationEdit}>
             <label>Location</label>
             <button onClick={e => this.showPopup(e)}>
@@ -92,6 +94,7 @@ export default class Edit extends Component {
             open={this.state.open}
             handleSave={this.handleSave}
           />
+          <LinkRequestButton />
         </section>
         <section class={style.data}>
           {measurement.acidity && <FormItem item="acidity" value={measurement.acidity} />}

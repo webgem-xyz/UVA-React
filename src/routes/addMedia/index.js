@@ -210,6 +210,7 @@ export default class AddMedia extends Component {
                 <option value="Sea Animals">Sea Animals</option>
                 <option value="Coral">Coral</option>
                 <option value="Sea Bedding">Sea Bedding</option>
+                <option value="Other">Other</option>
               </select>
             </div>
             <InputGroup
@@ -241,7 +242,7 @@ export default class AddMedia extends Component {
           <p class={style.addButtonLabel}>add media</p>
           {this.state.count > 0 && (
             <button class={style.submit} type="submit">
-              submit measurement
+              submit media
             </button>
           )}
         </form>

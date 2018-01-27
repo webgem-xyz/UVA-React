@@ -51,17 +51,73 @@
     font-size: 16px;
     font-weight: 700;
   }
+
+  select {
+    background: var(--main-bg-color);
+    border: 1px solid var(--main-color);
+    border-radius: 0;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  .select {
+    background-image:
+      linear-gradient(45deg, transparent 50%, var(--main-color) 50%),
+      linear-gradient(135deg, var(--main-color) 50%, transparent 50%),
+      linear-gradient(to right, var(--main-color), var(--main-color));
+    background-position:
+      calc(100% - 20px) calc(1em + 2px),
+      calc(100% - 15px) calc(1em + 2px),
+      calc(100% - 2.5em) 0.5em;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 1.5em;
+    background-repeat: no-repeat;
+  }
+
+  .select:focus {
+    background-image:
+      linear-gradient(45deg, var(--main-color) 50%, transparent 50%),
+      linear-gradient(135deg, transparent 50%, var(--main-color) 50%),
+      linear-gradient(to right, var(--main-color), var(--main-color));
+    background-position:
+      calc(100% - 15px) 1em,
+      calc(100% - 20px) 1em,
+      calc(100% - 2.5em) 0.5em;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 1.5em;
+    background-repeat: no-repeat;
+    border-color: var(--main-color);
+    outline: 0;
+  }
+
+  select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 var(--main-color);
+  }
 }
 
-.select {
-  background: none;
-  border: 1px solid var(--main-color);
-  border-radius: 0;
-  font-size: 15px;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  padding: 10px 5px;
-}
+// .select {
+//   background: none;
+//   border: 1px solid var(--main-color);
+//   border-radius: 0;
+//   font-size: 15px;
+//   margin-bottom: 5px;
+//   margin-top: 5px;
+//   padding: 10px 5px;
+// }
 
 .imageWrap {
   display: flex;

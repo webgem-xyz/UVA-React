@@ -1,7 +1,7 @@
 .header {
-  --header-background: #fafafa;
-  background: var(--header-background);
-  border-bottom: 1px solid var(--main-color);
+  background: var(--main-blue);
+  border-bottom: 0;
+  color: var(--main-bg-color);
   display: block;
   height: 100%;
   left: 0;
