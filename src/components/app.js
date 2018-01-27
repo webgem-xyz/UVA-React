@@ -123,6 +123,7 @@ export default class App extends Component {
             logout={this.logout}
             login={this.state.login}
           />
+          <Home path="/progress" uid={this.state.uid} />
           <Requests path="/requests" />
           <Notifications path="/notifications" />
           <Redirect path="/createAccount" to="/" />
