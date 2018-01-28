@@ -44,9 +44,14 @@ export default class Measurement extends Component {
     const measurement = this.state.measurement;
     return (
       <div class={style.container}>
-        <Header title={measurement.date} to="/" />
+        <Header title="Measurement" to="/" />
         <div class={style.measurementWrapper}>
           <EditLink type="measurement" to={`/edit/${this.props.measurementId}`} />
+          <RemoveMeasurementButton
+            Id={this.props.measurementId}
+            label="measurement"
+            removeMeasurement={this.props.removeMeasurement}
+          />
           {measurement.date && <MeasurementRow label="Date" value={measurement.date} />}
           <MapComponent
             latitude={measurement.latitude}
@@ -58,11 +63,6 @@ export default class Measurement extends Component {
           {measurement.tempature && (
             <MeasurementRow label="Tempature" value={measurement.tempature} />
           )}
-          <RemoveMeasurementButton
-            Id={this.props.measurementId}
-            label="measurement"
-            removeMeasurement={this.props.removeMeasurement}
-          />
         </div>
       </div>
     );

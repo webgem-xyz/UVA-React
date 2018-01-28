@@ -11,7 +11,8 @@ export default class RemoveMeasurementButton extends Component {
         }}
         class={style.removeButton}
       >
-        Delete {this.props.label}
+        Delete
+        <i class="material-icons">delete</i>
       </button>
     );
   }
@@ -20,5 +21,5 @@ export default class RemoveMeasurementButton extends Component {
 RemoveMeasurementButton.propTypes = {
   Id: PropTypes.string.isRequired,
   removeMeasurement: PropTypes.func.isRequired,
-  label: PropTypes.string.isRequired,
+  // label: PropTypes.string.isRequired,
 };

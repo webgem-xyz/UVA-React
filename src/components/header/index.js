@@ -3,7 +3,7 @@ import { Link } from 'preact-router/match';
 import { PropTypes } from 'preact-compat';
 import style from './style';
 
-import arrow from '../../assets/black/arrow.svg';
+import arrow from '../../assets/white/arrow.svg';
 
 export default class Header extends Component {
   render() {

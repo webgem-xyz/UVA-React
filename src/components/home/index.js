@@ -15,6 +15,7 @@ import Edit from '../../routes/edit/';
 import EditMedia from '../../routes/editMedia/';
 import Media from '../../routes/Media/index';
 import Account from '../../routes/account';
+import Progress from '../../routes/progress';
 
 export default class Home extends Component {
   constructor(props) {
@@ -112,6 +113,7 @@ export default class Home extends Component {
           logout={this.props.logout}
           login={this.props.login}
         />
+        <Progress path="/progress" uid={this.props.uid} measurements={this.state.measurements} />
       </Router>
     );
   }

@@ -9,8 +9,8 @@ import AddButton from '../../components/addButton/index';
 import FilterButton from '../../components/filterButton/index';
 
 // Import image
-import addIcon from '../../assets/black/measurements.svg';
-import mediaIcon from '../../assets/black/media.png';
+import addIcon from '../../assets/white/measurements.svg';
+import mediaIcon from '../../assets/white/media.svg';
 
 export default class Overview extends Component {
   constructor(props) {

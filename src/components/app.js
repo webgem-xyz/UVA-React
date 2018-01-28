@@ -1,3 +1,8 @@
+// All the code in this project is licensed under the terms of the GNU AGPLv3 license.
+// COPYRIGHT (C) Webgem ALL RIGHTS RESERVED.
+// More INFO AT https://github.com/webgem-xyz/UVA-React#license-information
+// All code can be found at https://github.com/webgem-xyz/UVA-React
+// You can read our LICENSE at https://github.com/webgem-xyz/UVA-React/blob/master/LICENSE
 import { Component } from 'preact';
 import { Router, route } from 'preact-router';
 import firebase from 'firebase/app';
@@ -9,6 +14,7 @@ import Footer from '../components/footer/';
 import Notifications from '../routes/notifications';
 import CreateAccount from '../routes/createAccount';
 import Redirect from './redirect/index';
+import Requests from '../routes/requests';
 
 // Import Firebase Login
 import fireApp from '../base2';
@@ -122,6 +128,8 @@ export default class App extends Component {
             logout={this.logout}
             login={this.state.login}
           />
+          <Home path="/progress" uid={this.state.uid} />
+          <Requests path="/requests" />
           <Notifications path="/notifications" />
           <Redirect path="/createAccount" to="/" />
         </Router>

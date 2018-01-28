@@ -1,12 +1,17 @@
 .notificationWrapper {
   align-items: center;
-  border: 1px solid var(--main-color);
+  background: var(--main-light-color);
+  // border: 1px solid var(--main-color);
+  border: 0;
+  color: var(--main-color);
   display: flex;
   justify-content: space-between;
   margin: 5px 0;
   padding: 15px 10px;
+  text-decoration: none;
 
   p {
+    color: var(--main-blue);
     display: inline-block;
     font-size: 14px;
     font-weight: 700;
@@ -14,6 +19,7 @@
   }
 
   p:nth-child(2) {
+    color: var(--main-color);
     font-weight: 400;
     white-space: nowrap;
   }

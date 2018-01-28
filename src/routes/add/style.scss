@@ -1,15 +1,15 @@
 .mainInputs {
-  background: var(--main-bg-color);
-  border-bottom: 1px solid var(--main-color);
+  background: var(--main-light-color);
+  // border-bottom: 1px solid var(--main-color);
   padding: 16px;
 }
 
 .addButton {
   align-items: center;
-  background: none;
-  border: 1px solid var(--main-color);
+  background: var(--main-purple);
+  border: 0;
   border-radius: 50%;
-  color: var(--main-color);
+  color: var(--main-bg-color);
   display: flex;
   font-size: 50px;
   font-weight: 400;
@@ -29,32 +29,88 @@
 }
 
 .customFormfieldWrap {
-  border-bottom: .5px solid var(--main-color);
-  border-top: .5px solid var(--main-color);
+  background: var(--main-light-color);
+  // border-bottom: .5px solid var(--main-color);
+  // border-top: .5px solid var(--main-color);
   display: flex;
   flex-direction: column;
   margin: 10px 0;
   padding: 14px 16px;
 
   label {
-    color: var(--main-color);
+    color: var(--main-blue);
     font-size: 16px;
     font-weight: 700;
     margin: 5px 0 4px;
   }
+
+  select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: var(--input-color);
+    border: 0;
+    border-radius: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 1.5em;
+    margin-bottom: 5px;
+    padding: .5em 3.5em .5em 1em;
+  }
+
+  .select {
+    background-image:
+      linear-gradient(45deg, transparent 50%, var(--main-color) 50%),
+      linear-gradient(135deg, var(--main-color) 50%, transparent 50%),
+      linear-gradient(to right, var(--main-color), var(--main-color));
+    background-position:
+      calc(100% - 20px) calc(1em + 2px),
+      calc(100% - 15px) calc(1em + 2px),
+      calc(100% - 2.5em) .5em;
+    background-repeat: no-repeat;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 1.5em;
+  }
+
+  .select:focus {
+    background-image:
+      linear-gradient(45deg, var(--main-color) 50%, transparent 50%),
+      linear-gradient(135deg, transparent 50%, var(--main-color) 50%),
+      linear-gradient(to right, var(--main-color), var(--main-color));
+    background-position:
+      calc(100% - 15px) 1em,
+      calc(100% - 20px) 1em,
+      calc(100% - 2.5em) .5em;
+    background-repeat: no-repeat;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 1.5em;
+    border-color: var(--main-color);
+    outline: 0;
+  }
+
+  select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 var(--main-color);
+  }
 }
 
-.select {
-  background: var(--main-bg-color);
-  border: 1px solid var(--main-color);
-  border-radius: 0;
-  font-size: 15px;
-  margin-bottom: 5px;
-  padding: 10px 5px;
-}
+// .select {
+//   background: var(--main-bg-color);
+//   border: 1px solid var(--main-color);
+//   border-radius: 0;
+//   font-size: 15px;
+//   margin-bottom: 5px;
+//   padding: 10px 5px;
+// }
 
 .addedInputField {
-  border: 1px solid var(--main-color);
+  border: 0;
   border-radius: 0;
   font-size: 15px;
   margin-top: 0;
@@ -87,17 +143,17 @@
 }
 
 .submit {
-  background: var(--main-bg-color);
+  background: var(--main-color);
   border: 1px solid var(--main-color);
   border-radius: 0;
-  color: var(--main-color);
-  font-size: 16px;
+  color: var(--main-light-color);
+  font-size: 15px;
   font-weight: 700;
   left: 50%;
   margin-bottom: 16px;
   margin-top: 10px;
   outline: 0;
-  padding: 20px;
+  padding: 10px;
   position: relative;
   text-transform: uppercase;
   transform: translateX(-50%);
@@ -110,8 +166,8 @@
 
   button {
     align-items: center;
-    background: none;
-    border: 1px solid var(--main-color);
+    background: var(--input-color);
+    border: 0;
     border-radius: 0;
     color: var(--main-color);
     display: flex;
@@ -127,7 +183,7 @@
   }
 
   label {
-    color: var(--main-color);
+    color: var(--main-blue);
     font-size: 16px;
     font-weight: 700;
     padding: 0;

@@ -29,13 +29,16 @@ export default class DateSelect extends Component {
     return (
       <div class={style.dateRow}>
         <label>{this.props.label}</label>
-        <DatePicker
-          selected={this.state.startDate}
-          dateFormat="YYYY-MM-DD"
-          onChange={this.handleChange}
-          maxDate={moment()}
-          className={style.date}
-        />
+        <div class={style.inputWrap}>
+          <DatePicker
+            selected={this.state.startDate}
+            dateFormat="YYYY-MM-DD"
+            onChange={this.handleChange}
+            maxDate={moment()}
+            className={style.date}
+          />
+          <i className="material-icons">date_range</i>
+        </div>
       </div>
     );
   }
@@ -44,4 +47,9 @@ export default class DateSelect extends Component {
 DateSelect.propTypes = {
   handleState: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
+  // startDate: PropTypes.object,
 };
+
+// DateSelect.defaultProps = {
+//   startDate: moment(),
+// };

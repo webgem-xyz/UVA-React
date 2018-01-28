@@ -1,6 +1,8 @@
 import { Component } from 'preact';
 import { PropTypes } from 'preact-compat';
 import { route } from 'preact-router';
+// import moment from 'moment';
+// import DatePicker from 'react-datepicker';
 
 import base from '../../base';
 
@@ -8,6 +10,7 @@ import LocationPopup from '../../components/locationPopup/';
 import Header from '../../components/header';
 import InputGroup from '../../components/inputGroup/index';
 import FormItem from '../../components/formItem/';
+import LinkRequestButton from '../../components/linkRequestButton/index';
 
 import style from './style';
 
@@ -65,14 +68,17 @@ export default class Edit extends Component {
       <div class={style.edit}>
         <Header title="Edit measurement" to={`/mes/${this.props.measurementId}`} />
         <section class={style.editMain}>
-          <InputGroup
-            value={measurement.date}
-            kind="date"
-            label="Date"
-            handleState={this.handleState}
-            fullWidth
-            placeholder=""
-          />
+          <div class={style.inputWrap}>
+            <InputGroup
+              value={measurement.date}
+              kind="date"
+              label="Date"
+              handleState={this.handleState}
+              fullWidth
+              placeholder=""
+            />
+            <i className="material-icons">date_range</i>
+          </div>
           <section class={style.locationEdit}>
             <label>Location</label>
             <button onClick={e => this.showPopup(e)}>
@@ -92,6 +98,7 @@ export default class Edit extends Component {
             open={this.state.open}
             handleSave={this.handleSave}
           />
+          <LinkRequestButton />
         </section>
         <section class={style.data}>
           {measurement.acidity && <FormItem item="acidity" value={measurement.acidity} />}

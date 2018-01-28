@@ -1,11 +1,17 @@
 .edit {
   align-items: center;
-  color: var(--main-color);
+  background: var(--main-color);
+  border: 0;
+  color: var(--main-bg-color);
   display: flex;
   float: right;
+  font-size: 12px;
   font-weight: 700;
+  margin: 0 0 10px 5px;
+  padding: 2.5px 2px 2.5px 7px;
   text-align: right;
   text-decoration: none;
+  text-transform: uppercase;
 
   i {
     font-size: .98em;

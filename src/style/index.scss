@@ -1,11 +1,22 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700');
 
+/*
+  All the code in this project is licensed under the terms of the GNU AGPLv3 license.
+  COPYRIGHT (C) Webgem ALL RIGHTS RESERVED.
+  More INFO AT https://github.com/webgem-xyz/UVA-React#license-information
+  All code can be found at https://github.com/webgem-xyz/UVA-React
+  You can read our LICENSE at https://github.com/webgem-xyz/UVA-React/blob/master/LICENSE
+*/
+
 :root {
-  --main-bg-color: #fafafa;
+  --input-color: #fff;
+  --main-bg-color: #f2f2f2;
   --main-blue: #009ba4;
-  --main-color: #656565;
-  --main-light-color: #e7e7e7;
+  --main-color: #666;
+  --main-light-color: #e2e2e2;
+  --main-purple: #c39;
+  --medium-gray: #999;
 }
 
 html,
@@ -30,4 +41,19 @@ body {
 #app {
   min-height: 100%;
   padding-bottom: 60px;
+}
+
+button,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+label,
+input {
+  font-family: 'Quattrocento Sans', sans-serif;
 }

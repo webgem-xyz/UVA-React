@@ -1,14 +1,23 @@
 .createAccountForm {
   padding: 16px;
 
+  > div {
+
+    label {
+      color: var(--input-color);
+    }
+  }
+
   .createAccountSubmit {
-    background: none;
-    border: 1px solid var(--main-color);
+    background: var(--input-color);
+    // border: 1px solid var(--main-color);
+    border: 0;
     border-radius: 0;
-    color: var(--main-color);
+    color: var(--main-blue);
+    font-size: 15px;
     font-weight: 700;
     margin: 15px 0;
-    padding: 15px;
+    padding: 10px 15px;
   }
 }
 
@@ -19,9 +28,23 @@
   margin-top: 5px;
 
   .cancel {
-    color: var(--main-color);
+    color: var(--input-color);
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
   }
+}
+
+.createAccountWrapper {
+  align-items: center;
+  background: var(--main-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+.logo {
+  margin-top: 20px;
+  width: 60%;
 }

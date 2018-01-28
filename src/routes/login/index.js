@@ -29,7 +29,7 @@ export default class Login extends Component {
   render() {
     return (
       <div class={style.login}>
-        <img src={logo} alt="Logo MyMarine" />
+        <img src={logo} alt="Logo MyMarine" class={style.logo} />
         <form
           class={style.loginForm}
           onSubmit={e => this.props.authenticate(e, this.state.email, this.state.password)}
@@ -56,7 +56,7 @@ export default class Login extends Component {
           />
           <section class={style.formButtons}>
             <button type="submit" class={style.loginSub}>
-              log in
+              Login
             </button>
             <Link class={style.forgot} href="/forgot">
               forgot password?

@@ -1,9 +1,14 @@
+.linkDiv {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .linkRequest {
-  background: none;
-  border: 1px solid var(--main-color);
+  background: var(--main-color);
+  border: 0;
   border-radius: 0;
-  color: var(--main-color);
-  font-size: 16px;
+  color: var(--main-bg-color);
+  font-size: 14px;
   font-weight: 700;
   margin: 15px 0;
   outline: 0;

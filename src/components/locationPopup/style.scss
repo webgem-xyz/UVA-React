@@ -24,7 +24,7 @@
   padding: 0;
 
   label {
-    color: var(--main-color);
+    color: var(--main-blue);
     font-size: 16px;
     font-weight: 700;
     margin: 0 0 5px;
@@ -36,15 +36,15 @@
   justify-content: space-between;
 
   input {
-    background: none;
+    background: var(--main-color);
     border: 0;
     border-radius: 0;
-    color: var(--main-color);
-    font-size: 15px;
+    color: var(--main-light-color);
+    font-size: 12px;
     font-weight: 700;
-    margin: 0;
+    margin: 10px 0 0;
     outline: 0;
-    padding: 15px 0 5px;
+    padding: 7px;
     text-transform: uppercase;
   }
 }

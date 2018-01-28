@@ -195,7 +195,7 @@ export default class Add extends Component {
           <p class={style.addButtonLabel}>add item</p>
           {this.state.count > 0 && (
             <button class={style.submit} type="submit">
-              submit measurement
+              save measurement
             </button>
           )}
         </form>

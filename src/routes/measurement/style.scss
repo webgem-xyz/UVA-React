@@ -68,6 +68,14 @@ p {margin: 0;}
 .measurementWrapper {
   padding: 16px;
   width: 100%;
+
+  > div {
+    background: var(--main-light-color);
+  }
+
+  > div:nth-child(even) {
+    background: var(--main-bg-color);
+  }
 }
 
 .edit {

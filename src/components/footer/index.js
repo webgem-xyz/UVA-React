@@ -11,9 +11,13 @@ export default class Footer extends Component {
           <i class="material-icons">list</i>
           <span>Overview</span>
         </Link>
-        <Link activeClassName={style.active} href="/request">
+        <Link activeClassName={style.active} href="/requests">
           <i class="material-icons">pan_tool</i>
           <span>Requests</span>
+        </Link>
+        <Link activeClassName={style.active} href="/progress">
+          <i class="material-icons">timeline</i>
+          <span>Progress</span>
         </Link>
         <Link activeClassName={style.active} href="/account">
           <i class="material-icons">person</i>
