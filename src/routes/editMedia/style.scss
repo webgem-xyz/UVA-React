@@ -203,6 +203,18 @@ select:-moz-focusring {
   transform: translateX(-50%);
 }
 
+.inputWrap {
+  position: relative;
+
+  i {
+    position: absolute;
+    pointer-events: none;
+    right: 5px;
+    top: 72.5%;
+    transform: translateY(-50%);
+  }
+}
+
 .imgWrap {
   // border: 1px solid var(--main-color);
   border: 0;

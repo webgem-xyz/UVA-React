@@ -104,6 +104,18 @@
   transform: translateX(-50%);
 }
 
+.inputWrap {
+  position: relative;
+
+  i {
+    position: absolute;
+    pointer-events: none;
+    right: 5px;
+    top: 72.5%;
+    transform: translateY(-50%);
+  }
+}
+
 .locationEdit {
   display: block;
   padding: 10px 0 0;

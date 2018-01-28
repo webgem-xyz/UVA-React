@@ -13,9 +13,7 @@ export default class Account extends Component {
       <div class={style.account}>
         <Header title="account" />
         <div class={style.accountSec}>
-          <p>
-            <span>Last connection:</span> {this.props.login}
-          </p>
+          <p class={style.headerP}>Account Details</p>
           <p>
             <span>Username:</span> {this.props.email}
           </p>
