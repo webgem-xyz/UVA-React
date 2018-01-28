@@ -242,7 +242,7 @@ export default class AddMedia extends Component {
           <p class={style.addButtonLabel}>add media</p>
           {this.state.count > 0 && (
             <button class={style.submit} type="submit">
-              submit media
+              save media
             </button>
           )}
         </form>

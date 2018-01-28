@@ -5,7 +5,7 @@ import { Link } from 'preact-router/match';
 import style from './style';
 
 // Import images
-import mediaIcon from '../../assets/black/media.png';
+import mediaIcon from '../../assets/black/media.svg';
 import measurementIcon from '../../assets/black/measurements.svg';
 
 function defineImgSrc(details) {

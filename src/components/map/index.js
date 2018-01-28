@@ -24,7 +24,7 @@ export default class MapComponent extends Component {
         <div class={style.map}>
           <Gmaps
             width="100%"
-            height="150px"
+            height="125px"
             zoom={4}
             lat={Number(latitude)}
             lng={Number(longitude)}

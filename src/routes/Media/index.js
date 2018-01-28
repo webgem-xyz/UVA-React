@@ -56,9 +56,14 @@ export default class Media extends Component {
     const measurement = this.state.measurement;
     return (
       <div class={style.media}>
-        <Header title={measurement.date} to="/" />
+        <Header title="Media" to="/" />
         <div class={style.dataWrap}>
           <EditLink type="media" to={`/editMedia/${this.props.mediaId}`} />
+          <RemoveMeasurementButton
+            Id={this.props.mediaId}
+            label="media"
+            removeMeasurement={this.props.removeMeasurement}
+          />
           {measurement.date && <MeasurementRow label="Date" value={measurement.date} />}
           <MapComponent
             latitude={measurement.latitude}
@@ -71,11 +76,6 @@ export default class Media extends Component {
           </section>
           {measurement.category && <MeasurementRow label="Category" value={measurement.category} />}
           {measurement.desc && <MeasurementRow label="Description" value={measurement.desc} desc />}
-          <RemoveMeasurementButton
-            Id={this.props.mediaId}
-            label="media"
-            removeMeasurement={this.props.removeMeasurement}
-          />
         </div>
       </div>
     );

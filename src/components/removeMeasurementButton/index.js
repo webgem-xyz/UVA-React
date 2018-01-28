@@ -11,7 +11,8 @@ export default class RemoveMeasurementButton extends Component {
         }}
         class={style.removeButton}
       >
-        Delete {this.props.label}
+        Delete
+        <i class="material-icons">delete</i>
       </button>
     );
   }

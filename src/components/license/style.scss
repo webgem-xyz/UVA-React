@@ -1,0 +1,18 @@
+.licenseWrapper {
+  background: var(--input-color);
+  bottom: 0;
+  display: block;
+  left: 0;
+  position: absolute;
+}
+
+.license {
+  font-size: 13px;
+  text-align: center;
+
+  a {
+    color: var(--main-blue);
+    font-size: 13px;
+    text-decoration: none;
+  }
+}

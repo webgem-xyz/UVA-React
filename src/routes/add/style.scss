@@ -1,6 +1,6 @@
 .mainInputs {
-  background: var(--main-bg-color);
-  border-bottom: 1px solid var(--main-color);
+  background: var(--main-light-color);
+  // border-bottom: 1px solid var(--main-color);
   padding: 16px;
 }
 
@@ -29,8 +29,9 @@
 }
 
 .customFormfieldWrap {
-  border-bottom: .5px solid var(--main-color);
-  border-top: .5px solid var(--main-color);
+  background: var(--main-light-color);
+  // border-bottom: .5px solid var(--main-color);
+  // border-top: .5px solid var(--main-color);
   display: flex;
   flex-direction: column;
   margin: 10px 0;
@@ -142,17 +143,17 @@
 }
 
 .submit {
-  background: var(--main-bg-color);
+  background: var(--main-color);
   border: 1px solid var(--main-color);
   border-radius: 0;
-  color: var(--main-color);
-  font-size: 16px;
+  color: var(--main-light-color);
+  font-size: 15px;
   font-weight: 700;
   left: 50%;
   margin-bottom: 16px;
   margin-top: 10px;
   outline: 0;
-  padding: 20px;
+  padding: 10px;
   position: relative;
   text-transform: uppercase;
   transform: translateX(-50%);

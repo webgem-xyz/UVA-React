@@ -1,13 +1,20 @@
 .removeButton {
-  background: var(--main-bg-color);
-  border: 1px solid var(--main-color);
-  color: var(--main-color);
-  display: block;
-  font-size: 16px;
+  align-items: center;
+  background: var(--main-color);
+  border: 0;
+  color: var(--main-bg-color);
+  display: flex;
+  float: right;
+  font-size: 12px;
   font-weight: 700;
-  margin: 15px 25px;
-  outline: 0;
-  padding: 10px 10px;
+  margin: 0 5px 10px 0;
+  padding: 2.5px 2px 2.5px 7px;
+  text-align: right;
+  text-decoration: none;
   text-transform: uppercase;
-  width: calc(100% - 50px);
+
+  i {
+    font-size: .98em;
+    padding: 5px;
+  }
 }

@@ -4,6 +4,7 @@ import { Link } from 'preact-router/match';
 
 import InputGroup from '../../components/inputGroup/';
 import logo from '../../assets/logo.svg';
+import LicenseInfo from '../../components/license/';
 
 import style from './style';
 
@@ -28,7 +29,7 @@ export default class CreateAccount extends Component {
   render() {
     return (
       <div class={style.createAccountWrapper}>
-        <img src={logo} alt="Logo MyMarine" />
+        <img src={logo} alt="Logo MyMarine" class={style.logo} />
         <form
           class={style.createAccountForm}
           onSubmit={e => this.props.createAccount(e, this.state.email, this.state.password)}
@@ -63,6 +64,7 @@ export default class CreateAccount extends Component {
             </Link>
           </section>
         </form>
+        <LicenseInfo />
       </div>
     );
   }

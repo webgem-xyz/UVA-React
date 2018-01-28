@@ -23,12 +23,13 @@
 }
 
 .labels p {
+  color: var(--main-blue);
   font-weight: 700;
   margin: 0;
 }
 
 .labels p:nth-child(1) {
-  width: 45px;
+  width: 55px;
 }
 
 .labels p:nth-child(2) {
