@@ -1,8 +1,8 @@
 import { Component } from 'preact';
 import { PropTypes } from 'preact-compat';
 import { route } from 'preact-router';
-import moment from 'moment';
-import DatePicker from 'react-datepicker';
+// import moment from 'moment';
+// import DatePicker from 'react-datepicker';
 
 import base from '../../base';
 

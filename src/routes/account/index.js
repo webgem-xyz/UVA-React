@@ -39,5 +39,4 @@ Account.propTypes = {
   // measurements: PropTypes.object.isRequired,
   email: PropTypes.object.isRequired,
   logout: PropTypes.func.isRequired,
-  login: PropTypes.string.isRequired,
 };

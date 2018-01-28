@@ -8,6 +8,7 @@ import {
   Area,
   CartesianGrid,
 } from 'recharts';
+import { PropTypes } from 'preact-compat';
 
 import base from '../../base';
 
@@ -159,3 +160,7 @@ export default class Progress extends Component {
     );
   }
 }
+
+Progress.propTypes = {
+  uid: PropTypes.string.isRequired,
+};
