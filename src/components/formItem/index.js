@@ -15,7 +15,12 @@ export default class FormItem extends Component {
           <option value="tempature">Tempature</option>
         </select>
         <label>Value</label>
-        <input type="number" value={this.props.value} class={style.addedInputField} />
+        <input
+          type="number"
+          step="0.00001"
+          value={this.props.value}
+          class={style.addedInputField}
+        />
         <RemoveButton value="remove item" removeField={this.removeField} />
       </div>
     );

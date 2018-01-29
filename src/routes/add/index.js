@@ -154,6 +154,7 @@ export default class Add extends Component {
           <label>Value</label>
           <input
             type="number"
+            step="0.0000001"
             value={this.state.value[i] || ''}
             onChange={e => this.handleChange(e, i)}
             class={style.addedInputField}

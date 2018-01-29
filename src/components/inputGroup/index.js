@@ -22,6 +22,7 @@ export default class InputGroup extends Component {
         <input
           onChange={e => this.handleChange(e, this.props.kind)}
           type={this.props.type}
+          step="0.00001"
           placeholder={this.props.placeholder}
           value={this.props.value}
           id={this.props.kind}
