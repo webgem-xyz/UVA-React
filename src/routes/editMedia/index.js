@@ -63,10 +63,6 @@ export default class EditMedia extends Component {
   removeImage(e, i) {
     e.preventDefault();
     const measurement = { ...this.state.measurement };
-    // const file = this.state.file.slice();
-    // const fileUrl = this.state.fileUrl.slice();
-    // file.splice(i, 1);
-    // fileUrl.splice(i, 1);
     measurement.images = this.state.measurement.images - 1;
     measurement[`media${i}`] = null;
     this.setState({
