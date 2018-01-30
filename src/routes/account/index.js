@@ -8,6 +8,21 @@ import Header from '../../components/header/index';
 import style from './style';
 
 export default class Account extends Component {
+  constructor(props) {
+    super(props);
+
+    this.logoutConfirm = this.logoutConfirm.bind(this);
+  }
+
+  logoutConfirm(e) {
+    e.preventDefault();
+    const r = confirm(
+      `Are you sure you want to sign out? \nYou need a proper internet connection to sign in again.`
+    );
+    if (r === true) {
+      this.props.logout(e);
+    }
+  }
   render() {
     return (
       <div class={style.account}>
@@ -26,7 +41,7 @@ export default class Account extends Component {
           <p>
             <span>Birth date:</span> 20-04-1990
           </p>
-          <button onClick={e => this.props.logout(e)} class={style.logout}>
+          <button onClick={e => this.logoutConfirm(e)} class={style.logout}>
             SIGN OUT
           </button>
         </div>

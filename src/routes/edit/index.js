@@ -75,9 +75,9 @@ export default class Edit extends Component {
               label="Date"
               handleState={this.handleState}
               fullWidth
+              type="date"
               placeholder=""
             />
-            <i className="material-icons">date_range</i>
           </div>
           <section class={style.locationEdit}>
             <label>Location</label>

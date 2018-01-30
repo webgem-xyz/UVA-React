@@ -64,6 +64,9 @@ export default class EditMedia extends Component {
     for (let i = 0; i < this.state.measurement.images; i += 1) {
       images.push(
         <div key={i} class={style.imgWrap}>
+          <button class={style.remove} onClick={e => this.removeImage(e, i)}>
+            <i className={`material-icons ${style.icon}`}>close</i>
+          </button>
           <img src={this.state.measurement[`media${i}`]} alt={this.state.measurement.category} />
         </div>
       );
