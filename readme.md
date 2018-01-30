@@ -36,12 +36,22 @@ To create a production build run
 ```
 
 ## License information
+This project is a way for people on sea to send the date they collect to Fleet Science
 
-This project is licensed under the terms of the [GNU AGPLv3 license](https://github.com/webgem-xyz/UVA-React/blob/master/LICENSE)
+Copyright (C) 2018  Yannick Frisart - Webgem
 
-Copyright (c) 2018 Webgem ALL RIGHTS RESERVED
+This program is free software: you can redistribute it and/or modify 
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## Team
 <img src="https://avatars0.githubusercontent.com/u/19853448?s=296&v=4" width="150" height="150" alt="Yannick1691" /> | <img src="https://avatars1.githubusercontent.com/u/25220164?s=296&v=4" width="150" height="150" alt="ThijsvanRijn" /> | <img src="https://avatars1.githubusercontent.com/u/15909945?s=296&v=4" width="150" height="150" alt="Coen" />
