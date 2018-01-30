@@ -10,9 +10,9 @@ export default class FormItem extends Component {
       <div key={this.props.item} class={style.customFormfieldWrap}>
         <label>Measurement type</label>
         <select required class={style.select} value={this.props.item}>
-          <option value="acidity">Acidity (Ph)</option>
+          <option value="acidity">Acidity (pH)</option>
           <option value="salinity">Salinity (PSU)</option>
-          <option value="tempature">Tempature</option>
+          <option value="Temperature">Temperature</option>
         </select>
         <label>Value</label>
         <input

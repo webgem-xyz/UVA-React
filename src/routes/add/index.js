@@ -147,9 +147,9 @@ export default class Add extends Component {
           <label>Measurement type</label>
           <select required onChange={e => this.handleSelectChange(e, i)} class={style.select}>
             <option label=" " disabled selected />
-            <option value="acidity">Acidity (Ph)</option>
+            <option value="acidity">Acidity (pH)</option>
             <option value="salinity">Salinity (PSU)</option>
-            <option value="tempature">Tempature</option>
+            <option value="Temperature">Temperature</option>
           </select>
           <label>Value</label>
           <input

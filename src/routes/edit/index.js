@@ -103,7 +103,7 @@ export default class Edit extends Component {
         <section class={style.data}>
           {measurement.acidity && <FormItem item="acidity" value={measurement.acidity} />}
           {measurement.salinity && <FormItem item="acidity" value={measurement.salinity} />}
-          {measurement.tempature && <FormItem item="acidity" value={measurement.tempature} />}
+          {measurement.Temperature && <FormItem item="acidity" value={measurement.Temperature} />}
           <input
             type="button"
             onClick={this.handleEditSave}
