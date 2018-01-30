@@ -18,6 +18,8 @@ export default class EditMedia extends Component {
     this.handleSave = this.handleSave.bind(this);
     this.handleResetLoc = this.handleResetLoc.bind(this);
     this.handleEditSave = this.handleEditSave.bind(this);
+    this.handleState = this.handleState.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.removeImage = this.removeImage.bind(this);
 
     this.state = {
@@ -27,9 +29,13 @@ export default class EditMedia extends Component {
   }
 
   componentWillMount(nextProps) {
-    this.ref = base.bindToState(`/${this.props.uid}/mes/${this.props.mediaId}`, {
+    this.ref = base.fetch(`/${this.props.uid}/mes/${this.props.mediaId}`, {
       context: this,
-      state: 'measurement',
+      then(data) {
+        this.setState({
+          measurement: data,
+        });
+      },
     });
   }
 
@@ -56,8 +62,26 @@ export default class EditMedia extends Component {
     });
   }
 
+  handleState(kind, value) {
+    const measurement = { ...this.state.measurement };
+    measurement[kind] = value;
+    this.setState({
+      measurement,
+    });
+  }
+
+  handleChange(e, kind) {
+    this.handleState(kind, e.target.value);
+  }
+
   handleEditSave() {
-    route(`/med/${this.props.mediaId}`);
+    const mediaId = this.props.mediaId;
+    base.update(`/${this.props.uid}/mes/${this.props.mediaId}`, {
+      data: this.state.measurement,
+      then() {
+        route(`/med/${mediaId}`);
+      },
+    });
   }
 
   removeImage(e, i) {
@@ -101,7 +125,6 @@ export default class EditMedia extends Component {
               type="date"
               placeholder=""
             />
-            <i className="material-icons">date_range</i>
           </div>
           <section class={style.locationEdit}>
             <label>Location</label>
@@ -124,7 +147,12 @@ export default class EditMedia extends Component {
           />
           <div class={style.inputGroupDate}>
             <label for="category">Category</label>
-            <select id="category" class={style.select} value={measurement.category}>
+            <select
+              id="category"
+              class={style.select}
+              value={measurement.category}
+              onChange={e => this.handleChange(e, 'category')}
+            >
               <option value="State of the water">State of the water</option>
               <option value="Sea Animals">Sea Animals</option>
               <option value="Coral">Coral</option>
@@ -137,6 +165,7 @@ export default class EditMedia extends Component {
             label="Description (optional)"
             fullWidth
             placeholder=""
+            handleState={this.handleState}
           />
           <LinkRequestButton />
         </section>
