@@ -9,7 +9,7 @@ export default class RemoveButton extends Component {
         type="button"
         value={this.props.value}
         class={style.remove}
-        onClick={e => this.props.removeField(e, this.props.i)}
+        onClick={() => this.props.removeField(this.props.i)}
       />
     );
   }

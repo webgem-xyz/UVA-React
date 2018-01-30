@@ -60,8 +60,8 @@ export default class Measurement extends Component {
           />
           {measurement.acidity && <MeasurementRow label="Acidity" value={measurement.acidity} />}
           {measurement.salinity && <MeasurementRow label="Salinity" value={measurement.salinity} />}
-          {measurement.tempature && (
-            <MeasurementRow label="Tempature" value={measurement.tempature} />
+          {measurement.Temperature && (
+            <MeasurementRow label="Temperature" value={measurement.Temperature} />
           )}
         </div>
       </div>

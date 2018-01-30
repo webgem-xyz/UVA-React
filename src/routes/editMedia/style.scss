@@ -229,6 +229,29 @@ select:-moz-focusring {
     object-position: center;
     width: 100%;
   }
+
+  .remove {
+    align-items: center;
+    background: var(--main-purple);
+    border: 0;
+    border-radius: 50%;
+    color: var(--main-bg-color);
+    display: flex;
+    font-size: 15px;
+    height: 30px;
+    justify-content: center;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 30px;
+
+    .icon {
+      color: var(--main-bg-color);
+    }
+  }
 }
 
 .mediaWrap {

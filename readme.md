@@ -240,16 +240,16 @@ createAccount | function | Function that handles creating the user account and s
 ## DatePicker Component
 ### Usage
 The DatePicker Component consists of the following
-* Label 
+* Label
 * Input (date)
   * You choose the date
 
 ### Location
-The DatePicker Component is located at 
+The DatePicker Component is located at
 ```
   src/components/datePicker/
 ```
-### Attributes 
+### Attributes
 The DatePicker Component accepts the following attributes
 
 Attribute | Type | Usage
@@ -362,7 +362,7 @@ HandleFilter | function | function that handles the filtering.
 
 ## Footer Component
 ### Usage
-The Footer Component consists of the following 
+The Footer Component consists of the following
 * Overview (icon)
   * When clicked on Overview it will send them to [Overview Component](#overview-component).
 * Request (icon)
@@ -373,7 +373,7 @@ The Footer Component consists of the following
   * When clicked on Notifications it will send them to [Notifications Component](#notifications-component).
 
 ### Location
-The Footer Component is located at 
+The Footer Component is located at
 ```
   src/components/footer/
 ```
@@ -393,7 +393,7 @@ The FormItem Component consists of the following
     * Value
       * Acidity
       * Salinity
-      * Tempature
+      * Temperature
 * Label (value)
 * Input (number)
 * Remove Button
@@ -401,7 +401,7 @@ The FormItem Component consists of the following
     * Remove item
 
 ### Location
-The FormItem is located at 
+The FormItem is located at
 ```
   src/components/formItem/
 ```
@@ -612,7 +612,7 @@ The Measurement component consists of the following
   * Date
   * Acidity (pH)
   * Salinity (PSU)
-  * Tempature
+  * Temperature
 * A button to delete the measurements
 
 ### Location
