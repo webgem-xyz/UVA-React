@@ -18,6 +18,7 @@ export default class EditMedia extends Component {
     this.handleSave = this.handleSave.bind(this);
     this.handleResetLoc = this.handleResetLoc.bind(this);
     this.handleEditSave = this.handleEditSave.bind(this);
+    this.removeImage = this.removeImage.bind(this);
 
     this.state = {
       measurement: {},
@@ -57,6 +58,20 @@ export default class EditMedia extends Component {
 
   handleEditSave() {
     route(`/med/${this.props.mediaId}`);
+  }
+
+  removeImage(e, i) {
+    e.preventDefault();
+    const measurement = { ...this.state.measurement };
+    // const file = this.state.file.slice();
+    // const fileUrl = this.state.fileUrl.slice();
+    // file.splice(i, 1);
+    // fileUrl.splice(i, 1);
+    measurement.images = this.state.measurement.images - 1;
+    measurement[`media${i}`] = null;
+    this.setState({
+      measurement,
+    });
   }
 
   renderImagesUI() {
