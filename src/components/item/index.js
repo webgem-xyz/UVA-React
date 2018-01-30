@@ -24,10 +24,6 @@ function defineImgAlt(details) {
   }
 }
 
-function getNumber(mx) {
-  return Math.floor(Math.random() * Math.floor(mx)) + 1;
-}
-
 export default class Item extends Component {
   render() {
     const details = this.props.details;
@@ -41,7 +37,7 @@ export default class Item extends Component {
             class={style.icon}
           />
           <p class={style.date}>{details.date}</p>
-          <p class={style.edit}>{getNumber(24)} days</p>
+          <p class={style.edit}>30 days</p>
           <p class={style.uploadStatText}>Received</p>
           <i className={`material-icons ${style.uploadStat}`}>done</i>
         </div>
