@@ -87,6 +87,7 @@ export default class EditMedia extends Component {
               label="Date"
               handleState={this.handleState}
               fullWidth
+              type="date"
               placeholder=""
             />
             <i className="material-icons">date_range</i>
