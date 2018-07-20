@@ -8,7 +8,9 @@
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build",
     "serve": "preact build && preact serve",
-    "dev": "preact watch"
+    "dev": "preact watch",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [],
   "author": "Yannick Frisart",
@@ -28,7 +30,7 @@
     "eslint-plugin-prettier": "^2.4.0",
     "eslint-plugin-react": "^7.5.1",
     "if-env": "^1.0.0",
-    "jest": "^22.0.6",
+    "jest": "^23.0.0",
     "node-sass": "^4.7.2",
     "preact-cli": "^2.1.0",
     "prettier": "^1.10.2",
@@ -46,6 +48,8 @@
     "react-firebase-file-uploader": "^2.4.1",
     "react-gmaps": "^1.7.0",
     "react-router": "^4.2.0",
-    "recharts": "^1.0.0-beta.9"
-  }
+    "recharts": "^1.0.0-beta.9",
+    "snyk": "^1.89.0"
+  },
+  "snyk": true
 }
