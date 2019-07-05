@@ -10,7 +10,8 @@
     "serve": "preact build && preact serve",
     "dev": "preact watch",
     "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "prepare": "npm run snyk-protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [],
   "author": "Yannick Frisart",
@@ -49,7 +50,7 @@
     "react-gmaps": "^1.7.0",
     "react-router": "^4.2.0",
     "recharts": "^1.0.0-beta.9",
-    "snyk": "^1.105.0"
+    "snyk": "^1.192.0"
   },
   "snyk": true
 }
