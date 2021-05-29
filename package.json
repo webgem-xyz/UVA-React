@@ -30,9 +30,9 @@
     "eslint-plugin-prettier": "^2.4.0",
     "eslint-plugin-react": "^7.5.1",
     "if-env": "^1.0.0",
-    "jest": "^22.0.6",
+    "jest": "^25.0.0",
     "node-sass": "^4.7.2",
-    "preact-cli": "^2.1.0",
+    "preact-cli": "^3.2.0",
     "prettier": "^1.10.2",
     "sass-loader": "^6.0.6"
   },
