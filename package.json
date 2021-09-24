@@ -48,7 +48,7 @@
     "react-firebase-file-uploader": "^2.4.1",
     "react-gmaps": "^1.7.0",
     "react-router": "^4.2.0",
-    "recharts": "^1.0.0-beta.9",
+    "recharts": "^2.1.3",
     "snyk": "^1.105.0"
   },
   "snyk": true
