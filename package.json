@@ -32,7 +32,7 @@
     "if-env": "^1.0.0",
     "jest": "^22.0.6",
     "node-sass": "^4.7.2",
-    "preact-cli": "^2.1.0",
+    "preact-cli": "^3.0.0",
     "prettier": "^1.10.2",
     "sass-loader": "^6.0.6"
   },
@@ -47,7 +47,7 @@
     "react-datepicker": "^1.0.4",
     "react-firebase-file-uploader": "^2.4.1",
     "react-gmaps": "^1.7.0",
-    "react-router": "^4.2.0",
+    "react-router": "^6.0.0",
     "recharts": "^1.0.0-beta.9",
     "snyk": "^1.105.0"
   },
